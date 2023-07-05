@@ -33,6 +33,9 @@
         "assets/css/square_shaped.css",
         "assets/css/disable_vanity.css",
         "assets/css/disable_explore.css",
+        "assets/css/disable_reels.css",
+        "assets/css/mp_disable_stories.css",
+        "assets/css/ev_disable_stories.css",
 
         "assets/css/fonts/roboto.css",
         "assets/css/fonts/poppins.css",
