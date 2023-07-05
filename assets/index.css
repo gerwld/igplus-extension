@@ -5,8 +5,15 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
     "Helvetica Neue", sans-serif;
   background-color: #ebebef;
-  min-width: 400px;
+  width: 650px;
+  height: fit-content;
   user-select: none;
+}
+
+body {
+  position: relative;
+  border: 1px solid #c7c9cc;
+  box-sizing: border-box;
 }
 
 .logo {
@@ -33,11 +40,27 @@ body {
   border-bottom: 1px solid #a3acb1;
 }
 
+#l3_settings {
+  display: flex;
+}
+
+.group {
+  flex: 1;
+}
+
+.group:nth-child(2) {
+  flex: 1.1;
+}
+
 .links {
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
+
+  position: absolute;
+  bottom: 0;
+  right: 0;
 
   padding: 0 10px 10px;
 }
@@ -59,6 +82,10 @@ a img {
   color: #333637;
   font-size: 0.75rem;
   border-bottom: 1px solid #caced3;
+}
+
+.sect_lable__color {
+  padding-top: 20px;
 }
 
 .ch_lp {
