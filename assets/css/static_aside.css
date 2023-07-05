@@ -1,0 +1,12 @@
+body {
+  --left-sidebar-width: calc(var(--nav-bar-width) - 5px);
+  --nav-bar-width: 300px;
+}
+
+div[data-testid="LayoutResizer__resize-bar"] {
+  display: none !important;
+}
+
+.ifVI2CEdOZGgMWIUN2Cw {
+  padding: 0 5px 8px !important;
+}

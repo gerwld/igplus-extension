@@ -1,0 +1,25 @@
+*,
+button,
+a,
+img,
+div,
+*::after,
+*::before {
+  border-radius: 0 !important;
+}
+
+body .btn,
+body [data-testid="tracklist-row"] .btn,
+body button.VgSbatGBB9XwTH2_dsxg,
+body button.ql0zZd7giPXSnPg75NR0,
+body .Xz3tlahv16UpqKBW5HdK,
+body figure.tp8rO9vtqBGPLOhwcdYv > div,
+body figure.tp8rO9vtqBGPLOhwcdYv,
+body .yYflTYbufy7rATGQiZfq,
+body button[data-testid="play-button"],
+body button[data-testid="play-button"] > span,
+body .Button-sc-1dqy6lx-0,
+body .dQCgoh,
+body .fJGlei::after {
+  border-radius: 0 !important;
+}

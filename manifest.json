@@ -1,0 +1,59 @@
+{
+  "name": "InstaPlus",
+  "description": "Enhance your Instagram experience with InstaPlus.",
+  "version": "1.0.0",
+  "manifest_version": 3,
+  "icons": {
+    "16": "/assets/icons/icon16.png",
+    "32": "/assets/icons/icon32.png",
+    "48": "/assets/icons/icon48.png",
+    "128": "/assets/icons/icon128.png"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "/assets/icons/icon16.png",
+      "32": "/assets/icons/icon32.png",
+      "48": "/assets/icons/icon48.png",
+      "128": "/assets/icons/icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "store.js",
+        "assets/css/bigger_navbar.css",
+        "assets/css/classic_mode.css",
+        "assets/css/premium_btns.css",
+        "assets/css/static_aside.css",
+        "assets/css/rect_avatars.css",
+        "assets/css/block_images.css",
+        "assets/css/block_videos.css",
+        "assets/css/now_play_disable.css",
+        "assets/css/square_shaped.css",
+
+        "assets/css/fonts/roboto.css",
+        "assets/css/fonts/poppins.css",
+        "assets/css/fonts/caprasimo.css",
+        "assets/css/fonts/playfair.css",
+        "assets/css/fonts/merriweather.css",
+        "assets/css/fonts/noto_sans.css",
+
+        "assets/css/themes/light_green.css",
+        "assets/css/themes/purple_dark.css",
+        "assets/css/themes/kittens.css"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "content_scripts": [
+    {
+      "matches": ["https://open.spotify.com/*", "https://open.spotify.com/"],
+      "js": ["contentScript.js"]
+    }
+  ],
+  "permissions": ["storage"]
+}
