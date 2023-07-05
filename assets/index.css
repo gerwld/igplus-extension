@@ -54,7 +54,6 @@ body {
 
 .links {
   display: flex;
-  flex-direction: column;
   align-items: flex-end;
   justify-content: center;
 
@@ -67,6 +66,20 @@ body {
 
 .links a {
   max-width: 170px;
+}
+
+.version {
+  display: block;
+  padding: 3px 5px;
+  margin-right: 5px;
+  color: gray;
+  text-decoration: none;
+  border-radius: 3px;
+}
+
+.version:hover {
+  background-color: #353639;
+  color: #fff;
 }
 
 a img {

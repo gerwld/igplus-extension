@@ -346,7 +346,7 @@ canvas._aarh[width="84"] + span::after {
 
 div._aarf img {
   position: relative;
-  z-index: 10;
+  z-index: 1;
   box-sizing: border-box;
 }
 
@@ -360,11 +360,13 @@ div._aarf img {
 }
 
 canvas._aarh[width="128"],
+.xamitd3.x1ypdohk.x1lliihq.x1n2onr6.x87ps6o canvas[width="174"],
 ._aams._aamt canvas[width="174"] {
   opacity: 0;
 }
 
 canvas._aarh[width="128"] + span::before,
+.xamitd3.x1ypdohk.x1lliihq.x1n2onr6.x87ps6o canvas[width="174"] + div::before,
 ._aams._aamt canvas[width="174"] + div::before {
   content: "";
   display: block;
@@ -376,6 +378,7 @@ canvas._aarh[width="128"] + span::before,
   border: 1px solid #e0e0e0;
 }
 
+.xamitd3.x1ypdohk.x1lliihq.x1n2onr6.x87ps6o canvas[width="174"] + div,
 ._aams._aamt canvas[width="174"] + div {
   overflow: visible;
 }

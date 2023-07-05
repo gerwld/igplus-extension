@@ -13,6 +13,13 @@ function splashScreenDelay(delay = 1000) {
   store.initStateIfNotExist();
 })();
 
+// Listen for changes in chrome.storage.local
+chrome.storage.local.onChanged.addListener((changes, namespace) => {
+  if (changes.formState && changes.formState.newValue) {
+    getCurrentState();
+  }
+});
+
 function setTheme(selectedTheme) {
   // Set theme if exists, then delete others
   if (themes.indexOf(selectedTheme) !== -1) {
@@ -44,20 +51,16 @@ function setOrRemoveStylesOfItem(assetPath, item, item_id) {
 }
 
 function toggleClassicMode(assetPath, state) {
+  clearInterval(interval0);
   setOrRemoveStylesOfItem(assetPath, state, "classic_mode");
-  function setClassic() {
-    const mode = localStorage.getItem("182yfcl2wcrumva06hlhooydu:library-row-mode");
-    if (mode == 0 && state) {
-      localStorage.setItem("182yfcl2wcrumva06hlhooydu:library-row-mode", 1);
-      window.location.reload();
-    }
-  }
+  function setClassic() {}
   if (state) interval0 = setInterval(setClassic, 200);
   else clearInterval(interval0);
 }
 
 //Removes all vanity metrics in realtime + hides static
 function toggleVanity(state) {
+  clearInterval(interval1);
   setOrRemoveStylesOfItem("/assets/css/disable_vanity.css", state, "disable_vanity");
   function toggle() {
     if (state) {
@@ -70,7 +73,22 @@ function toggleVanity(state) {
       });
     }
   }
-  interval1 = setInterval(toggle, 300);
+  if (state) interval1 = setInterval(toggle, 300);
+  else clearInterval(interval1);
+}
+
+function toggleExplore(state) {
+  clearInterval(interval2);
+  setOrRemoveStylesOfItem("/assets/css/disable_explore.css", state, "disable_explore");
+  function redirect() {
+    if (state && window.location.href.includes("/explore")) {
+      if (window.location?.assign) window.location.assign("/");
+      else window.location.href = "/";
+      console.log("redirect");
+    }
+  }
+  if (state) interval2 = setInterval(redirect, 300);
+  else clearInterval(interval2);
 }
 
 function getCurrentState() {
@@ -82,6 +100,7 @@ function getCurrentState() {
     setOrRemoveStylesOfItem("/assets/css/block_videos.css", state.block_videos, "block_videos");
     toggleClassicMode("/assets/css/classic_mode.css", state.classic_mode);
     toggleVanity(state.disable_vanity);
+    toggleExplore(state.disable_explore);
 
     setOrRemoveStylesOfItem("/assets/css/square_shaped.css", state.square_shaped, "square_shaped");
     setTheme(state.theme);
