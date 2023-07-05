@@ -85,10 +85,12 @@ function toggleExplore(state) {
       if (window.location?.assign) window.location.assign("/");
       else window.location.href = "/";
       console.log("redirect");
+      clearInterval(interval2);
     }
   }
-  if (state) interval2 = setInterval(redirect, 300);
-  else clearInterval(interval2);
+  if (state && window.location.href.includes("/explore")) {
+    interval2 = setInterval(redirect, 300);
+  } else clearInterval(interval2);
 }
 
 function getCurrentState() {
