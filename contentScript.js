@@ -2,6 +2,8 @@ let interval0, interval1, interval2;
 const fonts = ["roboto", "poppins", "caprasimo", "playfair", "merriweather", "noto_sans"];
 const themes = ["light_green", "purple_dark", "kittens"];
 
+setTimeout(() => (document.body.style.opacity = 1), 1000);
+
 //Init LS if not exists
 (async () => {
   const store = await import(chrome.runtime.getURL("/store.js"));

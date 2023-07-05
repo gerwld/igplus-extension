@@ -8,18 +8,253 @@ div,
   border-radius: 0 !important;
 }
 
-body .btn,
-body [data-testid="tracklist-row"] .btn,
-body button.VgSbatGBB9XwTH2_dsxg,
-body button.ql0zZd7giPXSnPg75NR0,
-body .Xz3tlahv16UpqKBW5HdK,
-body figure.tp8rO9vtqBGPLOhwcdYv > div,
-body figure.tp8rO9vtqBGPLOhwcdYv,
-body .yYflTYbufy7rATGQiZfq,
-body button[data-testid="play-button"],
-body button[data-testid="play-button"] > span,
-body .Button-sc-1dqy6lx-0,
-body .dQCgoh,
-body .fJGlei::after {
+@keyframes delay-appear {
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+body .btn {
   border-radius: 0 !important;
+}
+
+._9-zf,
+._9-zg,
+._9-ze,
+._a9fa,
+._9-zh,
+._9-zi,
+._9-zj,
+._9-zk,
+._9-zl,
+._9-zm,
+._9-zn,
+._9-zo,
+._9-zp,
+._9-zq,
+._9-zr,
+._9-zs,
+._9-zt,
+._a3op,
+._a3oq,
+._9-zu,
+._9-zv,
+._9-zw,
+._9-zx,
+._9-zy,
+._9-zz,
+._9-z-,
+._a3or,
+._a3ot,
+._a3os,
+._9zs1,
+._9zs2,
+._9-z_,
+._9--0,
+._9--1,
+._9--2,
+._9--3,
+._9--4,
+._9--5,
+._9--6,
+._9--7,
+._9--f,
+._9--8,
+._9--9,
+._9--a,
+._9--b,
+._9--c,
+._9--d,
+._9--e,
+._a3ou,
+._9--g,
+._9--h,
+._9--i,
+._9--j,
+._9--l,
+._9--k,
+._9--m,
+._9--n,
+._9--o,
+._9--p,
+._9--q,
+._a3ov,
+._9--s,
+._9--r,
+._9--t,
+._9--u,
+._9--v,
+._9--x,
+._9--y,
+._9--w,
+._9--z,
+._9--_,
+._9-_0,
+._9-_1,
+._9-_2,
+._9-_3,
+._9---,
+._9-_4,
+._9-_5,
+._9-_6,
+._9-_7,
+._a3wy,
+._9-_8,
+._9-_9,
+._a3ow,
+._9-_a,
+._9-_b,
+._9-_c,
+._9-_d,
+._9-_e,
+._9-_f,
+._9-_i,
+._9-_j,
+._9-_k,
+._9-_l,
+._9-_m,
+._9-_n,
+._9-_o,
+._a3ox,
+._9-_p,
+._9-_q,
+._a9fb,
+._9-_t,
+._9-_r,
+._9-_s,
+._a93g,
+._9-_u,
+._9-_v,
+._a9fc,
+._9-_w,
+._9-_x,
+._9-_y,
+._9-_z,
+._9-_-,
+._9-__,
+._9_00,
+._a3oy,
+._9_01,
+._9_02,
+._9_03,
+._9_04,
+._9_05,
+._9_08,
+._9_09,
+._9_07,
+._9_06,
+._9_0a,
+._9_0b,
+._9_0c,
+._9_0d,
+._9_0e,
+._9_0f,
+._9_0g,
+._a93h,
+._9_0h,
+._9_0i,
+._9_0j,
+._9_0k,
+._aepo,
+._9_0l,
+._9_0m,
+._9_0n,
+._9_0o,
+._9_0p,
+._a3oz,
+._a93l,
+._9_0r,
+._9_0s,
+._a7tk,
+._9_0q,
+._a3o-,
+._9_0t,
+._9_0v,
+._9_0u,
+._a9ej,
+._9_0w,
+._9_0y,
+._9_0z,
+._9_0_,
+._9_0-,
+._9_11,
+._9_12,
+._9_13,
+._9_14,
+._9_15,
+._a3o_,
+._9_18,
+._9_19,
+._9_1a,
+._9_1e,
+._9_1b,
+._9_1c,
+._9_1d,
+._9_16,
+._9_17,
+._a3p0,
+._9_1f,
+._9_1g,
+._9_1i,
+._9_1h,
+._9_1j,
+._9_1k,
+._9_1l,
+._9_1m,
+._a9pw {
+  background-image: url("chrome-extension://__MSG_@@extension_id__/assets/img/sprite.png") !important;
+}
+
+._aarh {
+  display: none !important;
+}
+
+canvas._aarh[width="132"] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: #d6249f;
+  background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #d6249f 90%);
+}
+
+div._aarf img {
+  position: relative;
+  z-index: 10;
+  border: 2px solid #fff;
+  box-sizing: border-box;
+  background-color: #fff;
+}
+
+.xnz67gz.x14yjl9h.xudhj91.x18nykt9.xww2gxu.x9f619.x1lliihq.x2lah0s.x6ikm8r.x10wlt62.x1n2onr6.x1ykvv32.xougopr.x159fomc.xnp5s1o.x194ut8o.x1vzenxt {
+  box-sizing: border-box;
+  overflow: visible;
+}
+
+.xbyyjgo canvas._aarh + span::before {
+  opacity: 0;
+}
+
+canvas._aarh[width="128"] {
+  opacity: 0;
+}
+
+canvas._aarh[width="128"] + span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: -1px;
+  left: -1px;
+  right: -1px;
+  bottom: -1px;
+  background-color: #9f9f9f;
 }

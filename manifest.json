@@ -25,14 +25,10 @@
     {
       "resources": [
         "store.js",
-        "assets/css/bigger_navbar.css",
+        "assets/img/sprite.png",
         "assets/css/classic_mode.css",
-        "assets/css/premium_btns.css",
-        "assets/css/static_aside.css",
-        "assets/css/rect_avatars.css",
         "assets/css/block_images.css",
         "assets/css/block_videos.css",
-        "assets/css/now_play_disable.css",
         "assets/css/square_shaped.css",
 
         "assets/css/fonts/roboto.css",
@@ -51,8 +47,14 @@
   ],
   "content_scripts": [
     {
-      "matches": ["https://open.spotify.com/*", "https://open.spotify.com/"],
-      "js": ["contentScript.js"]
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://www.instagram.com/",
+        "https://instagram.com/*",
+        "https://instagram.com/"
+      ],
+      "js": ["contentScript.js"],
+      "css": ["assets/css/main.css"]
     }
   ],
   "permissions": ["storage"]
