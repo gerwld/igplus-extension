@@ -52,24 +52,25 @@ function toggleClassicMode(assetPath, state) {
       window.location.reload();
     }
   }
-  if (state) interval2 = setInterval(setClassic, 200);
-  else clearInterval(interval2);
+  if (state) interval0 = setInterval(setClassic, 200);
+  else clearInterval(interval0);
 }
 
 //Removes all vanity metrics in realtime + hides static
-function toggleVanity(assetPath, state) {
-  setOrRemoveStylesOfItem(assetPath, state, "disable_vanity");
+function toggleVanity(state) {
+  setOrRemoveStylesOfItem("/assets/css/disable_vanity.css", state, "disable_vanity");
   function toggle() {
     if (state) {
-      let allVanityLikes = document.querySelectorAll("._a9ze");
+      let allVanityLikes = document.querySelectorAll("button._a9ze");
       allVanityLikes?.forEach((btn) => {
-        if (!isNaN(btn.innerText[0]) || !isNaN(btn.innerText.slice(-1))) {
+        let val = btn.innerText;
+        if (!isNaN(val[0]) || !isNaN(val[val.length - 1])) {
           btn.classList.add("hide_ls2");
         }
       });
     }
   }
-  setInterval(toggle, 300);
+  interval1 = setInterval(toggle, 300);
 }
 
 function getCurrentState() {
@@ -80,7 +81,8 @@ function getCurrentState() {
     setOrRemoveStylesOfItem("/assets/css/block_images.css", state.block_images, "block_images");
     setOrRemoveStylesOfItem("/assets/css/block_videos.css", state.block_videos, "block_videos");
     toggleClassicMode("/assets/css/classic_mode.css", state.classic_mode);
-    toggleVanity("/assets/css/disable_vanity.css", state.disable_vanity);
+    toggleVanity(state.disable_vanity);
+
     setOrRemoveStylesOfItem("/assets/css/square_shaped.css", state.square_shaped, "square_shaped");
     setTheme(state.theme);
     setFont(state.font);
