@@ -26,10 +26,12 @@
       "resources": [
         "store.js",
         "assets/img/sprite.png",
+        "assets/img/sprite_2.png",
         "assets/css/classic_mode.css",
         "assets/css/block_images.css",
         "assets/css/block_videos.css",
         "assets/css/square_shaped.css",
+        "assets/css/disable_vanity.css",
 
         "assets/css/fonts/roboto.css",
         "assets/css/fonts/poppins.css",
