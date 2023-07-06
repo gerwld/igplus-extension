@@ -1,10 +1,10 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gerwld/spotify-theme-editor/10515a6ce473be263f2a5dab5659e57ff288b4f7/assets/img/logo.svg" width="75" height="75"/>
+  <img src="https://raw.githubusercontent.com/gerwld/instaplus-extension/5b06f6acc168478bfbef6675adbb770fe8bc0fb1/assets/img/logo.svg" width="75" height="75"/>
 </p>
 
-<h1 align="center">Spotify Theme Editor</h1>
+<h1 align="center">InstaPlus Extension</h1>
 
-*Spotify Theme Editor is a powerful Google Chrome extension that allows you to customize and personalize the web version of Spotify. With this extension, you can transform the Spotify interface into a personalized experience that reflects your style and preferences.*
+_Spotify Theme Editor is a powerful Google Chrome extension that allows you to customize and personalize the web version of Spotify. With this extension, you can transform the Spotify interface into a personalized experience that reflects your style and preferences._
 
 ## Features
 

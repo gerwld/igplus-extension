@@ -3,6 +3,15 @@ import { initialState } from "./store.js";
 document.addEventListener("DOMContentLoaded", () => {
   const container = document.getElementById("l3_settings");
 
+  // Disable stories logic
+  function disableStories(state) {
+    const mp_item = container.querySelector('input[name="mp_disable_stories"]');
+    if (state?.ev_disable_stories) {
+      mp_item.setAttribute("disabled", true);
+      chrome.storage.local.set({ formState: { ...state, ev_disable_stories: true, mp_disable_stories: true } });
+    } else mp_item.disabled = false;
+  }
+
   // Listen for changes in chrome.storage.local
   let prevstate;
   chrome.storage.local.onChanged.addListener((changes, namespace) => {
@@ -29,6 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // Retrieve state from extension storage or use the initial state
     chrome.storage.local.get("formState", (result) => {
       let state = result.formState || { ...initialState };
+      disableStories(state);
 
       if (!result.formState) {
         chrome.storage.local.set({ formState: state }, () => {

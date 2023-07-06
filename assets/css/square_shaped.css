@@ -315,6 +315,7 @@ body .btn {
   display: none !important;
 }
 
+canvas._aarh[width="336"] + span::before,
 canvas._aarh[width="132"] + span::before,
 canvas._aarh[width="84"] + span::before {
   content: "";
@@ -331,7 +332,14 @@ canvas._aarh[width="84"] + span::before {
   background: #d6249f;
   background: radial-gradient(circle at 30% 107%, #fdf497 0%, #fdf497 5%, #fd5949 45%, #d6249f 60%, #d6249f 90%);
 }
+canvas._aarh[width="336"] + span::before {
+  top: -6px;
+  left: -6px;
+  right: -6px;
+  bottom: -6px;
+}
 
+canvas._aarh[width="336"] + span::after,
 canvas._aarh[width="132"] + span::after,
 canvas._aarh[width="84"] + span::after {
   content: "";
@@ -342,6 +350,13 @@ canvas._aarh[width="84"] + span::after {
   right: -2px;
   bottom: -2px;
   background: #fff;
+}
+
+canvas._aarh[width="336"] + span::after {
+  top: -3px;
+  left: -3px;
+  right: -3px;
+  bottom: -3px;
 }
 
 div._aarf img {

@@ -1,7 +1,7 @@
 {
   "name": "InstaPlus",
   "description": "Enhance your Instagram experience with InstaPlus.",
-  "version": "1.0.0",
+  "version": "0.0.2",
   "manifest_version": 3,
   "icons": {
     "16": "/assets/icons/icon16.png",

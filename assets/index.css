@@ -16,6 +16,20 @@ body {
   box-sizing: border-box;
 }
 
+input[disabled="true"],
+input:disabled {
+  opacity: 0.5 !important;
+  user-select: none;
+}
+
+input[disabled="true"] + .ch_sp,
+input:disabled + .ch_sp,
+input:disabled + .ch_sp::before {
+  opacity: 0.5 !important;
+  user-select: none;
+  cursor: default;
+}
+
 .logo {
   display: flex;
   flex-direction: row-reverse;

@@ -1,4 +1,4 @@
-let interval0, interval1, interval2, interval3;
+let interval0, interval1, interval2, interval3, interval4;
 const fonts = ["roboto", "poppins", "caprasimo", "playfair", "merriweather", "noto_sans"];
 const themes = ["light_green", "purple_dark", "kittens"];
 
@@ -116,19 +116,22 @@ function toggleReels(state) {
   } else clearInterval(interval3);
 }
 
-function disableStories(state) {
-  console.log(state);
-  let { ev_disable_stories, mp_disable_stories } = state;
-  if (!mp_disable_stories) {
-    chrome.storage.local.set({ formState: { ...state, ev_disable_stories: false } });
-  } else if (ev_disable_stories || mp_disable_stories) {
-    toggleClassicMode("/assets/css/mp_disable_stories.css", true);
-    chrome.storage.local.set({ formState: { ...state, mp_disable_stories: true } });
-    chrome.storage.local.get("formState", (result) => {
-      const state = result.formState;
-      console.log(state);
-    });
+function disableStories(ev_disable_stories, mp_disable_stories) {
+  clearInterval(interval4);
+  setOrRemoveStylesOfItem("/assets/css/ev_disable_stories.css", ev_disable_stories, "ev_disable_stories");
+  setOrRemoveStylesOfItem("/assets/css/mp_disable_stories.css", mp_disable_stories, "mp_disable_stories");
+  console.log(ev_disable_stories, "stories");
+  function redirect() {
+    if (ev_disable_stories && window.location.href.includes("/stories/")) {
+      if (window.location?.assign) window.location.assign("/");
+      else window.location.href = "/";
+      console.log("redirect");
+      clearInterval(interval4);
+    }
   }
+  if (ev_disable_stories) {
+    interval4 = setInterval(redirect, 300);
+  } else clearInterval(interval4);
 }
 
 function getCurrentState() {
@@ -139,11 +142,10 @@ function getCurrentState() {
     setOrRemoveStylesOfItem("/assets/css/block_images.css", state.block_images, "block_images");
     setOrRemoveStylesOfItem("/assets/css/block_videos.css", state.block_videos, "block_videos");
     toggleClassicMode("/assets/css/classic_mode.css", state.classic_mode);
-    toggleClassicMode("/assets/css/mp_disable_stories.css", state.mp_disable_stories);
     toggleVanity(state.disable_vanity);
     toggleExplore(state.disable_explore);
     toggleReels(state.disable_reels);
-    disableStories(state);
+    disableStories(state.ev_disable_stories, state.mp_disable_stories);
 
     setOrRemoveStylesOfItem("/assets/css/square_shaped.css", state.square_shaped, "square_shaped");
     setTheme(state.theme);
