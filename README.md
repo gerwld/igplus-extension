@@ -2,7 +2,7 @@
   <img src="https://raw.githubusercontent.com/gerwld/instaplus-extension/5b06f6acc168478bfbef6675adbb770fe8bc0fb1/assets/img/logo.svg" width="75" height="75"/>
 </p>
 
-# InstaPlus Extension
+<h1 align="center">InstaPlus Extension</h1>
 
 _InstaPlus Extension is a powerful Google Chrome extension that allows you to customize and personalize your Instagram experience. With this extension, you can transform the Instagram interface into a personalized platform that reflects your preferences and style._
 
