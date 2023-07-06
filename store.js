@@ -1,17 +1,15 @@
 // Initial state object
 export const initialState = {
-  bigger_navbar: true,
-  classic_mode: true,
-  premium_btns: false,
-  static_aside: true,
-
+  disable_reels: true,
+  disable_explore: true,
+  counters_gray: true,
+  disable_vanity: true,
+  mp_disable_recs: true,
   block_images: false,
   block_videos: false,
-  rect_avatars: false,
-  square_shaped: false,
-  now_play_disable: false,
+  square_shaped: true,
   theme: "default",
-  font: "poppins",
+  font: "default",
 };
 
 export function initStateIfNotExist() {

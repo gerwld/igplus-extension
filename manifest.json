@@ -1,7 +1,7 @@
 {
   "name": "InstaPlus",
   "description": "Enhance your Instagram experience with InstaPlus.",
-  "version": "0.0.2",
+  "version": "1.0.0",
   "manifest_version": 3,
   "icons": {
     "16": "/assets/icons/icon16.png",
@@ -38,6 +38,7 @@
         "assets/css/ev_disable_stories.css",
         "assets/css/counters_gray.css",
         "assets/css/counters_disable.css",
+        "assets/css/grayscale.css",
 
         "assets/css/fonts/roboto.css",
         "assets/css/fonts/poppins.css",

@@ -1,4 +1,4 @@
-let interval0, interval1, interval2, interval3, interval4, interval5;
+let interval0, interval1, interval2, interval3, interval4, interval5, interval6;
 const fonts = ["roboto", "poppins", "caprasimo", "playfair", "merriweather", "noto_sans"];
 const themes = ["light_green", "purple_dark", "kittens"];
 
@@ -148,19 +148,44 @@ function disableRecomendations(state) {
   } else clearInterval(interval5);
 }
 
+function disableVideos(state) {
+  clearInterval(interval6);
+  setOrRemoveStylesOfItem("/assets/css/block_videos.css", state, "block_videos");
+  function redirect() {
+    if (state) {
+      const posts = document.querySelectorAll("article");
+      posts.forEach((article) => {
+        const videoTag = article.querySelector("video");
+        if (videoTag) {
+          article.classList.add("video");
+          videoTag.remove();
+        }
+      });
+    }
+  }
+  if (state) {
+    interval6 = setInterval(redirect, 300);
+  } else {
+    // window.location.href = "/";
+    clearInterval(interval6);
+  }
+}
+
 function getCurrentState() {
   chrome.storage.local.get("formState", (result) => {
     const state = result.formState;
 
     // Styles setters
     setOrRemoveStylesOfItem("/assets/css/block_images.css", state.block_images, "block_images");
-    setOrRemoveStylesOfItem("/assets/css/block_videos.css", state.block_videos, "block_videos");
     setOrRemoveStylesOfItem("/assets/css/counters_gray.css", state.counters_gray, "counters_gray");
     setOrRemoveStylesOfItem("/assets/css/counters_disable.css", state.counters_disable, "counters_disable");
+    setOrRemoveStylesOfItem("/assets/css/grayscale.css", state.grayscale, "grayscale");
+
     toggleClassicMode("/assets/css/classic_mode.css", state.classic_mode);
     toggleVanity(state.disable_vanity);
     toggleExplore(state.disable_explore);
     toggleReels(state.disable_reels);
+    disableVideos(state.block_videos);
     disableStories(state.ev_disable_stories, state.mp_disable_stories);
     disableRecomendations(state.mp_disable_recs);
 
