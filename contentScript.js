@@ -1,4 +1,4 @@
-let interval0, interval1, interval2, interval3, interval4;
+let interval0, interval1, interval2, interval3, interval4, interval5;
 const fonts = ["roboto", "poppins", "caprasimo", "playfair", "merriweather", "noto_sans"];
 const themes = ["light_green", "purple_dark", "kittens"];
 
@@ -134,6 +134,20 @@ function disableStories(ev_disable_stories, mp_disable_stories) {
   } else clearInterval(interval4);
 }
 
+function disableRecomendations(state) {
+  clearInterval(interval5);
+  function redirect() {
+    if (state && window.location.href === "https://www.instagram.com/") {
+      if (window.location?.assign) window.location.assign("/?variant=following");
+      else window.location.href = "/?variant=following";
+      clearInterval(interval5);
+    }
+  }
+  if (state) {
+    interval5 = setInterval(redirect, 300);
+  } else clearInterval(interval5);
+}
+
 function getCurrentState() {
   chrome.storage.local.get("formState", (result) => {
     const state = result.formState;
@@ -141,11 +155,14 @@ function getCurrentState() {
     // Styles setters
     setOrRemoveStylesOfItem("/assets/css/block_images.css", state.block_images, "block_images");
     setOrRemoveStylesOfItem("/assets/css/block_videos.css", state.block_videos, "block_videos");
+    setOrRemoveStylesOfItem("/assets/css/counters_gray.css", state.counters_gray, "counters_gray");
+    setOrRemoveStylesOfItem("/assets/css/counters_disable.css", state.counters_disable, "counters_disable");
     toggleClassicMode("/assets/css/classic_mode.css", state.classic_mode);
     toggleVanity(state.disable_vanity);
     toggleExplore(state.disable_explore);
     toggleReels(state.disable_reels);
     disableStories(state.ev_disable_stories, state.mp_disable_stories);
+    disableRecomendations(state.mp_disable_recs);
 
     setOrRemoveStylesOfItem("/assets/css/square_shaped.css", state.square_shaped, "square_shaped");
     setTheme(state.theme);

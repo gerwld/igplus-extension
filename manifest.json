@@ -36,6 +36,8 @@
         "assets/css/disable_reels.css",
         "assets/css/mp_disable_stories.css",
         "assets/css/ev_disable_stories.css",
+        "assets/css/counters_gray.css",
+        "assets/css/counters_disable.css",
 
         "assets/css/fonts/roboto.css",
         "assets/css/fonts/poppins.css",
