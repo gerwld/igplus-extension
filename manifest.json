@@ -1,6 +1,6 @@
 {
-  "name": "InstaPlus",
-  "description": "Enhance your Instagram experience with InstaPlus.",
+  "name": "InstaPlus - Remove Instagram Shorts",
+  "description": "Hide Instagram shorts tab, videos, comments, suggestions wall, vanity metrics, homepage recommendations, trending, and many more.",
   "version": "1.0.0",
   "manifest_version": 3,
   "icons": {
