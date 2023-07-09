@@ -4,29 +4,31 @@
 
 <h1 align="center">InstaPlus Extension</h1>
 
-_Spotify Theme Editor is a powerful Google Chrome extension that allows you to customize and personalize the web version of Spotify. With this extension, you can transform the Spotify interface into a personalized experience that reflects your style and preferences._
+_InstaPlus Extension is a powerful Google Chrome extension that allows you to customize and personalize your Instagram experience. With this extension, you can transform the Instagram interface into a personalized platform that reflects your preferences and style._
 
 ## Features
 
-- **Interface Customization:** Modify the Spotify web version to suit your preferences. Choose what elements to display or hide, giving you a clutter-free and personalized interface.
-- **Theme Selection:** Change the default theme of Spotify with a wide range of options. Select from modern, minimalistic, vibrant, or other themes that align with your style and mood.
-- **Element Styling:** Customize specific parts of the Spotify interface, such as the sidebar, fonts, or colors. Tailor the appearance to create a cohesive and visually appealing experience.
-- **Enhanced User Experience:** Enjoy an improved browsing experience with a user-friendly and intuitive interface. Our extension seamlessly integrates into Spotify, ensuring a smooth and effortless customization process.
+- **Classic Mode:** Bring back the nostalgic interface of an earlier version of Instagram with the Classic Mode option.
+- **Reels and Explore Disable:** Disable the Reels section and videos, as well as the Explore page to have more control over your Instagram feed.
+- **Stories Disable:** Remove the Stories section from the main page and disable Stories everywhere for a cleaner and distraction-free interface.
+- **Aside Count Labels:** Make the count labels in the aside section appear in gray or disable them completely for a more streamlined look.
+- **Color Palette and Font Selection:** Choose from a variety of color palettes and fonts to customize the appearance of Instagram to your liking.
+- **Additional Features:** Disable recommendations on the main page, hide likes and followers count, enable grayscale mode, make everything square-shaped, and block videos or images to reduce traffic usage.
 
 ## Installation
 
-Spotify Theme Editor is available on the [Google Chrome Store](https://chrome.google.com/webstore/detail/spotify-theme-editor/ijkboaojikgaanlgigobkmbpnjgjljnc). Visit the store page and click on the "Add to Chrome" button to install the extension directly to your browser.
+InstaPlus Extension is available on the [Google Chrome Store](https://chrome.google.com/webstore/detail/instaplus-extension/example-link). Visit the store page and click on the "Add to Chrome" button to install the extension directly to your browser.
 
-You can also download the latest version of Spotify Theme Editor from the [Releases](https://github.com/gerwld/spotify-theme-editor/releases) page. Choose the appropriate version for your operating system and follow the installation instructions provided.
+You can also download the latest version of InstaPlus Extension from the [Releases](https://github.com/username/repo/releases) page. Choose the appropriate version for your operating system and follow the installation instructions provided.
 
 ## Usage
 
-Once the extension is installed, follow these steps to start customizing your Spotify theme:
+Once the extension is installed, follow these steps to start customizing your Instagram experience:
 
-1. **Activation:** Open the web version of Spotify in your Google Chrome browser.
-2. **Extension Access:** Click on the Spotify Theme Editor extension icon in the browser toolbar to activate it.
-3. **Customization:** Access the extension options to start customizing your Spotify experience. Choose from various customization features, including element visibility, theme selection, and element styling.
-4. **Enjoy!** Sit back, relax, and enjoy your personalized Spotify interface.
+1. **Activation:** Open Instagram in your Google Chrome browser.
+2. **Extension Access:** Click on the InstaPlus Extension icon in the browser toolbar to activate it.
+3. **Customization:** Access the extension options to start customizing your Instagram interface. Choose from various customization features, including Classic Mode, disabling sections, adjusting colors and fonts, and enabling additional features.
+4. **Enjoy!** Sit back, relax, and enjoy your personalized Instagram experience.
 
 ## Contributing
 
@@ -34,11 +36,11 @@ Contributions are welcome! If you find any issues or have ideas for new features
 
 ## License
 
-Spotify Theme Editor is released under the Creative Commons Attribution-NonCommercial License (CC BY-NC). This means that others are free to use, modify, and distribute the extension for non-commercial purposes, as long as they provide attribution to the original creator (gerwld). Commercial use of the extension is not allowed without explicit permission.
+InstaPlus Extension is released under the Creative Commons Attribution-NonCommercial License (CC BY-NC). This means that others are free to use, modify, and distribute the extension for non-commercial purposes, as long as they provide attribution to the original creator. Commercial use of the extension is not allowed without explicit permission.
 
 See the [LICENSE](LICENSE) file for more details.
 
-For any inquiries regarding commercial use or permission, please contact gerwld at pjaworski.dev@gmail.com.
+For any inquiries regarding commercial use or permission, please contact the creator at [pjaworski.dev@gmail.com].
 
 ## Contact
 
@@ -46,4 +48,4 @@ If you have any questions, suggestions, or feedback, please feel free to contact
 
 ---
 
-Transform your Spotify web experience with Spotify Theme Editor and enjoy a customized interface that suits your style. Download now and elevate your Spotify experience to new heights.
+Enhance your Instagram experience with InstaPlus Extension and enjoy a customized interface that reflects your style and preferences. Download now and take your Instagram usage to the next level.
