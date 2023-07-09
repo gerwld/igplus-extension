@@ -144,7 +144,7 @@ a img {
 .ch_ip {
   display: flex;
   position: relative;
-  padding: 0 0 0 25px;
+  padding: 0 0 0 33px;
   margin: 0 0 14px 10px;
 
   vertical-align: middle;
@@ -168,17 +168,13 @@ a img {
   position: absolute;
   top: 0;
   left: 0;
-  height: 17px;
-  width: 17px;
-  background-color: #ffffff;
-  border: 1px solid #c9cbd1;
-  border-radius: 3px;
+  height: 14px;
+  width: 25px;
+  background-color: transparent;
+  border: 1px solid #8a8d92;
+  border-radius: 30px;
   cursor: pointer;
-}
-
-/* On mouse-over, add a grey background color */
-.ch_ip:hover input ~ .ch_sp {
-  background-color: rgba(225, 231, 240, 0.428);
+  transition: background-color 100ms ease;
 }
 
 /* When the checkbox is checked, add a blue background */
@@ -187,25 +183,29 @@ a img {
   border-color: #197dc9;
 }
 
+.ch_ip input:checked:hover ~ .ch_sp {
+  background-color: #2076b8;
+  border-color: #197dc9;
+}
+
 /* Create the checkmark/indicator (hidden when not checked) */
 .ch_sp:after {
   content: "";
   position: absolute;
-  display: none;
-  left: 5px;
+  display: block;
   top: 1px;
-  width: 5px;
-  height: 10px;
-  border: solid white;
-  border-width: 0 2px 2px 0;
-  -webkit-transform: rotate(45deg);
-  -ms-transform: rotate(45deg);
-  transform: rotate(45deg);
+  left: 1px;
+  width: 12px;
+  height: 12px;
+  background-color: #8a8d92;
+  border-radius: 50%;
+  transition: left 100ms ease;
 }
 
-/* Show the checkmark when checked */
+/* Move the checkmark when checked */
 .ch_ip input:checked ~ .ch_sp:after {
-  display: block;
+  left: 12px;
+  background-color: #fff;
 }
 
 /* ----------------------- checkbox styles end ----------------------- */

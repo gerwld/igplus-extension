@@ -1,55 +1,50 @@
 {
   "name": "InstaPlus - Remove Instagram Shorts",
   "description": "Hide Instagram shorts tab, videos, comments, suggestions wall, vanity metrics, homepage recommendations, trending, and many more.",
-  "version": "1.0.0",
+  "version": "1.0.3",
   "manifest_version": 3,
   "icons": {
     "16": "/assets/icons/icon16.png",
     "32": "/assets/icons/icon32.png",
-    "48": "/assets/icons/icon48.png",
     "128": "/assets/icons/icon128.png"
-  },
-  "background": {
-    "service_worker": "background.js"
   },
   "action": {
     "default_popup": "popup.html",
     "default_icon": {
       "16": "/assets/icons/icon16.png",
       "32": "/assets/icons/icon32.png",
-      "48": "/assets/icons/icon48.png",
       "128": "/assets/icons/icon128.png"
     }
   },
   "web_accessible_resources": [
     {
       "resources": [
-        "store.js",
-        "assets/img/sprite.png",
-        "assets/img/sprite_2.png",
-        "assets/css/classic_mode.css",
-        "assets/css/block_images.css",
-        "assets/css/block_videos.css",
-        "assets/css/square_shaped.css",
-        "assets/css/disable_vanity.css",
-        "assets/css/disable_explore.css",
-        "assets/css/disable_reels.css",
-        "assets/css/mp_disable_stories.css",
-        "assets/css/ev_disable_stories.css",
-        "assets/css/counters_gray.css",
-        "assets/css/counters_disable.css",
-        "assets/css/grayscale.css",
+        "/assets/js/store.js",
+        "/assets/img/sprite.png",
+        "/assets/img/sprite_2.png",
+        "/assets/css/classic_mode.css",
+        "/assets/css/block_images.css",
+        "/assets/css/block_videos.css",
+        "/assets/css/square_shaped.css",
+        "/assets/css/disable_vanity.css",
+        "/assets/css/disable_explore.css",
+        "/assets/css/disable_reels.css",
+        "/assets/css/mp_disable_stories.css",
+        "/assets/css/ev_disable_stories.css",
+        "/assets/css/counters_gray.css",
+        "/assets/css/counters_disable.css",
+        "/assets/css/grayscale.css",
 
-        "assets/css/fonts/roboto.css",
-        "assets/css/fonts/poppins.css",
-        "assets/css/fonts/caprasimo.css",
-        "assets/css/fonts/playfair.css",
-        "assets/css/fonts/merriweather.css",
-        "assets/css/fonts/noto_sans.css",
+        "/assets/css/fonts/roboto.css",
+        "/assets/css/fonts/poppins.css",
+        "/assets/css/fonts/caprasimo.css",
+        "/assets/css/fonts/playfair.css",
+        "/assets/css/fonts/merriweather.css",
+        "/assets/css/fonts/noto_sans.css",
 
-        "assets/css/themes/light_green.css",
-        "assets/css/themes/purple_dark.css",
-        "assets/css/themes/kittens.css"
+        "/assets/css/themes/light_green.css",
+        "/assets/css/themes/purple_dark.css",
+        "/assets/css/themes/kittens.css"
       ],
       "matches": ["<all_urls>"]
     }
@@ -62,8 +57,8 @@
         "https://instagram.com/*",
         "https://instagram.com/"
       ],
-      "js": ["contentScript.js"],
-      "css": ["assets/css/main.css"]
+      "js": ["/assets/js/contentScript.js"],
+      "css": ["/assets/css/main.css"]
     }
   ],
   "permissions": ["storage"]
