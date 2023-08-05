@@ -4,7 +4,7 @@
 
 <h1 align="center">IGPlus Extension</h1>
 
-_IGPlus Extension is a powerful Google Chrome extension that allows you to customize and personalize your Instagram experience. With this extension, you can transform the Instagram interface into a personalized platform that reflects your preferences and style._
+_IGPlus is a powerful Google Chrome extension that allows you to customize and personalize your Instagram experience. With this extension, you can transform the Instagram interface into a personalized platform that reflects your preferences and style._
 
 ## Features
 
