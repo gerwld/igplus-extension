@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://raw.githubusercontent.com/gerwld/IGPlus-extension/5b06f6acc168478bfbef6675adbb770fe8bc0fb1/assets/img/logo.svg" width="75" height="75"/>
+  <img src="https://raw.githubusercontent.com/gerwld/igplus-extension/8765ded5cef43659500cef369b9bfdc6b81d0b70/assets/img/logo.svg" width="75" height="75"/>
 </p>
 
 <h1 align="center">IGPlus Extension</h1>
