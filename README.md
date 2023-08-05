@@ -17,9 +17,9 @@ _IGPlus is a powerful Google Chrome extension that allows you to customize and p
 
 ## Installation
 
-IGPlus Extension is available on the [Google Chrome Store](https://chrome.google.com/webstore/detail/IGPlus-extension/example-link). Visit the store page and click on the "Add to Chrome" button to install the extension directly to your browser.
+IGPlus Extension is available on the [Google Chrome Store](https://chrome.google.com/webstore/detail/igplus-remove-instagram-s/dbbopjndlaginbghfoibbndhlbpdpapd). Visit the store page and click on the "Add to Chrome" button to install the extension directly to your browser.
 
-You can also download the latest version of IGPlus Extension from the [Releases](https://github.com/username/repo/releases) page. Choose the appropriate version for your operating system and follow the installation instructions provided.
+You can also download the latest version of IGPlus Extension from the [Releases](https://github.com/gerwld/igplus-extension/releases) page. Choose the appropriate version for your operating system and follow the installation instructions provided.
 
 ## Usage
 
