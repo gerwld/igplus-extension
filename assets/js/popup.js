@@ -1,17 +1,17 @@
-//   - This file is part of InstaPlus Extension
-//  <https://github.com/gerwld/InstaPlus-extension/blob/main/README.md>,
-//   - Copyright (C) 2019-present InstaPlus Extension, Inc.
+//   - This file is part of IGPlus Extension
+//  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
+//   - Copyright (C) 2019-present IGPlus Extension, Inc.
 //   -
-//   -InstaPlus Extension is free software: you can redistribute it and/or modify
+//   -IGPlus Extension is free software: you can redistribute it and/or modify
 //   - it under the terms of the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License.
 //   -
-//   -InstaPlus Extension is distributed in the hope that it will be useful,
+//   -IGPlus Extension is distributed in the hope that it will be useful,
 //   - but WITHOUT ANY WARRANTY; without even the implied warranty of
 //   - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
 //   - Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License for more details.
 //   -
 //   - You should have received a copy of the Creative Commons Attribution-NonCommercial 4.0 International (CC BY-NC 4.0) License
-//   - along withInstaPlus Extension.  If not, see <https://creativecommons.org/licenses/by-nc/4.0/>.
+//   - along withIGPlus Extension.  If not, see <https://creativecommons.org/licenses/by-nc/4.0/>.
 
 import { initialState } from "./store.js";
 
