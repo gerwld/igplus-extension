@@ -1,0 +1,4 @@
+1. pnpm i && rm -rf ./public && gulp build
+2. In public/firefox is build
+
+Thats it. Also you need gulp for build it, and it may work with npm if you don't use pnpm. Thanks!

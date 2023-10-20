@@ -53,12 +53,18 @@
     "/assets/graphs/counters_gray.css",
     "/assets/graphs/counters_disable.css",
     "/assets/graphs/grayscale.css",
+    "/assets/graphs/fonts/noto_sans.css",
     "/assets/graphs/fonts/roboto.css",
     "/assets/graphs/fonts/poppins.css",
-    "/assets/graphs/fonts/caprasimo.css",
     "/assets/graphs/fonts/playfair.css",
     "/assets/graphs/fonts/merriweather.css",
-    "/assets/graphs/fonts/noto_sans.css"
+    "/assets/graphs/fonts/noto_sans.css",
+    "/assets/graphs/fonts/nunito.css",
+    "/assets/graphs/fonts/montserrat.css",
+    "/assets/graphs/fonts/pixelify.css",
+    "/assets/graphs/fonts/gabarito.css",
+    "/assets/graphs/fonts/roboto_condensed.css",
+    "/assets/graphs/fonts/inter.css"
   ],
   "browser_specific_settings": {
     "gecko": {
