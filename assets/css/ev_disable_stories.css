@@ -1,9 +1,0 @@
-._aarf._aarg {
-  pointer-events: none !important;
-}
-
-canvas._aarh[width="336"] + span::before,
-canvas._aarh[width="132"] + span::before,
-canvas._aarh[width="84"] + span::before {
-  display: none !important;
-}
