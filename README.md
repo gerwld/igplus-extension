@@ -16,8 +16,6 @@ IGPlus is a powerful Extension that allows you to customize and personalize your
 
 
 
-## About
-
 ## Features
 
 - **Classic Mode:** Bring back the nostalgic interface of an earlier version of Instagram with the Classic Mode option.
