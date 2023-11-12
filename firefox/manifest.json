@@ -1,0 +1,75 @@
+{
+  "manifest_version": 2,
+  "name": "IGPlus - Remove Instagram Reels, Explore Page",
+  "description": "Disable Instagram Shorts, videos, comments, suggestions wall, vanity metrics, homepage recomendations, trending... and many more.",
+  "version": "1.1.5",
+  "icons": {
+    "128": "assets/icons/icon128.png"
+  },
+  "browser_action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "128": "assets/icons/icon128.png"
+    }
+  },
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.instagram.com/*",
+        "https://www.instagram.com/",
+        "https://instagram.com/*",
+        "https://instagram.com/"
+      ],
+      "js": [
+        "/assets/js/content.js"
+      ],
+      "css": [
+        "/assets/graphs/main.css"
+      ],
+      "run_at": "document_start"
+    }
+  ],
+  "background": {
+    "scripts": [
+      "assets/js/background.js"
+    ],
+    "persistent": false
+  },
+  "web_accessible_resources": [
+    "/assets/img/sprite.png",
+    "/assets/img/sprite_2.png",
+    "/assets/graphs/classic_mode.css",
+    "/assets/graphs/block_images.css",
+    "/assets/graphs/block_videos.css",
+    "/assets/graphs/square_shaped.css",
+    "/assets/graphs/disable_vanity.css",
+    "/assets/graphs/disable_explore.css",
+    "/assets/graphs/disable_reels.css",
+    "/assets/graphs/mp_disable_stories.css",
+    "/assets/graphs/ev_disable_stories.css",
+    "/assets/graphs/counters_gray.css",
+    "/assets/graphs/counters_disable.css",
+    "/assets/graphs/grayscale.css",
+    "/assets/graphs/fonts/noto_sans.css",
+    "/assets/graphs/fonts/roboto.css",
+    "/assets/graphs/fonts/poppins.css",
+    "/assets/graphs/fonts/playfair.css",
+    "/assets/graphs/fonts/merriweather.css",
+    "/assets/graphs/fonts/noto_sans.css",
+    "/assets/graphs/fonts/nunito.css",
+    "/assets/graphs/fonts/montserrat.css",
+    "/assets/graphs/fonts/pixelify.css",
+    "/assets/graphs/fonts/gabarito.css",
+    "/assets/graphs/fonts/roboto_condensed.css",
+    "/assets/graphs/fonts/inter.css",
+    "/assets/graphs/img/cup-border.png"
+  ],
+  "browser_specific_settings": {
+    "gecko": {
+      "id": "{8e41107d-2be2-454d-b4b8-c3d7e54d77de}"
+    }
+  }
+}
