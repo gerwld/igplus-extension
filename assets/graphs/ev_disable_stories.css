@@ -1,10 +1,18 @@
 div.xw7yly9 div.x18dvoc8,
+.x4afe7t.x1v7wizp.x1htlvfj.x1a5igra.xds687c.xixxii4.x17qophe.x13vifvy.x1x85hfe.x1s85apg,
 .x9f619.xjbqb8w.x78zum5.x168nmei.x13lgxp2.x5pf9jr.xo71vjh.xdj266r.x1e56ztr.x1uhb9sk.x1plvlek.xryxfnj.x1c4vz4f.x2lah0s.xdt5ytf.xqjyukv.x1qjc9v5.x1oa3qoh.x1nhvcw1 {
   display: none !important;
 }
 
+canvas._aarh,
 canvas._aarh[width="336"]+span::before,
 canvas._aarh[width="132"]+span::before,
 canvas._aarh[width="84"]+span::before {
+  display: none !important;
+  pointer-events: none !important;
+  user-select: none;
+}
+
+.xzzrveb.x1h862dm.xjk3ia2.x1tb5o9v[role="menu"] {
   display: none !important;
 }

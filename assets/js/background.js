@@ -39,9 +39,17 @@ function initStateIfNotExist() {
 
 initStateIfNotExist();
 
-
-browser_cr.runtime.onInstalled.addListener(function () {
-  browser_cr.tabs.create({ url: "https://chesscolibri.pro/welcome-ig" });
+browser_cr.runtime.onInstalled.addListener(function (details) {
+  if (details.reason === 'install' || details.reason === 'update') {
+    chrome.storage.local.get('welcomePageDisplayed', function (data) {
+      if (!data.welcomePageDisplayed && details.reason === 'install') {
+        chrome.tabs.create({ url: "https://chesscolibri.pro/welcome-ig" });
+        chrome.storage.local.set({ 'welcomePageDisplayed': true });
+      } else {
+        // chrome.tabs.create({ url: "https://chesscolibri.pro/update-sp" });
+      }
+    });
+  }
 });
 
 browser_cr.runtime.setUninstallURL("https://docs.google.com/forms/d/e/1FAIpQLSckNi18UjnA6Zz_eVYMV5YnQXAa93-WsplVmmHIolpcbp0lXA/viewform?usp=sf_link");

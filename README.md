@@ -2,9 +2,19 @@
   <img src="https://raw.githubusercontent.com/gerwld/igplus-extension/8765ded5cef43659500cef369b9bfdc6b81d0b70/assets/img/logo.svg" width="75" height="75"/>
 </p>
 
-<h1 align="center">IGPlus Extension</h1>
+<p align="center">
+ <h1 align="center">IGPlus Extension</h1>
+</p>
 
-_IGPlus is a powerful Google Chrome extension that allows you to customize and personalize your Instagram experience. With this extension, you can transform the Instagram interface into a personalized platform that reflects your preferences and style._
+<p align="center">
+IGPlus is a powerful Extension that allows you to customize and personalize your Instagram experience. With this tool, you can transform the Instagram interface into a personalized platform that reflects your preferences and style.
+</p>
+
+***
+
+<p align="center"><a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/igplus-remove-instagram-r/dbbopjndlaginbghfoibbndhlbpdpapd"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/igplus-extension/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://microsoftedge.microsoft.com/addons/detail/igplus-remove-instagram/gcjgjfjabmgpainpahloaldflhfnppai"><img alt="Edge Addons" src="https://img.shields.io/badge/Edge-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"></a>  <a href="#soon" title="Soon" rel="noreferrer noopener"><img height="28" alt="Apple App Store" src="https://img.shields.io/badge/Safari-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"></a>
+
+
 
 ## Features
 
@@ -17,7 +27,7 @@ _IGPlus is a powerful Google Chrome extension that allows you to customize and p
 
 ## Installation
 
-IGPlus Extension is available on the [Google Chrome Store](https://chrome.google.com/webstore/detail/igplus-remove-instagram-s/dbbopjndlaginbghfoibbndhlbpdpapd). Visit the store page and click on the "Add to Chrome" button to install the extension directly to your browser.
+IGPlus is available on the [Google Chrome Store](https://chrome.google.com/webstore/detail/igplus-remove-instagram-s/dbbopjndlaginbghfoibbndhlbpdpapd), [Firefox Web Store](https://addons.mozilla.org/en-US/firefox/addon/igplus-extension/) and [Microsoft Edge Store](https://microsoftedge.microsoft.com/addons/detail/igplus-remove-instagram/gcjgjfjabmgpainpahloaldflhfnppai). Visit the store page and click on the "Add" button to install the extension directly to your browser.
 
 You can also download the latest version of IGPlus Extension from the [Releases](https://github.com/gerwld/igplus-extension/releases) page. Choose the appropriate version for your operating system and follow the installation instructions provided.
 

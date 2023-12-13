@@ -1,11 +1,9 @@
 @import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
 
-@import url("https://fonts.googleapis.com/css2?family=Caprasimo&display=swap");
-
 *,
 body,
 html,
 *::before,
 *::after {
-  font-family: "Caprasimo", cursive !important;
+  font-family: "Caprasimo", sans-serif !important;
 }

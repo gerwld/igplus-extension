@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "IGPlus - Remove Instagram Reels, Explore Page",
   "description": "Disable Instagram Shorts, videos, comments, suggestions wall, vanity metrics, homepage recomendations, trending... and many more.",
-  "version": "1.1.4",
+  "version": "1.1.6",
   "icons": {
     "128": "assets/icons/icon128.png"
   },
@@ -39,6 +39,7 @@
     "persistent": false
   },
   "web_accessible_resources": [
+    "/assets/img/logo.svg",
     "/assets/img/sprite.png",
     "/assets/img/sprite_2.png",
     "/assets/graphs/classic_mode.css",
@@ -49,6 +50,7 @@
     "/assets/graphs/disable_explore.css",
     "/assets/graphs/disable_reels.css",
     "/assets/graphs/mp_disable_stories.css",
+    "/assets/graphs/mp_disable_feed.css",
     "/assets/graphs/ev_disable_stories.css",
     "/assets/graphs/counters_gray.css",
     "/assets/graphs/counters_disable.css",
@@ -58,7 +60,8 @@
     "/assets/graphs/fonts/caprasimo.css",
     "/assets/graphs/fonts/playfair.css",
     "/assets/graphs/fonts/merriweather.css",
-    "/assets/graphs/fonts/noto_sans.css"
+    "/assets/graphs/fonts/noto_sans.css",
+    "/assets/graphs/img/cup-border.png"
   ],
   "browser_specific_settings": {
     "gecko": {
