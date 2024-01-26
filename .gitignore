@@ -91,4 +91,4 @@ lerna-debug.log
 Thumbs.db
 
 # Build dir
-public/
+public/.DS_Store
