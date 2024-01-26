@@ -1,0 +1,14 @@
+//   - This file is part of IGPlus Extension
+//  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
+//   - Copyright (C) 2023-present IGPlus Extension
+//   -
+//   - IGPlus Extension is a software: you can redistribute it, but you are not allowed to modify it under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
+//   -
+//   - IGPlus Extension is distributed in the hope that it will be useful,
+//   - but WITHOUT ANY WARRANTY; without even the implied warranty of
+//   - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+//   - Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License for more details.
+//   -
+//   - You should have received a copy of the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License
+//   - along with IGPlus Extension.  If not, see <https://creativecommons.org/licenses/by-nc-nd/4.0/>.
+(()=>{"use strict";document.addEventListener("DOMContentLoaded",()=>{const d=document.getElementById("l3_settings"),c=document.getElementById("header_nav"),l=document.getElementById("lang_set");let a;chrome.storage.local.onChanged.addListener((e,t)=>{e.formState&&e.formState.newValue&&JSON.stringify({...e.formState.newValue})!==a&&(a=JSON.stringify({...e.formState.newValue}),o())});const e=new CustomEvent("formStateChange");function m(){window.dispatchEvent(e)}function o(){console.log("rerender popup"),chrome.storage.local.get("formState",e=>{let a=e.formState||{};var t,o;function n(e){var e=e.target,t="checkbox"===e.type?e.checked:e.value;a[e.name]=t,chrome.storage.local.set({formState:a},()=>{m()})}t=a,o=d.querySelector('input[name="mp_disable_stories"]'),t?.ev_disable_stories?(o.setAttribute("disabled",!0),chrome.storage.local.set({formState:{...t,ev_disable_stories:!0,mp_disable_stories:!0}})):o.disabled=!1,e.formState||chrome.storage.local.set({formState:a},()=>{m()}),d.querySelectorAll("input, select").forEach(e=>{"checkbox"===e.type?e.addEventListener("change",n):e.addEventListener("input",n)}),c.addEventListener("click",function(e){(e=e.target.getAttribute("data-action"))&&(a[e]=!a[e]),chrome.storage.local.set({formState:a},()=>{m()})}),l.addEventListener("change",function(e){a.lang_set=e.target.value||"en",console.log(e.target.value),chrome.storage.local.set({formState:a},()=>{m()})});var r=document.querySelectorAll("input, select");for(let e=0;e<r.length;e++){var s=r[e];"checkbox"===s.type?s.checked=a[s.name]||!1:s.value=a[s.name]||""}a.dark_mode?document.documentElement.classList.add("dark_mode"):document.documentElement.classList.remove("dark_mode"),a.disabled?document.body.classList.add("disabled"):document.body.classList.remove("disabled")})}o()})})();

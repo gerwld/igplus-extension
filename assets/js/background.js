@@ -14,8 +14,8 @@
 
 
 const initialState = {
-  disabled: true,
-  dark_mode: false,
+  disabled: false,
+  dark_mode: true,
   disable_reels: true,
   disable_explore: true,
   counters_gray: true,
@@ -23,7 +23,7 @@ const initialState = {
   mp_disable_recs: true,
   block_images: false,
   block_videos: false,
-  square_shaped: true,
+  square_shaped: false,
   theme: "default",
   font: "default",
 };
@@ -39,14 +39,17 @@ function initStateIfNotExist() {
 
 initStateIfNotExist();
 
+if (!chrome)
+  chrome = browser;
+
 browser_cr.runtime.onInstalled.addListener(function (details) {
   if (details.reason === 'install' || details.reason === 'update') {
     chrome.storage.local.get('welcomePageDisplayed', function (data) {
       if (!data.welcomePageDisplayed && details.reason === 'install') {
-        chrome.tabs.create({ url: "https://chesscolibri.pro/welcome-ig" });
+        chrome.tabs.create({ url: "https://chesscolibri.pro/igp/welcome" });
         chrome.storage.local.set({ 'welcomePageDisplayed': true });
       } else {
-        // chrome.tabs.create({ url: "https://chesscolibri.pro/update-sp" });
+        chrome.tabs.create({ url: "https://chesscolibri.pro/igp/update" });
       }
     });
   }

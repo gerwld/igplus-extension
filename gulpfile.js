@@ -100,6 +100,10 @@ task('addOther', async function () {
 
     src('./manifest-chrome.json').pipe(rename("manifest.json")).pipe(dest('./public/chrome'));
     src('./manifest-firefox.json').pipe(rename("manifest.json")).pipe(dest('./public/firefox'));
+
+    src(['_locales/**/*'])
+        .pipe(dest('./public/chrome/_locales'))
+        .pipe(dest('./public/firefox/_locales'))
 });
 
 

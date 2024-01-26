@@ -1,0 +1,185 @@
+{
+  "extensionName": {
+    "message": "IGPlus - Remove Instagram Reels, Explore Page"
+  },
+  "extensionDescription": {
+    "message": "Disable Instagram Shorts, videos, comments, suggestions wall, vanity metrics, homepage recomendations, trending... and many more."
+  },
+  "disabled": {
+    "message": "You turned off IGPlus"
+  },
+  "header_title": {
+    "message": "IGPlus Extension"
+  },
+  "header_subtitle": {
+    "message": "Less distraction, more focus on what matters."
+  },
+  "btn_donate": {
+    "message": "Donate"
+  },
+  "btn_support": {
+    "message": "Get support"
+  },
+  "btn_reqfeature": {
+    "message": "Request feature"
+  },
+  "btn_goback": {
+    "message": "Go Back"
+  },
+  "menu_main": {
+    "message": "Main Features:"
+  },
+  "menu_sec": {
+    "message": "Additional Features:"
+  },
+  "menu_palette": {
+    "message": "Color palette / font:"
+  },
+  "n_default": {
+    "message": "Default"
+  },
+  "mi_1": {
+    "message": "Enable \"Focus mode\""
+  },
+  "mi_2": {
+    "message": "Disable Reels page & Reels videos"
+  },
+  "mi_3": {
+    "message": "Disable Explore page"
+  },
+  "mi_4": {
+    "message": "Disable Stories section on Main page"
+  },
+  "mi_5": {
+    "message": "Disable Stories everywhere"
+  },
+  "mi_6": {
+    "message": "Make \"new messages\" labels gray"
+  },
+  "mi_7": {
+    "message": "Disable \"new messages\" labels"
+  },
+  "mi_8": {
+    "message": "Disable recomendations on Main page"
+  },
+  "mi_9": {
+    "message": "Disable Feed (experimental)"
+  },
+  "mi_10": {
+    "message": "Color palette / font:"
+  },
+  "mi_11": {
+    "message": "Disable likes, followers count (vanity metrics)"
+  },
+  "mi_12": {
+    "message": "Enable grayscale mode (experimental)"
+  },
+  "mi_13": {
+    "message": "Make everything square shaped"
+  },
+  "mi_14": {
+    "message": "Block all videos to reduce traffic usage (experimental)"
+  },
+  "mi_15": {
+    "message": "Block all images to reduce traffic usage (experimental)"
+  },
+  "fonts_title": {
+    "message": "Select font:"
+  },
+  "themes_title": {
+    "message": "Select theme:"
+  },
+  "themes_label": {
+    "message": "NEW"
+  },
+  "themes_msg": {
+    "message": "New Options v1.1.9"
+  },
+  "theme_1": {
+    "message": "Default (Dark Green)"
+  },
+  "theme_2": {
+    "message": "Light Green"
+  },
+  "theme_3": {
+    "message": "Dark Purple"
+  },
+  "theme_4": {
+    "message": "Dark Pink (kittens)"
+  },
+  "theme_5": {
+    "message": "Light Purple"
+  },
+  "theme_6": {
+    "message": "Dark Blue"
+  },
+  "theme_7": {
+    "message": "Dark Red"
+  },
+  "theme_8": {
+    "message": "Dark Yellow"
+  },
+  "d_title": {
+    "message": "Donations keep IGPlus up and running."
+  },
+  "d_subtitle": {
+    "message": "I spend hours every week fixing bugs, adding and improving features, and addressing user feedback. Your support is crucial to continued maintenance."
+  },
+  "d_pp": {
+    "message": "Donate via PayPal"
+  },
+  "d_kofi": {
+    "message": "Support me on Ko-Fi"
+  },
+  "d_card": {
+    "message": "Donate via credit or debit card"
+  },
+  "d_cred__1": {
+    "message": "You can also share IGPlus with your friends or leave a"
+  },
+  "d_cred__2": {
+    "message": "review"
+  },
+  "d_cred__3": {
+    "message": "Thanks a lot."
+  },
+  "s_title": {
+    "message": "Having troubles with IGPlus?"
+  },
+  "s_subtitle": {
+    "message": "Here are some troubleshooting steps you can try:"
+  },
+  "s_res__1": {
+    "message": "Refresh the Instagram page."
+  },
+  "s_res__2": {
+    "message": "Disable and then enable again IGPlus."
+  },
+  "s_res__3": {
+    "message": "Disable any other extensions."
+  },
+  "s_res__4": {
+    "message": "Uninstall and re-install IGPlus."
+  },
+  "s_res__5": {
+    "message": "Clear browser cache."
+  },
+  "s_emailme": {
+    "message": "If the problem still here, please email me at"
+  },
+  "s_effic": {
+    "message": "To help me assist you more efficiently, please include this information:"
+  },
+  "s_detail__1": {
+    "message": "The version of IGPlus you are using."
+  },
+  "s_detail__2": {
+    "message": "A screenshot or video demonstrating the problem."
+  },
+  "s_detail__3": {
+    "message": "A detailed description of the issue."
+  },
+  "s_detail__4": {
+    "message": "Your browser and its version (e.g., Firefox 86.0)."
+  }
+}

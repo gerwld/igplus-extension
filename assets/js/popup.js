@@ -18,6 +18,8 @@
     document.addEventListener("DOMContentLoaded", () => {
       const container = document.getElementById("l3_settings");
       const main_nav = document.getElementById("header_nav");
+      const lang_set = document.getElementById("lang_set");
+
 
       // Disable stories logic
       function disableStories(state) {
@@ -88,6 +90,16 @@
             }
           }
 
+          //Function to update lang state
+          function updateLangState(e) {
+            state["lang_set"] = e.target.value || "en";
+            console.log(e.target.value);
+            // Save the updated state to extension storage
+            chrome.storage.local.set({ formState: state }, () => {
+              dispatchFormStateChangeEvent();
+            });
+          }
+
           // Function to update menu classes based on the state object
           function updateMenu() {
             //dark mode
@@ -118,9 +130,9 @@
             } else input.addEventListener("input", updateState);
           });
 
-          //Add event listener to header nav
+          //Add event listener to header nav & lang change
           main_nav.addEventListener("click", updateMenuState);
-
+          lang_set.addEventListener("change", updateLangState);
           // Initialize the form inputs based on the state
           updateFormInputs();
           updateMenu();

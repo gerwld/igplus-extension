@@ -1,0 +1,185 @@
+{
+  "extensionName": {
+    "message": "IGPlus - Inaktivera Instagram Reels, Utforska-sidan"
+  },
+  "extensionDescription": {
+    "message": "Inaktivera Instagram Shorts, videos, kommentarer, fåfänga mätetal, hemsideförslag, trender... och mycket mer."
+  },
+  "disabled": {
+    "message": "Du har stängt av IGPlus"
+  },
+  "header_title": {
+    "message": "IGPlus Tillägg"
+  },
+  "header_subtitle": {
+    "message": "Mindre distraktion, mer fokus på det som betyder något."
+  },
+  "btn_donate": {
+    "message": "Donera"
+  },
+  "btn_support": {
+    "message": "Få support"
+  },
+  "btn_reqfeature": {
+    "message": "Begär funktion"
+  },
+  "btn_goback": {
+    "message": "Gå Tillbaka"
+  },
+  "menu_main": {
+    "message": "Huvudfunktioner:"
+  },
+  "menu_sec": {
+    "message": "Ytterligare funktioner:"
+  },
+  "menu_palette": {
+    "message": "Färgpalett / typsnitt:"
+  },
+  "n_default": {
+    "message": "Standard"
+  },
+  "mi_1": {
+    "message": "Aktivera Focus-läge"
+  },
+  "mi_2": {
+    "message": "Inaktivera Reels (sektion och video)"
+  },
+  "mi_3": {
+    "message": "Inaktivera Utforska-sidan"
+  },
+  "mi_4": {
+    "message": "Inaktivera stories på huvudsidan"
+  },
+  "mi_5": {
+    "message": "Inaktivera stories överallt"
+  },
+  "mi_6": {
+    "message": "Gör meddelandelabels gråa"
+  },
+  "mi_7": {
+    "message": "Inaktivera meddelandelabels överallt"
+  },
+  "mi_8": {
+    "message": "Inaktivera rekommendationer på huvudsidan"
+  },
+  "mi_9": {
+    "message": "Inaktivera feed-flödet (experimentellt)"
+  },
+  "mi_10": {
+    "message": "Färgpalett / typsnitt:"
+  },
+  "mi_11": {
+    "message": "Inaktivera gillningar, följarmätare (själviska mätvärden)"
+  },
+  "mi_12": {
+    "message": "Aktivera gråskalaläge (experimentellt)"
+  },
+  "mi_13": {
+    "message": "Gör allt kvadratiskt"
+  },
+  "mi_14": {
+    "message": "Blockera video för att minska datatrafik (experimentellt)"
+  },
+  "mi_15": {
+    "message": "Blockera bilder för att minska datatrafik (experimentellt)"
+  },
+  "fonts_title": {
+    "message": "Välj typsnitt:"
+  },
+  "themes_title": {
+    "message": "Välj tema:"
+  },
+  "themes_label": {
+    "message": "NYTT"
+  },
+  "themes_msg": {
+    "message": "Nya alternativ v1.1.9"
+  },
+  "theme_1": {
+    "message": "Standard (Mörk Grön)"
+  },
+  "theme_2": {
+    "message": "Ljus Grön"
+  },
+  "theme_3": {
+    "message": "Mörk Lila"
+  },
+  "theme_4": {
+    "message": "Mörk Rosa (kattungar)"
+  },
+  "theme_5": {
+    "message": "Ljus Lila"
+  },
+  "theme_6": {
+    "message": "Mörk Blå"
+  },
+  "theme_7": {
+    "message": "Mörk Röd"
+  },
+  "theme_8": {
+    "message": "Mörk Gul"
+  },
+  "d_title": {
+    "message": "Donationer håller IGPlus igång."
+  },
+  "d_subtitle": {
+    "message": "Jag lägger ner timmar varje vecka på att fixa buggar, lägga till och förbättra funktioner samt hantera användarfeedback. Ditt stöd är avgörande för fortsatt underhåll."
+  },
+  "d_pp": {
+    "message": "Donera via PayPal"
+  },
+  "d_kofi": {
+    "message": "Stöd mig på Ko-Fi"
+  },
+  "d_card": {
+    "message": "Donera med kredit- eller betalkort"
+  },
+  "d_cred__1": {
+    "message": "Du kan också dela IGPlus med dina vänner eller lämna en"
+  },
+  "d_cred__2": {
+    "message": "recension"
+  },
+  "d_cred__3": {
+    "message": "Tack så mycket."
+  },
+  "s_title": {
+    "message": "Har du problem med IGPlus?"
+  },
+  "s_subtitle": {
+    "message": "Här är några felsökningssteg du kan försöka:"
+  },
+  "s_res__1": {
+    "message": "Uppdatera Instagram-sidan."
+  },
+  "s_res__2": {
+    "message": "Inaktivera och aktivera IGPlus igen."
+  },
+  "s_res__3": {
+    "message": "Inaktivera andra tillägg."
+  },
+  "s_res__4": {
+    "message": "Avinstallera och installera om IGPlus."
+  },
+  "s_res__5": {
+    "message": "Rensa webbläsarens cache."
+  },
+  "s_emailme": {
+    "message": "Om problemet kvarstår, vänligen mejla mig på"
+  },
+  "s_effic": {
+    "message": "För att hjälpa mig assistera dig mer effektivt, inkludera följande information:"
+  },
+  "s_detail__1": {
+    "message": "Versionen av IGPlus du använder."
+  },
+  "s_detail__2": {
+    "message": "En skärmbild eller video som visar problemet."
+  },
+  "s_detail__3": {
+    "message": "En detaljerad beskrivning av problemet."
+  },
+  "s_detail__4": {
+    "message": "Din webbläsare och dess version (t.ex. Firefox 86.0)."
+  }
+}

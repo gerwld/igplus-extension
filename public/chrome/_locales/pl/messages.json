@@ -1,0 +1,185 @@
+{
+  "extensionName": {
+    "message": "IGPlus - Wyłącz Instagram Reels, stronę Explore"
+  },
+  "extensionDescription": {
+    "message": "Wyłącz Instagram Shorts, filmy, komentarze, ścianę sugestii, metryki próżności(vanity metrics), rekomendacje na stronie głównej, trendy... i wiele więcej."
+  },
+  "disabled": {
+    "message": "Wyłączyłeś IGPlus"
+  },
+  "header_title": {
+    "message": "Rozszerzenie IGPlus"
+  },
+  "header_subtitle": {
+    "message": "Mniej rozproszeń, więcej skupienia na tym, co jest ważne."
+  },
+  "btn_donate": {
+    "message": "Wesprzyj"
+  },
+  "btn_support": {
+    "message": "Uzyskaj pomoc"
+  },
+  "btn_reqfeature": {
+    "message": "Request funkcję"
+  },
+  "btn_goback": {
+    "message": "wróć"
+  },
+  "menu_main": {
+    "message": "Główne funkcje:"
+  },
+  "menu_sec": {
+    "message": "Dodatkowe funkcje:"
+  },
+  "menu_palette": {
+    "message": "Paleta kolorów / czcionka:"
+  },
+  "n_default": {
+    "message": "Domyślne"
+  },
+  "mi_1": {
+    "message": "Włącz tryb Focus Mode"
+  },
+  "mi_2": {
+    "message": "Wyłącz Reels (sekcja i filmy)"
+  },
+  "mi_3": {
+    "message": "Wyłącz stronę Explore"
+  },
+  "mi_4": {
+    "message": "Wyłącz stories na głównej stronie"
+  },
+  "mi_5": {
+    "message": "Wyłącz stories wszędzie"
+  },
+  "mi_6": {
+    "message": "Zrób etykiety liczby wiadomości szare"
+  },
+  "mi_7": {
+    "message": "Wyłącz etykiety liczby wiadomości"
+  },
+  "mi_8": {
+    "message": "Wyłącz rekomendacje na głównej"
+  },
+  "mi_9": {
+    "message": "Wyłącz feed (beta)"
+  },
+  "mi_10": {
+    "message": "Paleta kolorów / czcionka:"
+  },
+  "mi_11": {
+    "message": "Wyłącz polubienia, licznik obserwujących (vanity metrics)"
+  },
+  "mi_12": {
+    "message": "Włącz czarno-biały tryb (beta)"
+  },
+  "mi_13": {
+    "message": "Zrób wszystko kwadratowym"
+  },
+  "mi_14": {
+    "message": "Zablokuj wideo dla ograniczenia użycia danych (beta)"
+  },
+  "mi_15": {
+    "message": "Zablokuj obrazy dla ograniczenia użycia danych (beta)"
+  },
+  "fonts_title": {
+    "message": "Wybierz czcionkę:"
+  },
+  "themes_title": {
+    "message": "Wybierz motyw:"
+  },
+  "themes_label": {
+    "message": "NOWE"
+  },
+  "themes_msg": {
+    "message": "Nowe opcje v1.1.9"
+  },
+  "theme_1": {
+    "message": "Domyślny (Ciemnozielony)"
+  },
+  "theme_2": {
+    "message": "Jasnozielony"
+  },
+  "theme_3": {
+    "message": "Ciemnopurpurowy"
+  },
+  "theme_4": {
+    "message": "Ciemnoróżowy (kotki)"
+  },
+  "theme_5": {
+    "message": "Jasnopurpurowy"
+  },
+  "theme_6": {
+    "message": "Ciemnoniebieski"
+  },
+  "theme_7": {
+    "message": "Ciemnoczerwony"
+  },
+  "theme_8": {
+    "message": "Ciemnożółty"
+  },
+  "d_title": {
+    "message": "Darowizny utrzymują IGPlus przy życiu."
+  },
+  "d_subtitle": {
+    "message": "Co tydzień poświęcam godziny na naprawę błędów, dodawanie i ulepszanie funkcji oraz poprawę doświadczenia użytkownika. Wsparcie jest kluczowe dla ciągłego utrzymania!"
+  },
+  "d_pp": {
+    "message": "Wesprzyj na PayPal"
+  },
+  "d_kofi": {
+    "message": "Wesprzyj na Ko-Fi"
+  },
+  "d_card": {
+    "message": "Wesprzyj poprzez kartę debetową"
+  },
+  "d_cred__1": {
+    "message": "Możesz także podzielić się o IGPlus z przyjaciółmi lub napisać"
+  },
+  "d_cred__2": {
+    "message": "recenzję"
+  },
+  "d_cred__3": {
+    "message": "Dzięki."
+  },
+  "s_title": {
+    "message": "Masz problemy z IGPlus?"
+  },
+  "s_subtitle": {
+    "message": "Oto kilka kroków do rozwiązania problemów, które możesz spróbować:"
+  },
+  "s_res__1": {
+    "message": "Odśwież stronę Instagram."
+  },
+  "s_res__2": {
+    "message": "Wyłącz, a następnie ponownie włącz IGPlus."
+  },
+  "s_res__3": {
+    "message": "Wyłącz inne rozszerzenia."
+  },
+  "s_res__4": {
+    "message": "Odinstaluj i ponownie zainstaluj IGPlus."
+  },
+  "s_res__5": {
+    "message": "Wyczyść pamięć podręczną (cache i cookies) przeglądarki."
+  },
+  "s_emailme": {
+    "message": "Jeśli problem nadal występuje, napisz na"
+  },
+  "s_effic": {
+    "message": "Aby pomóc w udzieleniu bardziej efektywnego wsparcia, dołącz te informacje:"
+  },
+  "s_detail__1": {
+    "message": "Wersje IGPlus, którą używasz."
+  },
+  "s_detail__2": {
+    "message": "Zrzut ekranu lub nagranie demonstrujące problem."
+  },
+  "s_detail__3": {
+    "message": "Szczegółowy opis problemu."
+  },
+  "s_detail__4": {
+    "message": "Twoja przeglądarka i jej wersja (np. Firefox 86.0)."
+  }
+}

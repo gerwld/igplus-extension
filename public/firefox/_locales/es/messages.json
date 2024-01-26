@@ -1,0 +1,185 @@
+{
+  "extensionName": {
+    "message": "IGPlus - Elimina Instagram Reels, página Explorar"
+  },
+  "extensionDescription": {
+    "message": "Deshabilita Instagram Shorts, videos, comentarios, sugerencias en el muro, métricas de vanidad, recomendaciones de la página principal, tendencias... y mucho más."
+  },
+  "disabled": {
+    "message": "Has desactivado IGPlus"
+  },
+  "header_title": {
+    "message": "Extensión IGPlus"
+  },
+  "header_subtitle": {
+    "message": "Menos distracciones, más enfoque en lo que importa."
+  },
+  "btn_donate": {
+    "message": "Donar"
+  },
+  "btn_support": {
+    "message": "Obtener soporte"
+  },
+  "btn_reqfeature": {
+    "message": "Solicitar función"
+  },
+  "btn_goback": {
+    "message": "Volver"
+  },
+  "menu_main": {
+    "message": "Características Principales:"
+  },
+  "menu_sec": {
+    "message": "Características Adicionales:"
+  },
+  "menu_palette": {
+    "message": "Paleta de colores / fuente:"
+  },
+  "n_default": {
+    "message": "Predeterminado"
+  },
+  "mi_1": {
+    "message": "Habilitar modo de enfoque"
+  },
+  "mi_2": {
+    "message": "Desactivar página de Reels"
+  },
+  "mi_3": {
+    "message": "Desactivar página de Explorar"
+  },
+  "mi_4": {
+    "message": "Desactivar sección de Historias en la página principal"
+  },
+  "mi_5": {
+    "message": "Desactivar Historias en todas partes"
+  },
+  "mi_6": {
+    "message": "Hacer que las etiquetas de \"nuevos mensajes\" sean grises"
+  },
+  "mi_7": {
+    "message": "Desactivar etiquetas de \"nuevos mensajes\""
+  },
+  "mi_8": {
+    "message": "Desactivar recomendaciones"
+  },
+  "mi_9": {
+    "message": "Desactivar Feed (experimental)"
+  },
+  "mi_10": {
+    "message": "Paleta de colores / fuente:"
+  },
+  "mi_11": {
+    "message": "Desactivar likes, recuento de seguidores (métricas de vanidad)"
+  },
+  "mi_12": {
+    "message": "Habilitar modo de escala de grises (experimental)"
+  },
+  "mi_13": {
+    "message": "Hacer que todo sea de forma cuadrada"
+  },
+  "mi_14": {
+    "message": "Bloquear todos los videos para reducir el uso de tráfico (experimental)"
+  },
+  "mi_15": {
+    "message": "Bloquear todas las imágenes para reducir el uso de tráfico (experimental)"
+  },
+  "fonts_title": {
+    "message": "Seleccionar fuente:"
+  },
+  "themes_title": {
+    "message": "Seleccionar tema:"
+  },
+  "themes_label": {
+    "message": "NUEVO"
+  },
+  "themes_msg": {
+    "message": "Nuevas opciones v1.1.9"
+  },
+  "theme_1": {
+    "message": "Predeterminado (Verde Oscuro)"
+  },
+  "theme_2": {
+    "message": "Verde Claro"
+  },
+  "theme_3": {
+    "message": "Morado Oscuro"
+  },
+  "theme_4": {
+    "message": "Rosa Oscuro (gatitos)"
+  },
+  "theme_5": {
+    "message": "Morado Claro"
+  },
+  "theme_6": {
+    "message": "Azul Oscuro"
+  },
+  "theme_7": {
+    "message": "Rojo Oscuro"
+  },
+  "theme_8": {
+    "message": "Amarillo Oscuro"
+  },
+  "d_title": {
+    "message": "Las donaciones mantienen IGPlus en funcionamiento."
+  },
+  "d_subtitle": {
+    "message": "Paso horas cada semana corrigiendo errores, agregando y mejorando funciones, y atendiendo comentarios de usuarios. Tu apoyo es crucial para el mantenimiento continuo."
+  },
+  "d_pp": {
+    "message": "Donar a través de PayPal"
+  },
+  "d_kofi": {
+    "message": "Apóyame en Ko-Fi"
+  },
+  "d_card": {
+    "message": "Donar con tarjeta de crédito o débito"
+  },
+  "d_cred__1": {
+    "message": "También puedes compartir IGPlus con tus amigos o dejar una"
+  },
+  "d_cred__2": {
+    "message": "reseña"
+  },
+  "d_cred__3": {
+    "message": "Muchas gracias."
+  },
+  "s_title": {
+    "message": "¿Tienes problemas con IGPlus?"
+  },
+  "s_subtitle": {
+    "message": "Aquí hay algunos pasos de solución de problemas que puedes intentar:"
+  },
+  "s_res__1": {
+    "message": "Actualiza la página de Instagram."
+  },
+  "s_res__2": {
+    "message": "Desactiva y luego vuelve a activar IGPlus."
+  },
+  "s_res__3": {
+    "message": "Desactiva cualquier otra extensión."
+  },
+  "s_res__4": {
+    "message": "Desinstala y vuelve a instalar IGPlus."
+  },
+  "s_res__5": {
+    "message": "Borra la caché del navegador."
+  },
+  "s_emailme": {
+    "message": "Si el problema persiste, por favor envíame un correo electrónico a"
+  },
+  "s_effic": {
+    "message": "Para ayudarme a asistirte de manera más eficiente, incluye esta información:"
+  },
+  "s_detail__1": {
+    "message": "La versión de IGPlus que estás utilizando."
+  },
+  "s_detail__2": {
+    "message": "Una captura de pantalla o video que muestre el problema."
+  },
+  "s_detail__3": {
+    "message": "Una descripción detallada del problema."
+  },
+  "s_detail__4": {
+    "message": "Tu navegador y su versión (por ejemplo, Firefox 86.0)."
+  }
+}

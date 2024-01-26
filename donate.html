@@ -9,10 +9,10 @@
 </head>
 
 <body class="ext_content">
-  <header><a href="popup.html" class="back_btn">Go Back</a></header>
+  <header><a href="popup.html" class="back_btn" data-i18n="btn_goback">Go Back</a></header>
   <div>
-    <h1>Donations keep IGPlus up and running.</h1>
-    <p>
+    <h1 data-i18n="d_title">Donations keep IGPlus up and running.</h1>
+    <p data-i18n="d_subtitle">
       I spend hours every week fixing bugs, adding and improving features, and addressing user feedback. Your support is
       crucial to continued maintenance.
     </p>
@@ -34,35 +34,12 @@
             </g>
           </svg>
         </span>
-        <span>
-          PayPal Donation</span></a>
+        <span data-i18n="d_pp">
+          Donate via PayPal</span></a>
       <a href="https://ko-fi.com/patrykjaworski" target="_blank">
         <span class="ic">
-
-          <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-          <svg xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#"
-            xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg"
-            xmlns="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
-            xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" width="64" height="64" viewBox="0 0 64 64"
-            version="1.1" id="svg15" sodipodi:docname="ko-fi-icon.svg"
-            inkscape:version="0.92.4 (5da689c313, 2019-01-14)">
-            <metadata id="metadata21">
-              <rdf:RDF>
-                <cc:Work rdf:about="">
-                  <dc:format>image/svg+xml</dc:format>
-                  <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
-                  <dc:title>Artboard</dc:title>
-                </cc:Work>
-              </rdf:RDF>
-            </metadata>
+          <svg width="64" height="64" viewBox="0 0 64 64">
             <defs id="defs19" />
-            <sodipodi:namedview pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" objecttolerance="10"
-              gridtolerance="10" guidetolerance="10" inkscape:pageopacity="0" inkscape:pageshadow="2"
-              inkscape:window-width="1920" inkscape:window-height="1001" id="namedview17" showgrid="false"
-              inkscape:zoom="3.8522727" inkscape:cx="44" inkscape:cy="17.5" inkscape:window-x="-9"
-              inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="svg15" />
-            <title id="title2">Artboard</title>
-            <desc id="desc4">Created with Sketch.</desc>
             <g id="g856" transform="matrix(1.9656019,0,0,1.9656019,-2.8167172e-7,-51.10565)">
               <g transform="translate(0,26)" id="Group-4"
                 style="fill:none;fill-rule:nonzero;stroke:none;stroke-width:1">
@@ -79,9 +56,8 @@
               </g>
             </g>
           </svg>
-
         </span>
-        <span>
+        <span data-i18n="d_kofi">
           Support Me on Ko-Fi</span></a>
       <a href="https://www.paypal.com/donate/?cmd=_donations&business=pjaworski.dev@gmail.com&currency_code=USD"
         target="_blank">
@@ -122,18 +98,19 @@
           </svg>
 
         </span>
-        <span>
-          Donate using a Credit or Debit Card
+        <span data-i18n="d_card">
+          Donate via Credit or Debit Card
         </span></a>
     </nav>
     <p>
-      You can also share IGPlus with your friends or leave a <a
-        href="https://chromewebstore.google.com/detail/igplus-remove-instagram-r/dbbopjndlaginbghfoibbndhlbpdpapd?hl=en"
-        target="_blank">review</a>!
-      Thanks a lot.
+      <span data-i18n="d_cred__1">You can also share IGPlus with your friends or leave a</span> <a
+        href="https://chromewebstore.google.com/detail/dbbopjndlaginbghfoibbndhlbpdpapd/reviews/write" target="_blank"
+        data-attr="ext_lk"><span data-i18n="d_cred__2">review</span></a>!
+      <span data-i18n="d_cred__3">Thanks a lot.</span>
     </p>
   </div>
   <script type="module" src="/assets/js/init.js"></script>
+  <script type="module" src="./assets/js/locales.js"></script>
 </body>
 
 </html>

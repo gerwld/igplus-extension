@@ -1,0 +1,185 @@
+{
+  "extensionName": {
+    "message": "IGPlus - Entferne Instagram Reels, Entdeckungsseite"
+  },
+  "extensionDescription": {
+    "message": "Deaktiviere Instagram Shorts, Videos, Kommentare, Vorschlägewand, Eitelkeitsmetriken, Empfehlungen auf der Startseite, Trends... und vieles mehr."
+  },
+  "disabled": {
+    "message": "Du hast IGPlus ausgeschaltet"
+  },
+  "header_title": {
+    "message": "IGPlus Erweiterung"
+  },
+  "header_subtitle": {
+    "message": "Weniger Ablenkung, mehr Fokus auf das, was zählt."
+  },
+  "btn_donate": {
+    "message": "Spenden"
+  },
+  "btn_support": {
+    "message": "Unterstützung erhalten"
+  },
+  "btn_reqfeature": {
+    "message": "Feature anfragen"
+  },
+  "btn_goback": {
+    "message": "Zurück"
+  },
+  "menu_main": {
+    "message": "Hauptfunktionen:"
+  },
+  "menu_sec": {
+    "message": "Zusätzliche Funktionen:"
+  },
+  "menu_palette": {
+    "message": "Farbpalette / Schriftart:"
+  },
+  "n_default": {
+    "message": "Standard"
+  },
+  "mi_1": {
+    "message": "Fokusmodus aktivieren"
+  },
+  "mi_2": {
+    "message": "Reels ausschalten (Abschnitt und Video)"
+  },
+  "mi_3": {
+    "message": "Entdecken-Seite ausschalten"
+  },
+  "mi_4": {
+    "message": "Stories auf der Startseite ausschalten"
+  },
+  "mi_5": {
+    "message": "Überall Stories ausschalten"
+  },
+  "mi_6": {
+    "message": "Labels für Nachrichtenanzahl grau machen"
+  },
+  "mi_7": {
+    "message": "Überall Labels für Nachrichtenanzahl ausschalten"
+  },
+  "mi_8": {
+    "message": "Empfehlungen auf der Startseite ausschalten"
+  },
+  "mi_9": {
+    "message": "Feed deaktivieren (experimentell)"
+  },
+  "mi_10": {
+    "message": "Farbpalette / Schrift:"
+  },
+  "mi_11": {
+    "message": "Likes, Follower-Zähler ausschalten (Vanity Metrics)"
+  },
+  "mi_12": {
+    "message": "Graustufenmodus aktivieren (experimentell)"
+  },
+  "mi_13": {
+    "message": "Alles quadratisch machen"
+  },
+  "mi_14": {
+    "message": "Videos sperren, um den Datenverbrauch zu reduzieren (experimentell)"
+  },
+  "mi_15": {
+    "message": "Bilder sperren, um den Datenverbrauch zu reduzieren (experimentell)"
+  },
+  "fonts_title": {
+    "message": "Schriftart auswählen:"
+  },
+  "themes_title": {
+    "message": "Thema auswählen:"
+  },
+  "themes_label": {
+    "message": "NEU"
+  },
+  "themes_msg": {
+    "message": "Neue Optionen v1.1.9"
+  },
+  "theme_1": {
+    "message": "Standard (Dunkelgrün)"
+  },
+  "theme_2": {
+    "message": "Hellgrün"
+  },
+  "theme_3": {
+    "message": "Dunkellila"
+  },
+  "theme_4": {
+    "message": "Dunkelrosa (Kätzchen)"
+  },
+  "theme_5": {
+    "message": "Helllila"
+  },
+  "theme_6": {
+    "message": "Dunkelblau"
+  },
+  "theme_7": {
+    "message": "Dunkelrot"
+  },
+  "theme_8": {
+    "message": "Dunkelgelb"
+  },
+  "d_title": {
+    "message": "Spenden halten IGPlus am Laufen."
+  },
+  "d_subtitle": {
+    "message": "Ich investiere jede Woche Stunden, um Fehler zu beheben, Funktionen hinzuzufügen und zu verbessern sowie auf Benutzerfeedback einzugehen. Ihre Unterstützung ist entscheidend für die fortlaufende Wartung."
+  },
+  "d_pp": {
+    "message": "Spenden über PayPal"
+  },
+  "d_kofi": {
+    "message": "Unterstützen Sie mich auf Ko-Fi"
+  },
+  "d_card": {
+    "message": "Mit Kredit- oder Debitkarte spenden"
+  },
+  "d_cred__1": {
+    "message": "Sie können IGPlus auch mit Ihren Freunden teilen oder eine"
+  },
+  "d_cred__2": {
+    "message": "Bewertung hinterlassen"
+  },
+  "d_cred__3": {
+    "message": "Vielen Dank."
+  },
+  "s_title": {
+    "message": "Probleme mit IGPlus?"
+  },
+  "s_subtitle": {
+    "message": "Hier sind einige Problembehandlungsschritte, die Sie versuchen können:"
+  },
+  "s_res__1": {
+    "message": "Aktualisieren Sie die Instagram-Seite."
+  },
+  "s_res__2": {
+    "message": "Deaktivieren Sie IGPlus und aktivieren Sie es erneut."
+  },
+  "s_res__3": {
+    "message": "Deaktivieren Sie andere Erweiterungen."
+  },
+  "s_res__4": {
+    "message": "Deinstallieren Sie IGPlus und führen Sie eine Neuinstallation durch."
+  },
+  "s_res__5": {
+    "message": "Browser-Cache löschen."
+  },
+  "s_emailme": {
+    "message": "Wenn das Problem weiterhin besteht, senden Sie mir bitte eine E-Mail an"
+  },
+  "s_effic": {
+    "message": "Um mir zu helfen, Sie effizienter zu unterstützen, geben Sie bitte folgende Informationen an:"
+  },
+  "s_detail__1": {
+    "message": "Die Version von IGPlus, die Sie verwenden."
+  },
+  "s_detail__2": {
+    "message": "Ein Screenshot oder Video, das das Problem zeigt."
+  },
+  "s_detail__3": {
+    "message": "Eine ausführliche Beschreibung des Problems."
+  },
+  "s_detail__4": {
+    "message": "Ihr Browser und seine Version (z.B. Firefox 86.0)."
+  }
+}
