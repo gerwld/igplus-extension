@@ -61,6 +61,7 @@ yarn-error.log*
 # Dependency directories
 node_modules/
 jspm_packages/
+public/
 
 # Optional npm cache directory
 .npm
@@ -92,3 +93,6 @@ Thumbs.db
 
 # Build dir
 public/.DS_Store
+
+public
+*.zip

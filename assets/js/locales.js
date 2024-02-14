@@ -36,6 +36,12 @@
   async function handleLanguage(selectedLanguage) {
     CURRENT_LANG = selectedLanguage;
     document.documentElement.setAttribute("lang", selectedLanguage);
+    const rtl_locales = ["ar", "he", "ku", "fa", "ur", "sd"]
+    if (rtl_locales.indexOf(selectedLanguage) != -1) {
+      document.documentElement.setAttribute("dir", "rtl");
+    } else {
+      document.documentElement.setAttribute("dir", "ltr");
+    }
     await fetchTranslations(selectedLanguage);
     setLanguage(selectedLanguage);
   }
@@ -50,12 +56,20 @@
   });
 
   // Entry point. 
-  // If manually selected - then so, else browser lang if so, otherways english
+  // If manually selected - then so, else browser lang if so & not beta, otherways english
+
+  const notinbeta = ["en", "de", "es", "pl", "uk", "sv", "ar"];
+  const browser_lang = navigator?.language?.split("-")[0]?.toLowerCase() || "en"
   browser_cr.storage.local.get("formState", async (result) => {
+
     const initialLang =
       result.formState.lang_set ? result.formState.lang_set
-        : navigator?.language ? navigator.language.split("-")[0]
+        : browser_lang && notinbeta.indexOf(browser_lang) !== -1 ? browser_lang
           : "en";
+    // Init lang if not exist      
+    if (!result.formState.lang_set) {
+      browser_cr.storage.local.set({ formState: { ...result.formState, lang_set: initialLang } })
+    }
 
     await handleLanguage(initialLang);
   });

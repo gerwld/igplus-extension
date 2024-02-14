@@ -2,13 +2,13 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "1.2.1",
+  "version": "1.2.2",
   "default_locale": "en",
   "icons": {
     "128": "/assets/icons/icon128.png"
   },
   "action": {
-    "default_popup": "popup.html",
+    "default_popup": "./content/popup.html",
     "default_icon": {
       "128": "/assets/icons/icon128.png"
     }
@@ -54,10 +54,8 @@
   "content_scripts": [
     {
       "matches": [
-        "https://www.instagram.com/*",
-        "https://www.instagram.com/",
-        "https://instagram.com/*",
-        "https://instagram.com/"
+        "https://*.instagram.com/*",
+        "https://instagram.com/*"
       ],
       "js": [
         "/assets/js/content.js"

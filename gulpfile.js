@@ -82,12 +82,12 @@ task('minifyJS', async function () {
 
 //## Minify HTML ##//
 task('minifyHTML', async function () {
-    src(['./*.html'])
+    src(['./content/*.html'])
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(insert.prepend(`<!--\n${COPYRIGHT}-->\n\n`))
         .pipe(gulpFlatten({ includeParents: 4 }))
-        .pipe(dest('./public/chrome/'))
-        .pipe(dest('./public/firefox/'))
+        .pipe(dest('./public/chrome/content/'))
+        .pipe(dest('./public/firefox/content/'))
 });
 
 
