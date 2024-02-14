@@ -175,31 +175,45 @@
       } else clearInterval(interval4);
     }
 
+    // function disableRecomendations(state) {
+    //   clearInterval(interval5);
+
+
+    //   function redirect() {
+    //     const followbtn_parent = document.querySelector('.x7a106z.x78zum5.xp1r0qw.xtqikln.x1nhvcw1')
+    //       || document.querySelector('.x11fxgd9').querySelector('div')
+    //     const followbtn = followbtn_parent?.querySelectorAll('div')[1];
+
+    //     if (state && window.location.href === "https://www.instagram.com/" || window.location.href.includes("://www.instagram.com/?")) {
+    //       if (followbtn_parent && !window.location.href.includes("?variant=following")) {
+    //         followbtn?.click();
+    //         console.log("IGPlus: Setting Feed to Subscriptions Mode.");
+    //       }
+    //     }
+    //   }
+
+    //   if (state) {
+    //     interval5 = setInterval(redirect, 1500);
+    //   } else clearInterval(interval5);
+
+    //   const bbRedirect = () => bombardier(redirect, 20, 2000)
+
+
+    //   document.addEventListener("DOMContentLoaded", bbRedirect, false);
+    // }
+
     function disableRecomendations(state) {
       clearInterval(interval5);
-
-
       function redirect() {
-        const followbtn_parent = document.querySelector('.x7a106z.x78zum5.xp1r0qw.xtqikln.x1nhvcw1')
-          || document.querySelector('.x11fxgd9').querySelector('div')
-        const followbtn = followbtn_parent?.querySelectorAll('div')[1];
-
-        if (state && window.location.href === "https://www.instagram.com/" || window.location.href.includes("://www.instagram.com/?")) {
-          if (followbtn_parent && !window.location.href.includes("?variant=following")) {
-            followbtn?.click();
-            console.log("IGPlus: Setting Feed to Subscriptions Mode.");
-          }
+        if (state && window.location.href === "https://www.instagram.com/") {
+          if (window.location?.assign) window.location.assign("/?variant=following");
+          else window.location.href = "/?variant=following";
+          clearInterval(interval5);
         }
       }
-
       if (state) {
-        interval5 = setInterval(redirect, 1500);
+        interval5 = setInterval(redirect, 300);
       } else clearInterval(interval5);
-
-      const bbRedirect = () => bombardier(redirect, 20, 2000)
-
-
-      document.addEventListener("DOMContentLoaded", bbRedirect, false);
     }
 
     function disableVideos(state) {
