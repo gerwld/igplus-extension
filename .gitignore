@@ -4,6 +4,7 @@
 /dist
 /tmp
 /out-tsc
+/dist
 
 # Runtime data
 pids
@@ -61,7 +62,6 @@ yarn-error.log*
 # Dependency directories
 node_modules/
 jspm_packages/
-public/
 
 # Optional npm cache directory
 .npm
@@ -92,7 +92,7 @@ lerna-debug.log
 Thumbs.db
 
 # Build dir
-public/.DS_Store
+public/
 
-public
+# zip files
 *.zip

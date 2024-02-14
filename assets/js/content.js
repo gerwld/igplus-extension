@@ -284,7 +284,7 @@
   (() => {
     const APPEAR_TIMEOUT = 10 * 1000 * 60;
     // const APPEAR_TIMEOUT = 4000;
-    const MAX_CLOSE_COUNT = 10;
+    const MAX_CLOSE_COUNT = 5;
     const browser_cr = chrome ? chrome : browser;
     const store_links = {
       "chrome": "https://chromewebstore.google.com/detail/dbbopjndlaginbghfoibbndhlbpdpapd/reviews/write",
