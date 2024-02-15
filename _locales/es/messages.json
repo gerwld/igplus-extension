@@ -181,5 +181,8 @@
   },
   "s_detail__4": {
     "message": "Tu navegador y su versión (por ejemplo, Firefox 86.0)."
+  },
+  "mi_16": {
+    "message": "Navega a Direct desde la página principal"
   }
 }

@@ -164,7 +164,7 @@ html[dir="rtl"] a.version {
 }
 
 .ch_lp::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   right: 18px;
@@ -193,8 +193,8 @@ body {
 body,
 html,
 * {
-  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans",
-    "Helvetica Neue", sans-serif;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 body {
@@ -202,7 +202,7 @@ body {
 }
 
 .ns,
-.ns>* {
+.ns > * {
   user-select: none;
 }
 
@@ -214,7 +214,7 @@ h2 {
 }
 
 body a[href^="mailto:"],
-body a[href^="mailto:"]>* {
+body a[href^="mailto:"] > * {
   user-select: auto !important;
 }
 
@@ -233,9 +233,9 @@ input:disabled {
   user-select: none;
 }
 
-input[disabled="true"]+.ch_sp,
-input:disabled+.ch_sp,
-input:disabled+.ch_sp::before {
+input[disabled="true"] + .ch_sp,
+input:disabled + .ch_sp,
+input:disabled + .ch_sp::before {
   opacity: 0.5 !important;
   user-select: none;
   cursor: default;
@@ -270,9 +270,10 @@ hr {
   margin: 2rem 0 0.8rem;
 }
 
-
 .emojiesfix {
-  font-family: apple color emoji, segoe ui emoji, noto color emoji, android emoji, emojisymbols, emojione mozilla, twemoji mozilla, segoe ui symbol;
+  font-family: apple color emoji, segoe ui emoji, noto color emoji,
+    android emoji, emojisymbols, emojione mozilla, twemoji mozilla,
+    segoe ui symbol;
 }
 
 *::-webkit-scrollbar {
@@ -282,7 +283,6 @@ hr {
 ::-webkit-scrollbar {
   display: none;
 }
-
 
 *::-moz-scrollbar {
   display: none;
@@ -318,7 +318,7 @@ html[lang="hi"] body {
 
 /* header styles  */
 
-.logo_group>span {
+.logo_group > span {
   display: block;
 }
 
@@ -441,24 +441,29 @@ html.dark_mode .btn_header:hover {
   line-height: 1.06rem !important;
 }
 
-
 /* header styles end */
 .content {
-  min-height: 280px;
+  min-height: 296px;
+}
+
+[lang="sv"] .content {
+  min-height: 310px;
+}
+
+[lang="hi"] .content {
+  min-height: 299px;
 }
 
 [lang="es"] .content,
 [lang="de"] .content {
-  min-height: 310px;
+  min-height: 336px;
 }
 
 [lang="ar"] .content,
-[lang="sw"] .content,
 [lang="uk"] .content,
 [lang="pl"] .content {
   min-height: 296px;
 }
-
 
 #l3_settings {
   display: flex;
@@ -648,7 +653,8 @@ a img {
 }
 
 .ext_content__contribute {
-  background: no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cg fill='rgba(156,156,156,0.05)'%3E%3Cpath d='M7.75 2.75a.75.75 0 0 0-1.5 0v1.258a32.987 32.987 0 0 0-3.599.278a.75.75 0 1 0 .198 1.487A31.545 31.545 0 0 1 8.7 5.545A19.381 19.381 0 0 1 7 9.56a19.418 19.418 0 0 1-1.002-2.05a.75.75 0 0 0-1.384.577a20.935 20.935 0 0 0 1.492 2.91a19.613 19.613 0 0 1-3.828 4.154a.75.75 0 1 0 .945 1.164A21.116 21.116 0 0 0 7 12.331c.095.132.192.262.29.391a.75.75 0 0 0 1.194-.91a18.97 18.97 0 0 1-.59-.815a20.888 20.888 0 0 0 2.333-5.332c.31.031.618.068.924.108a.75.75 0 0 0 .198-1.487a32.832 32.832 0 0 0-3.599-.278z'/%3E%3Cpath fill-rule='evenodd' d='M13 8a.75.75 0 0 1 .671.415l4.25 8.5a.75.75 0 1 1-1.342.67L15.787 16h-5.573l-.793 1.585a.75.75 0 1 1-1.342-.67l4.25-8.5A.75.75 0 0 1 13 8m2.037 6.5L13 10.427L10.964 14.5z' clip-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E");
+  background: no-repeat
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cg fill='rgba(156,156,156,0.05)'%3E%3Cpath d='M7.75 2.75a.75.75 0 0 0-1.5 0v1.258a32.987 32.987 0 0 0-3.599.278a.75.75 0 1 0 .198 1.487A31.545 31.545 0 0 1 8.7 5.545A19.381 19.381 0 0 1 7 9.56a19.418 19.418 0 0 1-1.002-2.05a.75.75 0 0 0-1.384.577a20.935 20.935 0 0 0 1.492 2.91a19.613 19.613 0 0 1-3.828 4.154a.75.75 0 1 0 .945 1.164A21.116 21.116 0 0 0 7 12.331c.095.132.192.262.29.391a.75.75 0 0 0 1.194-.91a18.97 18.97 0 0 1-.59-.815a20.888 20.888 0 0 0 2.333-5.332c.31.031.618.068.924.108a.75.75 0 0 0 .198-1.487a32.832 32.832 0 0 0-3.599-.278z'/%3E%3Cpath fill-rule='evenodd' d='M13 8a.75.75 0 0 1 .671.415l4.25 8.5a.75.75 0 1 1-1.342.67L15.787 16h-5.573l-.793 1.585a.75.75 0 1 1-1.342-.67l4.25-8.5A.75.75 0 0 1 13 8m2.037 6.5L13 10.427L10.964 14.5z' clip-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E");
   background-position: 102% -2%;
   background-size: 200px auto;
 }
@@ -680,8 +686,8 @@ a img {
 }
 
 .donate_nav {
-  max-width: 240px;
-  padding: 20px 0;
+  max-width: 232px;
+  padding: 20px 0 28px;
   margin: 0 auto;
   display: flex;
   align-items: stretch;
@@ -696,19 +702,26 @@ a img {
 
   padding: 4px 6px;
   color: #ffffff;
-  border: 2px solid #315d96;
-  background-color: #3d79c8;
-  margin-bottom: 10px;
+  border: 0px solid #315d96;
+  background-color: #505cc7;
+
+  background: linear-gradient(342deg, #505cc7, #a3abeb);
+  margin: 0 0 8px;
+  min-height: 45px;
   text-decoration: none;
   text-align: center;
-  border-radius: 14px;
-  font-size: 0.84rem;
+  border-radius: 50px;
+  font-size: 0.86rem;
   font-weight: 300;
   line-height: 140%;
   box-shadow: 0px 2px 0 0 var(--shadow-color-1);
   transition: transform 100ms ease, background 100ms ease, box-shadow 200ms ease;
+  /* transition: 400ms ease; */
 }
 
+.dark_mode .donate_nav a {
+  background: linear-gradient(342deg, #6571e3, #6471e422);
+}
 
 .donate_nav a:nth-last-child(1) {
   margin: 0;
@@ -716,8 +729,29 @@ a img {
 
 .donate_nav a:hover {
   background-color: #347cdb;
-  transform: translateY(-1px);
+  background: linear-gradient(342deg, #505cc7, #dadeff);
+  transform: translateY(-0.5px);
   transition: transform 200ms ease, background 200ms ease;
+}
+
+.donate_nav a:hover span.ic {
+  background: linear-gradient(313deg, #d5dee4, #ffffff);
+}
+
+.dark_mode .donate_nav span.ic {
+  background: linear-gradient(313deg, #d0d0d093, #6666692c);
+}
+
+.dark_mode .donate_nav a:hover span.ic {
+  background: linear-gradient(
+    313deg,
+    rgba(255, 255, 255, 0.5),
+    rgba(212, 212, 217, 0.5)
+  );
+}
+
+.dark_mode .donate_nav a:hover {
+  background: linear-gradient(342deg, #505cc7, #818add);
 }
 
 @keyframes anim_nav_link {
@@ -748,34 +782,33 @@ a img {
 }
 
 @keyframes ko-ani {
-
   0%,
   100%,
   60% {
     -webkit-transform: rotate(0) scale(1);
-    transform: rotate(0) scale(1)
+    transform: rotate(0) scale(1);
   }
 
   75% {
     -webkit-transform: rotate(0) scale(1.12);
-    transform: rotate(0) scale(1.12)
+    transform: rotate(0) scale(1.12);
   }
 
   80% {
     -webkit-transform: rotate(0) scale(1.1);
-    transform: rotate(0) scale(1.1)
+    transform: rotate(0) scale(1.1);
   }
 
   84%,
   92% {
     -webkit-transform: rotate(-10deg) scale(1.1);
-    transform: rotate(-10deg) scale(1.1)
+    transform: rotate(-10deg) scale(1.1);
   }
 
   88%,
   96% {
     -webkit-transform: rotate(10deg) scale(1.1);
-    transform: rotate(10deg) scale(1.1)
+    transform: rotate(10deg) scale(1.1);
   }
 }
 
@@ -828,7 +861,6 @@ a.don_btn {
   height: 28px;
   margin: 7px;
 }
-
 
 .back_btn {
   display: inline-block;
@@ -965,12 +997,12 @@ a.don_btn {
 }
 
 /* When the checkbox is checked, add a blue background */
-.ch_ip input:checked~.ch_sp {
+.ch_ip input:checked ~ .ch_sp {
   background-color: #2d9ef4;
   border-color: #197dc9;
 }
 
-.ch_ip input:checked:hover~.ch_sp {
+.ch_ip input:checked:hover ~ .ch_sp {
   background-color: #2076b8;
   border-color: #197dc9;
 }
@@ -990,12 +1022,12 @@ a.don_btn {
 }
 
 /* Move the checkmark when checked */
-.ch_ip input:checked~.ch_sp:after {
+.ch_ip input:checked ~ .ch_sp:after {
   left: 12px;
   background-color: #fff;
 }
 
-.ch_ip input.is_any_state:checked~.ch_sp {
+.ch_ip input.is_any_state:checked ~ .ch_sp {
   background-color: #228ad7;
   border: 1px solid #197dc9;
   border-radius: 30px;
@@ -1003,7 +1035,7 @@ a.don_btn {
   transition: background-color 110ms ease;
 }
 
-.ch_ip input.is_any_state~.ch_sp:after {
+.ch_ip input.is_any_state ~ .ch_sp:after {
   background-color: #ffffff;
   left: 10px;
   width: 5px;
@@ -1018,7 +1050,7 @@ a.don_btn {
      transition: background-color 110ms ease;
    } */
 
-.ch_ip input.is_any_state__disable~.ch_sp:after {
+.ch_ip input.is_any_state__disable ~ .ch_sp:after {
   background-color: #8a8d92;
   left: 1px;
   width: 12px;

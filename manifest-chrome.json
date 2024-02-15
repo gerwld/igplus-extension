@@ -2,7 +2,7 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "default_locale": "en",
   "icons": {
     "128": "/assets/icons/icon128.png"
@@ -46,23 +46,14 @@
         "/assets/graphs/fonts/inter.css",
         "/assets/graphs/img/cup-border.png"
       ],
-      "matches": [
-        "<all_urls>"
-      ]
+      "matches": ["<all_urls>"]
     }
   ],
   "content_scripts": [
     {
-      "matches": [
-        "https://*.instagram.com/*",
-        "https://instagram.com/*"
-      ],
-      "js": [
-        "/assets/js/content.js"
-      ],
-      "css": [
-        "/assets/graphs/main.css"
-      ],
+      "matches": ["https://*.instagram.com/*", "https://instagram.com/*"],
+      "js": ["/assets/js/content.js"],
+      "css": ["/assets/graphs/main.css"],
       "run_at": "document_start"
     }
   ],
@@ -70,7 +61,5 @@
     "service_worker": "/assets/js/background.js",
     "type": "module"
   },
-  "permissions": [
-    "storage"
-  ]
+  "permissions": ["storage"]
 }

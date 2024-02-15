@@ -159,6 +159,7 @@
     }
 
     function disableStories(ev_disable_stories, mp_disable_stories) {
+      console.log(ev_disable_stories, mp_disable_stories)
       clearInterval(interval4);
       setOrRemoveStylesOfItem("/assets/graphs/ev_disable_stories.css", ev_disable_stories, "ev_disable_stories");
       setOrRemoveStylesOfItem("/assets/graphs/mp_disable_stories.css", mp_disable_stories, "mp_disable_stories");
@@ -205,15 +206,28 @@
     function disableRecomendations(state) {
       clearInterval(interval5);
       function redirect() {
+        document.querySelectorAll('a[href="/"]')?.forEach(e => e.setAttribute("href", "/?variant=following"))
         if (state && window.location.href === "https://www.instagram.com/") {
           if (window.location?.assign) window.location.assign("/?variant=following");
           else window.location.href = "/?variant=following";
           clearInterval(interval5);
         }
       }
+
       if (state) {
         interval5 = setInterval(redirect, 300);
-      } else clearInterval(interval5);
+      } else {
+        clearInterval(interval5);
+        document?.querySelectorAll('a[href="/?variant=following"]')?.forEach(e => e.setAttribute("href", "/"))
+      }
+    }
+
+    function navToMessages(state) {
+      if (state && (window.location.href === "https://www.instagram.com/")) {
+        if (window.location?.assign) window.location.assign("/direct/inbox/");
+        else window.location.href = "/direct/inbox/";
+        clearInterval(interval5);
+      }
     }
 
     function disableVideos(state) {
@@ -257,6 +271,7 @@
         disableVideos(state.block_videos);
         disableStories(state.ev_disable_stories, state.mp_disable_stories);
         disableRecomendations(state.mp_disable_recs);
+        navToMessages(state.nav_to_messages_first)
 
         setOrRemoveStylesOfItem("/assets/graphs/square_shaped.css", state.square_shaped, "square_shaped");
         // setTheme(state.theme);
@@ -282,6 +297,8 @@
       }
 
     });
+
+    getCurrentState();
 
     //Init get state and do delay
     splashScreenDelay(0);

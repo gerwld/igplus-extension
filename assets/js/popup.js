@@ -30,6 +30,15 @@
         } else mp_item.disabled = false;
       }
 
+      // Nav to direct logic
+      function navToDirect(state) {
+        const mp_item = container.querySelector('input[name="mp_disable_recs"]');
+        if (state?.nav_to_messages_first) {
+          mp_item.setAttribute("disabled", true);
+          chrome.storage.local.set({ formState: { ...state, nav_to_messages_first: true, mp_disable_recs: true } });
+        } else mp_item.disabled = false;
+      }
+
       // Listen for changes in chrome.storage.local
       let prevstate;
       chrome.storage.local.onChanged.addListener((changes, namespace) => {
@@ -58,6 +67,7 @@
         chrome.storage.local.get("formState", (result) => {
           let state = result.formState ? result.formState : {};
           disableStories(state);
+          navToDirect(state);
 
           if (!result.formState) {
             chrome.storage.local.set({ formState: state }, () => {

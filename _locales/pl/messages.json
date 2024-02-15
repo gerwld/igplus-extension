@@ -181,5 +181,8 @@
   },
   "s_detail__4": {
     "message": "Twoja przeglądarka i jej wersja (np. Firefox 86.0)."
+  },
+  "mi_16": {
+    "message": "Przejdź do Direct z głównej strony"
   }
 }

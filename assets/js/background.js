@@ -24,6 +24,7 @@ const initialState = {
   block_images: false,
   block_videos: false,
   square_shaped: false,
+  nav_to_messages_first: false,
   theme: "default",
   font: "default",
 };
@@ -48,11 +49,13 @@ browser_cr.runtime.onInstalled.addListener(function (details) {
       if (!data.welcomePageDisplayed && details.reason === 'install') {
         chrome.tabs.create({ url: "https://chesscolibri.pro/igp/welcome" });
         chrome.storage.local.set({ 'welcomePageDisplayed': true });
-      } else {
+      } else if (details.reason === 'update') {
         chrome.tabs.create({ url: "https://chesscolibri.pro/igp/update" });
       }
     });
   }
 });
+
+
 
 browser_cr.runtime.setUninstallURL("https://docs.google.com/forms/d/e/1FAIpQLSckNi18UjnA6Zz_eVYMV5YnQXAa93-WsplVmmHIolpcbp0lXA/viewform?usp=sf_link");

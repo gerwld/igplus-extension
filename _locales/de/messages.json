@@ -123,7 +123,7 @@
     "message": "Spenden halten IGPlus am Laufen."
   },
   "d_subtitle": {
-    "message": "Ich investiere jede Woche Stunden, um Fehler zu beheben, Funktionen hinzuzufügen und zu verbessern sowie auf Benutzerfeedback einzugehen. Ihre Unterstützung ist entscheidend für die fortlaufende Wartung."
+    "message": "Jede Woche investiere ich Stunden, um Fehler zu beheben, Funktionen hinzuzufügen und zu verbessern sowie auf Benutzerfeedback einzugehen. Ihre Unterstützung ist entscheidend für die fortlaufende Wartung."
   },
   "d_pp": {
     "message": "Spenden über PayPal"
@@ -150,7 +150,7 @@
     "message": "Hier sind einige Problembehandlungsschritte, die Sie versuchen können:"
   },
   "s_res__1": {
-    "message": "Aktualisieren Sie die Instagram-Seite."
+    "message": "Laden Sie die Instagram-Seite neu."
   },
   "s_res__2": {
     "message": "Deaktivieren Sie IGPlus und aktivieren Sie es erneut."
@@ -181,5 +181,8 @@
   },
   "s_detail__4": {
     "message": "Ihr Browser und seine Version (z.B. Firefox 86.0)."
+  },
+  "mi_16": {
+    "message": "Nav. Sie von der Hauptseite zu Direct"
   }
 }

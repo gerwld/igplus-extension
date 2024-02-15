@@ -132,7 +132,7 @@
     "message": "Support me on Ko-Fi"
   },
   "d_card": {
-    "message": "Donate via credit or debit card"
+    "message": "Donate via debit card"
   },
   "d_cred__1": {
     "message": "You can also share IGPlus with your friends or leave a"
@@ -181,5 +181,8 @@
   },
   "s_detail__4": {
     "message": "Your browser and its version (e.g., Firefox 86.0)."
+  },
+  "mi_16": {
+    "message": "Navigate to Direct from the Main page"
   }
 }

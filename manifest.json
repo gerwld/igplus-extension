@@ -2,7 +2,7 @@
   "manifest_version": 2,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "1.2.2",
+  "version": "1.2.4",
   "default_locale": "en",
   "icons": {
     "128": "assets/icons/icon128.png"
@@ -13,9 +13,7 @@
       "128": "assets/icons/icon128.png"
     }
   },
-  "permissions": [
-    "storage"
-  ],
+  "permissions": ["storage"],
   "content_scripts": [
     {
       "matches": [
@@ -24,19 +22,13 @@
         "https://instagram.com/*",
         "https://instagram.com/"
       ],
-      "js": [
-        "/assets/js/content.js"
-      ],
-      "css": [
-        "/assets/graphs/main.css"
-      ],
+      "js": ["/assets/js/content.js"],
+      "css": ["/assets/graphs/main.css"],
       "run_at": "document_start"
     }
   ],
   "background": {
-    "scripts": [
-      "assets/js/background.js"
-    ],
+    "scripts": ["assets/js/background.js"],
     "persistent": false
   },
   "web_accessible_resources": [
