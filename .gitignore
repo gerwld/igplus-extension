@@ -96,3 +96,6 @@ public/
 
 # zip files
 *.zip
+
+previews
+previews/
