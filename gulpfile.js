@@ -8,9 +8,16 @@ import insert from 'gulp-insert';
 import uglify from 'gulp-uglify';
 import htmlmin from "gulp-htmlmin";
 import rename from "gulp-rename";
+import filter from 'gulp-filter';
 import replace from "gulp-replace";
+import zip from 'gulp-zip';
+import chalk from 'chalk';
+
 
 let { src, dest, task, series } = gulp;
+const link = chalk.hex('#5e98d9');
+const EXTENSION_NAME = 'igplus'
+const EXTENSION_V = 'v.1.2.4'
 const COPYRIGHT = `//   - This file is part of IGPlus Extension
 //  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
 //   - Copyright (C) 2023-present IGPlus Extension
@@ -31,24 +38,24 @@ task('minifyImg', async function () {
     src(['./assets/img/*.svg', './assets/img/**/*.svg'])
         .pipe(svgmin())
         .pipe(gulpFlatten({ includeParents: 4 }))
-        .pipe(dest('./public/chrome/assets/img/'))
+        .pipe(dest('./public/chromium/assets/img/'))
         .pipe(dest('./public/firefox/assets/img/'))
 
     src(['./assets/img/*.png', './assets/img/**/*.png'])
         // .pipe(imagemin())
         .pipe(gulpFlatten({ includeParents: 4 }))
-        .pipe(dest('./public/chrome/assets/img/'))
+        .pipe(dest('./public/chromium/assets/img/'))
         .pipe(dest('./public/firefox/assets/img/'))
 
     src(['./assets/icons/*.png', './assets/icons/**/*.png'])
         // .pipe(imagemin())
         .pipe(gulpFlatten({ includeParents: 4 }))
-        .pipe(dest('./public/chrome/assets/icons/'))
+        .pipe(dest('./public/chromium/assets/icons/'))
         .pipe(dest('./public/firefox/assets/icons/'))
 
     src(['./assets/img/**/*.md'])
         .pipe(gulpFlatten({ includeParents: 4 }))
-        .pipe(dest('./public/chrome/assets/img/'))
+        .pipe(dest('./public/chromium/assets/img/'))
         .pipe(dest('./public/firefox/assets/img/'))
 });
 
@@ -67,7 +74,7 @@ task('minifyCSS', async function () {
         .pipe(autoprefix('last 2 versions'))
         .pipe(insert.prepend(`/*\n${COPYRIGHT}*/\n\n`))
         .pipe(gulpFlatten({ includeParents: 4 }))
-        .pipe(dest('./public/chrome/assets/graphs/'))
+        .pipe(dest('./public/chromium/assets/graphs/'))
 });
 
 //## Minify JS ##//
@@ -76,7 +83,7 @@ task('minifyJS', async function () {
         .pipe(uglify())
         .pipe(insert.prepend(COPYRIGHT))
         .pipe(gulpFlatten({ includeParents: 4 }))
-        .pipe(dest('./public/chrome/assets/js/'))
+        .pipe(dest('./public/chromium/assets/js/'))
         .pipe(dest('./public/firefox/assets/js/'))
 });
 
@@ -86,7 +93,7 @@ task('minifyHTML', async function () {
         .pipe(htmlmin({ collapseWhitespace: true }))
         .pipe(insert.prepend(`<!--\n${COPYRIGHT}-->\n\n`))
         .pipe(gulpFlatten({ includeParents: 4 }))
-        .pipe(dest('./public/chrome/content/'))
+        .pipe(dest('./public/chromium/content/'))
         .pipe(dest('./public/firefox/content/'))
 });
 
@@ -94,18 +101,62 @@ task('minifyHTML', async function () {
 //## Add other files  ##//
 task('addOther', async function () {
     src(['./LICENSE.md', './package.json', './README.md', './SECURITY.md'])
-        .pipe(dest('./public/chrome'))
+        .pipe(dest('./public/chromium'))
         .pipe(dest('./public/firefox'))
         .pipe(dest('./public'));
 
-    src('./manifest-chrome.json').pipe(rename("manifest.json")).pipe(dest('./public/chrome'));
+    src('./manifest-chrome.json').pipe(rename("manifest.json")).pipe(dest('./public/chromium'));
     src('./manifest-firefox.json').pipe(rename("manifest.json")).pipe(dest('./public/firefox'));
 
     src(['_locales/**/*'])
-        .pipe(dest('./public/chrome/_locales'))
+        .pipe(dest('./public/chromium/_locales'))
         .pipe(dest('./public/firefox/_locales'))
+});
+
+//## For source code .zip ##//
+task('source', async function (done) {
+    const excludedDirs = ['public', 'node_modules', 'previews', '.git'];
+    const excludedFiles = ['**', '!**/__*.js', '!**/*.zip', '.git', '.gitignore', '.DS_Store', "!**/manifest.json", "!**/pnpm-lock.yaml"];
+
+    src("./**/*")
+        .pipe(filter(['**', ...excludedFiles]))
+        .pipe(filter(['**', ...excludedDirs.map(e => [`!./${e}/**/*`, `!./${e}/`]).flat(2)]))
+        .pipe(dest('./public/__source_code/'))
+
+    src("./**/*")
+        .pipe(filter(['**', ...excludedFiles]))
+        .pipe(filter(['**', ...excludedDirs.map(e => [`!./${e}/**/*`, `!./${e}/`]).flat(2)]))
+        .pipe(zip(`${EXTENSION_NAME}_${EXTENSION_V}_source_code.zip`))
+        .pipe(gulp.dest('./public/'))
+        .on('end', function () {
+            console.log("Source finished, dest: " + link(`./public/${EXTENSION_NAME}_${EXTENSION_V}_source_code.zip`));
+            done();
+        })
+});
+
+
+task('zipper', async function (done) {
+    setTimeout(function () {
+        const fn_base = `${EXTENSION_NAME}_${EXTENSION_V}`
+        console.log(chalk.green("Zipper started."));
+        src("./public/firefox/**/*")
+            .pipe(zip(`${fn_base}_firefox.zip`))
+            .pipe(gulp.dest('./public/'))
+            .on('end', function () {
+                console.log("Zipper finished, dest: " + link(`./public/${fn_base}_firefox.zip`));
+                done();
+            });
+        src("./public/chromium/**/*")
+            .pipe(zip(`${fn_base}_chromium.zip`))
+            .pipe(gulp.dest('./public/'))
+            .on('end', function () {
+                console.log("Zipper finished, dest: " + link(`./public/${fn_base}_chromium.zip`));
+                done();
+            });
+    }, 6000);
 });
 
 
 task('build', series('minifyImg', "minifyCSS", "minifyJS", "minifyHTML", "addOther"));
+task('build_md', series('minifyImg', "minifyCSS", "minifyJS", "minifyHTML", "addOther", "source", "zipper"));
 export default series('minifyImg');
