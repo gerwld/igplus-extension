@@ -176,6 +176,8 @@
       } else clearInterval(interval4);
     }
 
+    // TODO: Make it work as fast as possible without window.location.href usage and Tabs permission.
+
     // function disableRecomendations(state) {
     //   clearInterval(interval5);
 
