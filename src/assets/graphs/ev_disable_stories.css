@@ -4,7 +4,11 @@ div.xw7yly9 div.x18dvoc8,
   display: none !important;
 }
 
+canvas.x1upo8f9.xpdipgo.x87ps6o,
+canvas.x1upo8f9.xpdipgo.x87ps6o+span::before,
+canvas.x1upo8f9.xpdipgo.x87ps6o+span::after,
 canvas._aarh,
+canvas._aarh+span::before,
 canvas._aarh[width="336"]+span::before,
 canvas._aarh[width="132"]+span::before,
 canvas._aarh[width="84"]+span::before {
@@ -13,6 +17,7 @@ canvas._aarh[width="84"]+span::before {
   user-select: none;
 }
 
+[role="menu"] .x1qo8xr2.x129qt2x.xpoid6y.xx7atzb,
 .xzzrveb.x1h862dm.xjk3ia2.x1tb5o9v[role="menu"] {
   display: none !important;
 }
