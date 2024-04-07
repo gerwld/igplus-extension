@@ -25,6 +25,7 @@ const initialState = {
   block_videos: false,
   square_shaped: false,
   nav_to_messages_first: false,
+  mp_disable_comments: false,
   theme: "default",
   font: "default",
 };

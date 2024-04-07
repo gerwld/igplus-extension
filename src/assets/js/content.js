@@ -282,8 +282,10 @@
       });
       // To prevent layout bouncing
       setTimeout(() => {
-        document.body.style.opacity = "all 0s!important";
-        document.documentElement.style.opacity = 1;
+        if (document?.body?.style?.opacity)
+          document.body.style.opacity = "all 0s!important";
+        if (document?.documentElement?.style?.opacity)
+          document.documentElement.style.opacity = 1;
       }, 300)
     }
 

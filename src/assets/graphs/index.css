@@ -202,7 +202,7 @@ body {
 }
 
 .ns,
-.ns > * {
+.ns>* {
   user-select: none;
 }
 
@@ -214,7 +214,7 @@ h2 {
 }
 
 body a[href^="mailto:"],
-body a[href^="mailto:"] > * {
+body a[href^="mailto:"]>* {
   user-select: auto !important;
 }
 
@@ -233,9 +233,9 @@ input:disabled {
   user-select: none;
 }
 
-input[disabled="true"] + .ch_sp,
-input:disabled + .ch_sp,
-input:disabled + .ch_sp::before {
+input[disabled="true"]+.ch_sp,
+input:disabled+.ch_sp,
+input:disabled+.ch_sp::before {
   opacity: 0.5 !important;
   user-select: none;
   cursor: default;
@@ -318,7 +318,7 @@ html[lang="hi"] body {
 
 /* header styles  */
 
-.logo_group > span {
+.logo_group>span {
   display: block;
 }
 
@@ -446,6 +446,7 @@ html.dark_mode .btn_header:hover {
   min-height: 296px;
 }
 
+[lang="be"] .content,
 [lang="sv"] .content {
   min-height: 310px;
 }
@@ -653,8 +654,7 @@ a img {
 }
 
 .ext_content__contribute {
-  background: no-repeat
-    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cg fill='rgba(156,156,156,0.05)'%3E%3Cpath d='M7.75 2.75a.75.75 0 0 0-1.5 0v1.258a32.987 32.987 0 0 0-3.599.278a.75.75 0 1 0 .198 1.487A31.545 31.545 0 0 1 8.7 5.545A19.381 19.381 0 0 1 7 9.56a19.418 19.418 0 0 1-1.002-2.05a.75.75 0 0 0-1.384.577a20.935 20.935 0 0 0 1.492 2.91a19.613 19.613 0 0 1-3.828 4.154a.75.75 0 1 0 .945 1.164A21.116 21.116 0 0 0 7 12.331c.095.132.192.262.29.391a.75.75 0 0 0 1.194-.91a18.97 18.97 0 0 1-.59-.815a20.888 20.888 0 0 0 2.333-5.332c.31.031.618.068.924.108a.75.75 0 0 0 .198-1.487a32.832 32.832 0 0 0-3.599-.278z'/%3E%3Cpath fill-rule='evenodd' d='M13 8a.75.75 0 0 1 .671.415l4.25 8.5a.75.75 0 1 1-1.342.67L15.787 16h-5.573l-.793 1.585a.75.75 0 1 1-1.342-.67l4.25-8.5A.75.75 0 0 1 13 8m2.037 6.5L13 10.427L10.964 14.5z' clip-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E");
+  background: no-repeat url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='1em' height='1em' viewBox='0 0 20 20'%3E%3Cg fill='rgba(156,156,156,0.05)'%3E%3Cpath d='M7.75 2.75a.75.75 0 0 0-1.5 0v1.258a32.987 32.987 0 0 0-3.599.278a.75.75 0 1 0 .198 1.487A31.545 31.545 0 0 1 8.7 5.545A19.381 19.381 0 0 1 7 9.56a19.418 19.418 0 0 1-1.002-2.05a.75.75 0 0 0-1.384.577a20.935 20.935 0 0 0 1.492 2.91a19.613 19.613 0 0 1-3.828 4.154a.75.75 0 1 0 .945 1.164A21.116 21.116 0 0 0 7 12.331c.095.132.192.262.29.391a.75.75 0 0 0 1.194-.91a18.97 18.97 0 0 1-.59-.815a20.888 20.888 0 0 0 2.333-5.332c.31.031.618.068.924.108a.75.75 0 0 0 .198-1.487a32.832 32.832 0 0 0-3.599-.278z'/%3E%3Cpath fill-rule='evenodd' d='M13 8a.75.75 0 0 1 .671.415l4.25 8.5a.75.75 0 1 1-1.342.67L15.787 16h-5.573l-.793 1.585a.75.75 0 1 1-1.342-.67l4.25-8.5A.75.75 0 0 1 13 8m2.037 6.5L13 10.427L10.964 14.5z' clip-rule='evenodd'/%3E%3C/g%3E%3C/svg%3E");
   background-position: 102% -2%;
   background-size: 200px auto;
 }
@@ -743,11 +743,9 @@ a img {
 }
 
 .dark_mode .donate_nav a:hover span.ic {
-  background: linear-gradient(
-    313deg,
-    rgba(255, 255, 255, 0.5),
-    rgba(212, 212, 217, 0.5)
-  );
+  background: linear-gradient(313deg,
+      rgba(255, 255, 255, 0.5),
+      rgba(212, 212, 217, 0.5));
 }
 
 .dark_mode .donate_nav a:hover {
@@ -782,6 +780,7 @@ a img {
 }
 
 @keyframes ko-ani {
+
   0%,
   100%,
   60% {
@@ -997,12 +996,12 @@ a.don_btn {
 }
 
 /* When the checkbox is checked, add a blue background */
-.ch_ip input:checked ~ .ch_sp {
+.ch_ip input:checked~.ch_sp {
   background-color: #2d9ef4;
   border-color: #197dc9;
 }
 
-.ch_ip input:checked:hover ~ .ch_sp {
+.ch_ip input:checked:hover~.ch_sp {
   background-color: #2076b8;
   border-color: #197dc9;
 }
@@ -1022,12 +1021,12 @@ a.don_btn {
 }
 
 /* Move the checkmark when checked */
-.ch_ip input:checked ~ .ch_sp:after {
+.ch_ip input:checked~.ch_sp:after {
   left: 12px;
   background-color: #fff;
 }
 
-.ch_ip input.is_any_state:checked ~ .ch_sp {
+.ch_ip input.is_any_state:checked~.ch_sp {
   background-color: #228ad7;
   border: 1px solid #197dc9;
   border-radius: 30px;
@@ -1035,7 +1034,7 @@ a.don_btn {
   transition: background-color 110ms ease;
 }
 
-.ch_ip input.is_any_state ~ .ch_sp:after {
+.ch_ip input.is_any_state~.ch_sp:after {
   background-color: #ffffff;
   left: 10px;
   width: 5px;
@@ -1050,7 +1049,7 @@ a.don_btn {
      transition: background-color 110ms ease;
    } */
 
-.ch_ip input.is_any_state__disable ~ .ch_sp:after {
+.ch_ip input.is_any_state__disable~.ch_sp:after {
   background-color: #8a8d92;
   left: 1px;
   width: 12px;
