@@ -184,5 +184,8 @@
   },
   "mi_16": {
     "message": "Navega a Direct desde la página principal"
-  }
+  },
+  "mi_17": {
+    "message": "Desactivar comentarios (beta)"
+}
 }

@@ -184,5 +184,8 @@
   },
   "mi_16": {
     "message": "Przejdź do Direct z głównej strony"
-  }
+  },
+  "mi_17": {
+    "message": "Wyłącz Komentarze (beta)"
+}
 }

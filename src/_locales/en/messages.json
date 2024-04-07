@@ -184,5 +184,8 @@
   },
   "mi_16": {
     "message": "Navigate to Direct from the Main page"
+  },
+  "mi_17": {
+    "message": "Disable Comments (experimental)"
   }
 }
