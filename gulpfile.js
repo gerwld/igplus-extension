@@ -116,7 +116,7 @@ task('minifyHTML', async function () {
 
 //## Add other files  ##//
 task('addOther', async function () {
-    src(['./LICENSE.md', './package.json', './README.md', './SECURITY.md'])
+    src(['./LICENSE', './package.json', './README.md', './SECURITY.md'])
         .pipe(dest('./public/chromium'))
         .pipe(dest('./public/firefox'))
         .pipe(dest('./public'));
