@@ -172,7 +172,17 @@ task('zipper', async function (done) {
     }, 6000);
 });
 
+// Watcher task to monitor changes in the src directory and run the build task
+task('watch', function () {
+    gulp.watch('./src/**/*', series('build')).on('change', function (path, stats) {
+        console.log(`File ${link("./" + path)} was changed, running build...`);
+    });
+});
 
 task('build', series('minifyImg', "minifyCSS", "minifyJS", "minifyHTML", "addOther"));
 task('build_md', series('minifyImg', "minifyCSS", "minifyJS", "minifyHTML", "addOther", "source", "zipper"));
-export default series('minifyImg');
+
+// Task to run the build and start the watcher
+task('dev', series('build', 'watch'));
+
+task('default', series('build'));
