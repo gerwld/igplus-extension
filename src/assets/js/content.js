@@ -15,7 +15,7 @@
 (() => {
   "use strict";
   (() => {
-    let interval0, interval1, interval2, interval3, interval4, interval5, interval6;
+    let interval0, interval1, interval2, interval3, interval4, interval5, interval6, interval7;
     const fonts = [
       "noto_sans",
       "pixelify",
@@ -208,8 +208,20 @@
     function disableRecomendations(state) {
       clearInterval(interval5);
       function redirect() {
-        document.querySelectorAll('a[href="/"]')?.forEach(e => e.setAttribute("href", "/?variant=following"))
-        if (state && window.location.href === "https://www.instagram.com/") {
+
+        // replace the / links to variant home.
+        document.querySelectorAll('a[href="/"]')?.forEach(e => {
+          let newLink = e.cloneNode(true);
+          newLink.setAttribute("href", "/?variant=following")
+          newLink.addEventListener("click", e => {
+            e.preventDefault();
+            if (window.location.href !== "https://www.instagram.com/?variant=following")
+            window.location.href = "https://www.instagram.com/?variant=following";
+          })
+          e.parentNode.replaceChild(newLink, e);
+        })
+
+        if (state && (window.location.href === "https://www.instagram.com/" || window.location.href.indexOf("?variant=home") > -1)) {
           if (window.location?.assign) window.location.assign("/?variant=following");
           else window.location.href = "/?variant=following";
           clearInterval(interval5);
@@ -225,10 +237,31 @@
     }
 
     function navToMessages(state) {
-      if (state && (window.location.href === "https://www.instagram.com/")) {
-        if (window.location?.assign) window.location.assign("/direct/inbox/");
-        else window.location.href = "/direct/inbox/";
-        clearInterval(interval5);
+      clearInterval(interval7);
+
+      function redirect() {
+        function checkURL() {
+          //when one from that substrings is found
+          return ((window.location.href === "https://www.instagram.com/")
+              || (window.location.href.indexOf(".com/?variant=") > -1)
+              || (window.location.href.indexOf(".com/reels") > -1)
+              || (window.location.href.indexOf(".com/explore") > -1))
+            //but not that substring
+            && window.location.href.indexOf("/direct/") === -1;
+        }
+
+        
+        if (state && checkURL()) {
+          clearInterval(interval7);
+          if (window.location?.assign) window.location.assign("/direct/inbox/");
+          else window.location.href = "/direct/inbox/";
+        }
+      }
+
+      if (state) {
+        interval7 = setInterval(redirect, 300);
+      } else {
+        clearInterval(interval7);
       }
     }
 
@@ -273,7 +306,7 @@
         toggleReels(state.disable_reels);
         disableVideos(state.block_videos);
         disableStories(state.ev_disable_stories, state.mp_disable_stories);
-        disableRecomendations(state.mp_disable_recs);
+        !state.nav_to_messages_first && disableRecomendations(state.mp_disable_recs);
         navToMessages(state.nav_to_messages_first)
 
         setOrRemoveStylesOfItem("/assets/graphs/square_shaped.css", state.square_shaped, "square_shaped");
