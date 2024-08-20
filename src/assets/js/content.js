@@ -294,7 +294,7 @@
 
         // Styles setters
         setOrRemoveStylesOfItem("/assets/graphs/mp_disable_feed.css", state.mp_disable_feed, "mp_disable_feed");
-        setOrRemoveStylesOfItem("/assets/graphs/mp_disable_comments.css", state.mp_disable_comments, "mp_disable_comments");
+        setOrRemoveStylesOfItem("/assets/graphs/disable_comments.css", state.disable_comments, "disable_comments");
         setOrRemoveStylesOfItem("/assets/graphs/block_images.css", state.block_images, "block_images");
         setOrRemoveStylesOfItem("/assets/graphs/counters_gray.css", state.counters_gray, "counters_gray");
         setOrRemoveStylesOfItem("/assets/graphs/counters_disable.css", state.counters_disable, "counters_disable");
