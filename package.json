@@ -21,7 +21,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^8.0.0",
     "gulp-insert": "^0.5.0",
-    "gulp-rename": "^2.0.0",
+    "gulp-rename": "^2.0.1",
     "gulp-svgmin": "^4.1.0",
     "gulp-uglify": "^3.0.2"
   },

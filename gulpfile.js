@@ -33,7 +33,7 @@ import chalk from 'chalk';
 let { src, dest, task, series } = gulp;
 const link = chalk.hex('#5e98d9');
 const EXTENSION_NAME = 'igplus'
-const EXTENSION_V = 'v.2.0.0'
+const EXTENSION_V = 'v.2.0.1'
 const COPYRIGHT = `//   - This file is part of IGPlus Extension
 //  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
 //   - Copyright (C) 2023-present IGPlus Extension
@@ -57,7 +57,7 @@ task('minifyImg', async function () {
         .pipe(dest('./public/chromium/assets/img/'))
         .pipe(dest('./public/firefox/assets/img/'))
 
-    src(['./src/assets/img/*.png', './src/assets/img/**/*.png'])
+    src(['./src/assets/img/*.png', './src/assets/img/*.gif',  './src/assets/img/**/*.png'])
         // .pipe(imagemin())
         .pipe(gulpFlatten({ includeParents: 4 }))
         .pipe(dest('./public/chromium/assets/img/'))
