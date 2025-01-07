@@ -2,8 +2,8 @@
 //  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
 //   - Copyright (C) 2023-present IGPlus Extension
 //   -
-//   - IGPlus Extension is a software: you can redistribute it, but you are not allowed to modify it under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
-//   -
+//   - IGPlus Extension is a software: you can redistribute it, and you are allowed to modify it (for contribution purposes) under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
+//
 //   - IGPlus Extension is distributed in the hope that it will be useful,
 //   - but WITHOUT ANY WARRANTY; without even the implied warranty of
 //   - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -33,13 +33,13 @@ import chalk from 'chalk';
 let { src, dest, task, series } = gulp;
 const link = chalk.hex('#5e98d9');
 const EXTENSION_NAME = 'igplus'
-const EXTENSION_V = 'v.2.0.1'
+const EXTENSION_V = 'v.2.1.0'
 const COPYRIGHT = `//   - This file is part of IGPlus Extension
 //  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
 //   - Copyright (C) 2023-present IGPlus Extension
 //   -
-//   - IGPlus Extension is a software: you can redistribute it, but you are not allowed to modify it under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
-//   -
+//   - IGPlus Extension is a software: you can redistribute it, and you are allowed to modify it (for contribution purposes) under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
+//
 //   - IGPlus Extension is distributed in the hope that it will be useful,
 //   - but WITHOUT ANY WARRANTY; without even the implied warranty of
 //   - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -174,7 +174,14 @@ task('zipper', async function (done) {
 
 // Watcher task to monitor changes in the src directory and run the build task
 task('watch', function () {
+    console.clear();
+    console.log("Dev mode initialized.\n" + chalk.green(`${EXTENSION_NAME} - ${EXTENSION_V}\n`));
+    console.log(chalk.green("✓") + " Starting...\n" + chalk.green("✓") + " Started sucessfuly.\n");
+
+    console.log("\nBuild files located in " + chalk.hex("#205ab3")("./public/$browsertype") + " directory.\n\n");
+
     gulp.watch('./src/**/*', series('build')).on('change', function (path, stats) {
+        console.clear();
         console.log(`File ${link("./" + path)} was changed, running build...`);
     });
 });
@@ -184,5 +191,9 @@ task('build_md', series('minifyImg', "minifyCSS", "minifyJS", "minifyHTML", "add
 
 // Task to run the build and start the watcher
 task('dev', series('build', 'watch'));
+// TODO: Faster Dev builds
+task('edge', series('build', 'watch'));
+task('firefox', series('build', 'watch'));
+task('chrome', series('build', 'watch'));
 
 task('default', series('build'));

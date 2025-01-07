@@ -4,15 +4,24 @@ video {
 
 article.video {
   position: relative;
+  overflow: hidden;
 }
 
-article.video
-  .x1qjc9v5.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.x78zum5.xdt5ytf.x2lah0s.xk390pu.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x1n2onr6.xggy1nq.x11njtxf {
-  max-height: 100px;
+article.video .xyzq4qe {
+  background-color: transparent;
 }
 
-article.video
-  .x1qjc9v5.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.x78zum5.xdt5ytf.x2lah0s.xk390pu.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x1n2onr6.xggy1nq.x11njtxf::after {
+article.video img[referrerpolicy="origin-when-cross-origin"] {
+  display: none;
+}
+
+article.video>div:nth-child(1)>div:nth-child(2) {
+  overflow: hidden;
+  margin: 1px;
+  border: none!important;
+}
+
+article.video  div[data-visualcompletion="ignore"]::after {
   content: "";
   position: absolute;
   display: block;
@@ -20,19 +29,18 @@ article.video
   bottom: 0;
   left: 0;
   right: 0;
-  background-color: black;
+  background-color: #f4f4f4;
 }
 
-article.video
-  .x1qjc9v5.x6umtig.x1b1mbwd.xaqea5y.xav7gou.x9f619.x78zum5.xdt5ytf.x2lah0s.xk390pu.xdj266r.x11i5rnm.xat24cr.x1mh8g0r.xexx8yu.x4uap5.x18d9i69.xkhd6sd.x1n2onr6.xggy1nq.x11njtxf::before {
-  content: "Hidden Video";
-  display: block;
-  position: absolute;
-  text-align: center;
-  width: 100%;
-  top: calc(50% - 0.55rem);
-  color: #fff;
-  font-size: 1.1rem;
-  line-height: 1.1rem;
-  z-index: 10;
+html.__fb-dark-mode article.video  div[data-visualcompletion="ignore"]::after {
+  background-color: #1e1f20;
+}
+
+article.video button[type="button"] {
+  display: none;
+}
+
+[aria-label="Toggle audio"],
+[aria-label="Play"] {
+  display: none!important;
 }

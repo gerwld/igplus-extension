@@ -2,8 +2,9 @@
 //  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
 //   - Copyright (C) 2023-present IGPlus Extension
 //   -
-//   - IGPlus Extension is a software: you can redistribute it, but you are not allowed to modify it under the terms of the Creative Commons Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
-//   -
+//   - IGPlus Extension is a software: you can redistribute and modify (for contribution purposes) under the terms of the Creative Commons 
+//   - Attribution-NonCommercial-NoDerivatives 4.0 International (CC BY-NC-ND 4.0) License.
+//
 //   - IGPlus Extension is distributed in the hope that it will be useful,
 //   - but WITHOUT ANY WARRANTY; without even the implied warranty of
 //   - MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
@@ -30,7 +31,6 @@
       "caprasimo",
       "inter"
     ];
-    const themes = ["light_green", "purple_dark", "kittens"];
     const browser_cr = chrome ? chrome : browser;
 
     document.documentElement.style.opacity = 0;
@@ -55,14 +55,6 @@
       }
     });
 
-    function setTheme(selectedTheme) {
-      // Set theme if exists, then delete others
-      if (themes.indexOf(selectedTheme) !== -1) {
-        setOrRemoveStylesOfItem(`/assets/graphs/themes/${selectedTheme}.css`, true, selectedTheme);
-      }
-      themes.filter((e) => e !== selectedTheme).forEach((theme) => document.getElementById(theme)?.remove());
-    }
-
 
     //Calls the same function x count per timeout
     function bombardier(func, timeout, count) {
@@ -79,7 +71,7 @@
 
 
     function setFont(selectedFont) {
-      // Set font if exists, then delete others
+      // Set font if it exists => then deletes others from DOM by ID
       if (fonts.indexOf(selectedFont) !== -1) {
         setOrRemoveStylesOfItem(`/assets/graphs/fonts/${selectedFont}.css`, true, selectedFont);
       }
@@ -178,45 +170,18 @@
 
     // TODO: Make it work as fast as possible without window.location.href usage and Tabs permission.
 
-    // function disableRecomendations(state) {
-    //   clearInterval(interval5);
-
-
-    //   function redirect() {
-    //     const followbtn_parent = document.querySelector('.x7a106z.x78zum5.xp1r0qw.xtqikln.x1nhvcw1')
-    //       || document.querySelector('.x11fxgd9').querySelector('div')
-    //     const followbtn = followbtn_parent?.querySelectorAll('div')[1];
-
-    //     if (state && window.location.href === "https://www.instagram.com/" || window.location.href.includes("://www.instagram.com/?")) {
-    //       if (followbtn_parent && !window.location.href.includes("?variant=following")) {
-    //         followbtn?.click();
-    //         console.log("IGPlus: Setting Feed to Subscriptions Mode.");
-    //       }
-    //     }
-    //   }
-
-    //   if (state) {
-    //     interval5 = setInterval(redirect, 1500);
-    //   } else clearInterval(interval5);
-
-    //   const bbRedirect = () => bombardier(redirect, 20, 2000)
-
-
-    //   document.addEventListener("DOMContentLoaded", bbRedirect, false);
-    // }
-
     function disableRecomendations(state) {
       clearInterval(interval5);
       function redirect() {
 
-        // replace the / links to variant home.
+        // Replaces all the "/" links to variant home.
         document.querySelectorAll('a[href="/"]')?.forEach(e => {
           let newLink = e.cloneNode(true);
           newLink.setAttribute("href", "/?variant=following")
           newLink.addEventListener("click", e => {
             e.preventDefault();
             if (window.location.href !== "https://www.instagram.com/?variant=following")
-            window.location.href = "https://www.instagram.com/?variant=following";
+              window.location.href = "https://www.instagram.com/?variant=following";
           })
           e.parentNode.replaceChild(newLink, e);
         })
@@ -243,14 +208,14 @@
         function checkURL() {
           //when one from that substrings is found
           return ((window.location.href === "https://www.instagram.com/")
-              || (window.location.href.indexOf(".com/?variant=") > -1)
-              || (window.location.href.indexOf(".com/reels") > -1)
-              || (window.location.href.indexOf(".com/explore") > -1))
+            || (window.location.href.indexOf(".com/?variant=") > -1)
+            || (window.location.href.indexOf(".com/reels") > -1)
+            || (window.location.href.indexOf(".com/explore") > -1))
             //but not that substring
             && window.location.href.indexOf("/direct/") === -1;
         }
 
-        
+
         if (state && checkURL()) {
           clearInterval(interval7);
           if (window.location?.assign) window.location.assign("/direct/inbox/");
@@ -288,17 +253,33 @@
       }
     }
 
+
+    /**
+     * Updates DOM based on the user state, and applies all the corresponding changes without any unnecessary mutations.
+     * All of the methods and functions it contains, have good, easy to understand & self explanatory namings.
+     * 
+     * Good to know: This part is called each time when "formState" actually changes in state listener - on the line 44 (content.js).
+     * 
+     * @returns {void}
+     */
     function getCurrentState() {
       browser_cr.storage.local.get("formState", (result) => {
         const state = result.formState.disabled ? { a: true } : result.formState;
+        const GRAPHS_SETTERS = [
+          "mp_disable_feed",
+          "disable_comments",
+          "block_images",
+          "counters_gray",
+          "counters_disable",
+          "grayscale",
+          "disable_threads",
+        ]
 
-        // Styles setters
-        setOrRemoveStylesOfItem("/assets/graphs/mp_disable_feed.css", state.mp_disable_feed, "mp_disable_feed");
-        setOrRemoveStylesOfItem("/assets/graphs/disable_comments.css", state.disable_comments, "disable_comments");
-        setOrRemoveStylesOfItem("/assets/graphs/block_images.css", state.block_images, "block_images");
-        setOrRemoveStylesOfItem("/assets/graphs/counters_gray.css", state.counters_gray, "counters_gray");
-        setOrRemoveStylesOfItem("/assets/graphs/counters_disable.css", state.counters_disable, "counters_disable");
-        setOrRemoveStylesOfItem("/assets/graphs/grayscale.css", state.grayscale, "grayscale");
+        // This part injects current (active) .css setters, based on the user settings state.
+        GRAPHS_SETTERS.forEach(GRAPH => {
+          let url = `/assets/graphs/${GRAPH}.css`;
+          setOrRemoveStylesOfItem(url, state[GRAPH], GRAPH)
+        })
 
         toggleClassicMode("/assets/graphs/classic_mode.css", state.classic_mode);
         toggleVanity(state.disable_vanity);
@@ -309,8 +290,10 @@
         !state.nav_to_messages_first && disableRecomendations(state.mp_disable_recs);
         navToMessages(state.nav_to_messages_first)
 
+        // May be buggy if not injected last, that's why its not in GRAPHS_SETTERS[]
+        // TODO: Better implementation.
         setOrRemoveStylesOfItem("/assets/graphs/square_shaped.css", state.square_shaped, "square_shaped");
-        // setTheme(state.theme);
+
         setFont(state.font);
       });
       // To prevent layout bouncing
@@ -346,33 +329,18 @@
 })(this);
 
 
-// ---- Donate popup ---- //
-
+/**
+ * This part shows rate-me / support popup. It's under IIFE to avoid any related issues.
+ */
 (() => {
   "use strict";
   (() => {
     const APPEAR_TIMEOUT = 10 * 1000 * 60;
     // const APPEAR_TIMEOUT = 2000;
-    const MAX_CLOSE_COUNT = 3;
+    const MAX_CLOSE_COUNT = 4;
     const supported_languages = ["en", "de", "es", "pl", "uk", "sv", "ar", "be", "ru", "fr", "hi", "ja", "nl", "zh", "pt"];
     let current_lang = "en";
     const translations = {
-      en: {
-        "title": "Your support inspires us to improve.",
-        "subtitle_1": "Thank you for using IGPlus! We (me and my close friend) have dedicated countless hours to creating an Instagram experience that’s healthier, distraction-free, and entirely customizable. If you enjoy IGPlus and find it valuable, consider supporting the project with a small donation. Your contribution helps us add new features and ensures the extension remains free for everyone.",
-        "title_2": "Why does it matter?",
-        "subtitle_2": "Your donation allows us to introduce more customization options and distraction-free modes and keep IGPlus running smoothly on each device.",
-        "title_3": "Bonuses for you:",
-        "pref_1": "Unique donor badge (in the extension).",
-        "pref_2": "Priority access to new features.",
-        "pref_3": "The ability to vote for future updates.",
-        "don_1": "Donate $10 (Big Support)",
-        "don_2": "Donate $5 (Cup of Coffee)",
-        "don_3": "Donate your amount (From $0.1)",
-        "sup": "Every step we take to make Instagram better is powered by users like you!",
-        "rem_btn": "Remind me later",
-        "more_btn": "More about the project"
-      },
       de: {
         "title": "Ihre Unterstützung inspiriert uns zur Verbesserung.",
         "subtitle_1": "Vielen Dank, dass Sie IGPlus verwenden! Wir (mein enger Freund und ich) haben unzählige Stunden darauf verwendet, ein gesünderes, ablenkungsfreies und vollständig anpassbares Instagram-Erlebnis zu schaffen. Wenn Sie IGPlus schätzen und wertvoll finden, ziehen Sie bitte in Betracht, das Projekt mit einer kleinen Spende zu unterstützen. Ihr Beitrag hilft uns, neue Funktionen hinzuzufügen und sicherzustellen, dass die Erweiterung für alle kostenlos bleibt.",
@@ -382,9 +350,9 @@
         "pref_1": "Einzigartiges Spenderabzeichen (in der Erweiterung).",
         "pref_2": "Prioritärer Zugang zu neuen Funktionen.",
         "pref_3": "Die Möglichkeit, über zukünftige Updates abzustimmen.",
-        "don_1": "Spenden Sie 10€ (Große Unterstützung)",
-        "don_2": "Spenden Sie 5€ (Eine Tasse Kaffee)",
-        "don_3": "Spenden Sie Ihren Betrag (Ab 0,1€)",
+        "don_1": "Spenden mit PayPal",
+        "don_2": "Spenden mit Ko-Fi.com",
+        "don_3": "Spenden mit Krypto",
         "sup": "Jeder Schritt, den wir unternehmen, um Instagram zu verbessern, wird von großartigen Nutzern wie Ihnen ermöglicht!",
         "rem_btn": "Erinnere mich später",
         "more_btn": "Mehr über das Projekt"
@@ -398,9 +366,9 @@
         "pref_1": "Insignia única de donante (en la extensión).",
         "pref_2": "Acceso prioritario a nuevas funciones.",
         "pref_3": "La posibilidad de votar por futuras actualizaciones.",
-        "don_1": "Donar $10 (Gran apoyo)",
-        "don_2": "Donar $5 (Taza de café)",
-        "don_3": "Donar tu monto (Desde $0.1)",
+        "don_1": "Donar con PayPal",
+        "don_2": "Donar con Ko-Fi.com",
+        "don_3": "Donar con Cripto",
         "sup": "¡Cada paso que damos para mejorar Instagram es gracias a usuarios increíbles como tú!",
         "rem_btn": "Recuérdame más tarde",
         "more_btn": "Más sobre el proyecto"
@@ -414,25 +382,25 @@
         "pref_1": "Unikalna odznaka darczyńcy (w rozszerzeniu).",
         "pref_2": "Priorytetowy dostęp do nowych funkcji.",
         "pref_3": "Możliwość głosowania nad przyszłymi aktualizacjami.",
-        "don_1": "Przekaż 30zł (Duże wsparcie)",
-        "don_2": "Przekaż 5zł (Filiżanka kawy)",
-        "don_3": "Przekaż swoją kwotę (od 0,1 zł)",
+        "don_1": "Wesprzyj przez PayPal",
+        "don_2": "Wesprzyj przez Ko-Fi.com",
+        "don_3": "Wesprzyj za pomocą kryptowaluty",
         "sup": "Każdy krok, który podejmujemy, aby ulepszyć Instagram, jest możliwy dzięki osobom takim jak Ty!",
         "rem_btn": "Przypomnij mi później",
         "more_btn": "Więcej o projekcie"
       },
       uk: {
         "title": "Ваша підтримка надихає нас на вдосконалення.",
-        "subtitle_1": "Дякуємо, що користуєтесь IGPlus! Ми (я та мій близький друг) присвятили безліч годин створенню здоровішого, без відволікань і повністю персоналізованого досвіду Instagram. Якщо вам подобається IGPlus і ви вважаєте його корисним, розгляньте можливість підтримати проєкт невеликою пожертвою. Ваш внесок допомагає нам додавати нові функції та забезпечувати безкоштовність розширення для всіх.",
+        "subtitle_1": "Дякуємо, що користуєтесь IGPlus! Ми (я та мій близький друг) присвятили безліч годин створенню здоровішого, без відволікань і повністю персоналізованого досвіду Instagram. Якщо вам подобається IGPlus і ви вважаєте його корисним, розгляньте можливість підтримати проєкт невеликою пожертвою. Ваш внесок допомагає нам додавати нові функції та забезпечувати безкоштовність додатку для всіх.",
         "title_2": "Чому це важливо?",
         "subtitle_2": "Ваш внесок дозволяє нам додавати більше налаштувань і режимів без відволікань, а також забезпечувати стабільну роботу IGPlus на кожному пристрої.",
         "title_3": "Бонуси для вас:",
         "pref_1": "Унікальний значок донора (у розширенні).",
         "pref_2": "Пріоритетний доступ до нових функцій.",
         "pref_3": "Можливість голосувати за майбутні оновлення.",
-        "don_1": "Пожертвуйте 100грн (Велика підтримка)",
-        "don_2": "Пожертвуйте 25грн (Чашка кави)",
-        "don_3": "Пожертвуйте вашу суму (від 1грн)",
+        "don_1": "Пожертвувати через PayPal",
+        "don_2": "Пожертвувати через Ko-Fi.com",
+        "don_3": "Пожертвувати криптовалютою",
         "sup": "Кожен крок до покращення Instagram здійснюється завдяки таким чудовим користувачам, як ви!",
         "rem_btn": "Нагадати пізніше",
         "more_btn": "Дізнатися більше про проєкт"
@@ -446,9 +414,9 @@
         "pref_1": "Unik donationsmärkning (i tillägget).",
         "pref_2": "Prioriterad tillgång till nya funktioner.",
         "pref_3": "Möjlighet att rösta om framtida uppdateringar.",
-        "don_1": "Donera €10 (Stort stöd)",
-        "don_2": "Donera €5 (En kopp kaffe)",
-        "don_3": "Donera valfritt belopp (Från 0.1€)",
+        "don_1": "Donera med PayPal",
+        "don_2": "Donera med Ko-Fi.com",
+        "don_3": "Donera med Kryptovaluta",
         "sup": "Varje steg vi tar för att förbättra Instagram är tack vare fantastiska användare som du!",
         "rem_btn": "Påminn mig senare",
         "more_btn": "Mer om projektet"
@@ -462,9 +430,9 @@
         "pref_1": "شارة متبرع فريدة (في الإضافة).",
         "pref_2": "الوصول المسبق للميزات الجديدة.",
         "pref_3": "إمكانية التصويت على التحديثات المستقبلية.",
-        "don_1": "تبرع بـ $10 (دعم كبير)",
-        "don_2": "تبرع بـ $5 (فنجان قهوة)",
-        "don_3": "تبرع بمبلغك (من $0.1)",
+        "don_1": "تبرع باستخدام PayPal",
+        "don_2": "تبرع باستخدام Ko-Fi.com",
+        "don_3": "تبرع بالعملات المشفرة",
         "sup": "كل خطوة نتخذها لتحسين إنستغرام مدعومة بمستخدمين رائعين مثلك!",
         "rem_btn": "ذكرني لاحقًا",
         "more_btn": "المزيد عن المشروع"
@@ -478,9 +446,9 @@
         "pref_1": "Унікальны значок донара (у пашырэнні).",
         "pref_2": "Прыярытэтны доступ да новых функцый.",
         "pref_3": "Магчымасць галасаваць за будучыя абнаўленні.",
-        "don_1": "Ахвяруйце $10 (Вялікая падтрымка)",
-        "don_2": "Ахвяруйце $5 (Кубак кавы)",
-        "don_3": "Ахвяруйце сваю суму (ад $0,1)",
+        "don_1": "Ахвяраваць праз PayPal",
+        "don_2": "Ахвяраваць праз Ko-Fi.com",
+        "don_3": "Ахвяраваць крыптавалютай",
         "sup": "Кожны крок, які мы робім для паляпшэння Instagram, магчыма дзякуючы цудоўным карыстальнікам, як вы!",
         "rem_btn": "Нагадаць пазней",
         "more_btn": "Больш пра праект"
@@ -494,12 +462,28 @@
         "pref_1": "Уникальный значок донора (в расширении).",
         "pref_2": "Приоритетный доступ к новым функциям.",
         "pref_3": "Возможность голосовать за будущие обновления.",
-        "don_1": "Пожертвовать $10 (Большая поддержка)",
-        "don_2": "Пожертвовать $5 (Чашка кофе)",
-        "don_3": "Пожертвовать свою сумму (от $0.1)",
+        "don_1": "Пожертвовать через PayPal",
+        "don_2": "Пожертвовать через Ko-Fi.com",
+        "don_3": "Пожертвовать криптовалютой",
         "sup": "Каждый наш шаг к улучшению Instagram становится возможным благодаря таким удивительным пользователям, как вы!",
         "rem_btn": "Напомнить позже",
         "more_btn": "Подробнее о проекте"
+      },
+      en: {
+        "title": "Your support inspires us to improve.",
+        "subtitle_1": "Thank you for using IGPlus! We (me and my close friend) have dedicated countless hours to creating an Instagram experience that’s healthier, distraction-free, and entirely customizable. If you enjoy IGPlus and find it valuable, consider supporting the project with a small donation. Your contribution helps us add new features and ensures the extension remains free for everyone.",
+        "title_2": "Why does it matter?",
+        "subtitle_2": "Your donation allows us to introduce more customization options and distraction-free modes and keep IGPlus running smoothly on each device.",
+        "title_3": "Bonuses for you:",
+        "pref_1": "Unique donor badge (in the extension).",
+        "pref_2": "Priority access to new features.",
+        "pref_3": "The ability to vote for future updates.",
+        "don_1": "Donate with PayPal",
+        "don_2": "Donate with Ko-Fi.com",
+        "don_3": "Donate with Crypto",
+        "sup": "Every step we take to make Instagram better is powered by users like you!",
+        "rem_btn": "Remind me later",
+        "more_btn": "More about the project"
       },
       fr: {
         "title": "Votre soutien nous inspire à nous améliorer.",
@@ -510,9 +494,9 @@
         "pref_1": "Badge de donateur unique (dans l'extension).",
         "pref_2": "Accès prioritaire aux nouvelles fonctionnalités.",
         "pref_3": "La possibilité de voter pour les futures mises à jour.",
-        "don_1": "Faire un don de 10 $ (Grand soutien)",
-        "don_2": "Faire un don de 5 $ (Une tasse de café)",
-        "don_3": "Faire un don de votre montant (à partir de 0,1 $)",
+        "don_1": "Faire un don avec PayPal",
+        "don_2": "Faire un don avec Ko-Fi.com",
+        "don_3": "Faire un don avec des cryptomonnaies",
         "sup": "Chaque étape que nous franchissons pour améliorer Instagram est rendue possible grâce à des utilisateurs incroyables comme vous !",
         "rem_btn": "Rappelez-moi plus tard",
         "more_btn": "En savoir plus sur le projet"
@@ -526,9 +510,9 @@
         "pref_1": "विशिष्ट दानकर्ता बैज (एक्सटेंशन में)।",
         "pref_2": "नई सुविधाओं का प्राथमिकता वाला एक्सेस।",
         "pref_3": "भविष्य के अपडेट के लिए वोट करने की क्षमता।",
-        "don_1": "₹10 का दान करें (बड़ा समर्थन)",
-        "don_2": "₹5 का दान करें (एक कप कॉफी)",
-        "don_3": "अपनी राशि का दान करें (₹0.1 से शुरू)",
+        "don_1": "PayPal के माध्यम से दान करें",
+        "don_2": "Ko-Fi.com के ज़रिये दान करें",
+        "don_3": "क्रिप्टो के माध्यम से दान करें",
         "sup": "इंस्टाग्राम को बेहतर बनाने के लिए हमारा हर कदम आप जैसे अद्भुत उपयोगकर्ताओं की बदौलत है!",
         "rem_btn": "मुझे बाद में याद दिलाएं",
         "more_btn": "परियोजना के बारे में अधिक जानकारी"
@@ -542,9 +526,9 @@
         "pref_1": "ユニークな寄付者バッジ（拡張機能内）。",
         "pref_2": "新機能への優先アクセス。",
         "pref_3": "将来のアップデートに投票する権利。",
-        "don_1": "¥400を寄付する（大きな支援）",
-        "don_2": "¥200を寄付する（コーヒー1杯分）",
-        "don_3": "お好きな金額を寄付する（¥0.1から）",
+        "don_1": "PayPalで寄付",
+        "don_2": "Ko-Fi.comで寄付",
+        "don_3": "暗号通貨で寄付",
         "sup": "Instagramをより良くするための私たちの一歩一歩は、皆さまのような素晴らしいユーザーのおかげです！",
         "rem_btn": "後で通知",
         "more_btn": "プロジェクトの詳細"
@@ -558,9 +542,9 @@
         "pref_1": "Unieke donateursbadge (in de extensie).",
         "pref_2": "Prioritaire toegang tot nieuwe functies.",
         "pref_3": "De mogelijkheid om te stemmen op toekomstige updates.",
-        "don_1": "Doneer €10 (Grote steun)",
-        "don_2": "Doneer €5 (Een kop koffie)",
-        "don_3": "Doneer uw bedrag (vanaf €0,1)",
+        "don_1": "Doneren met PayPal",
+        "don_2": "Doneren met Ko-Fi.com",
+        "don_3": "Doneren met Crypto",
         "sup": "Elke stap die we zetten om Instagram te verbeteren, is mogelijk dankzij geweldige gebruikers zoals u!",
         "rem_btn": "Herinner me later",
         "more_btn": "Meer over het project"
@@ -574,9 +558,9 @@
         "pref_1": "独特的捐赠者徽章（在扩展中显示）。",
         "pref_2": "优先使用新功能。",
         "pref_3": "投票决定未来更新的能力。",
-        "don_1": "捐赠 $10（大力支持）",
-        "don_2": "捐赠 $5（咖啡一杯）",
-        "don_3": "捐赠任意金额（最低 $0.1）",
+        "don_1": "通过PayPal捐赠",
+        "don_2": "通过Ko-Fi.com捐赠",
+        "don_3": "用加密货币捐赠",
         "sup": "我们每一步提升 Instagram 的努力都离不开像您这样了不起的用户！",
         "rem_btn": "稍后提醒我",
         "more_btn": "了解更多关于项目的信息"
@@ -590,9 +574,9 @@
         "pref_1": "Distintivo exclusivo de doador (na extensão).",
         "pref_2": "Acesso prioritário a novos recursos.",
         "pref_3": "Capacidade de votar nas próximas atualizações.",
-        "don_1": "Doe €10 (Grande Apoio)",
-        "don_2": "Doe €5 (Uma Xícara de Café)",
-        "don_3": "Doe qualquer valor (A partir de €0.1)",
+        "don_1": "Doar com PayPal",
+        "don_2": "Doar com Ko-Fi.com",
+        "don_3": "Doar com Criptomoedas",
         "sup": "Cada passo que damos para melhorar o Instagram é impulsionado por usuários incríveis como você!",
         "rem_btn": "Lembrar-me mais tarde",
         "more_btn": "Mais sobre o projeto"
@@ -621,7 +605,7 @@
             browser_cr.storage.local.set({ 'closeDonateCount': 0 });
           }
 
-          
+
 
           if (!data.closeDonateCount || data.closeDonateCount < MAX_CLOSE_COUNT) {
 
@@ -650,7 +634,7 @@
               // Check if extension is enabled && isFourDaysLeftFromInstall, and only then append modal window.
               if (!isExtensionDisabled && isFourDaysLeftFromInstall()) {
                 // console.log("show");
-                
+
                 // Creating the DOM element using innterHTML in ID wrapper
                 const notification = document.createElement('div');
                 notification.setAttribute('id', "ext_show_dn");
@@ -677,9 +661,59 @@
     </ul>
 
     <div class="donate-as">
-      <a href="https://www.paypal.com/donate/?cmd=_donations&business=pjaworski.dev@gmail.com" target="_blank" class="donate-btn" onclick="donate(10)">${translations[current_lang].don_1}</a>
-      <a href="https://ko-fi.com/patrykjaworski" target="_blank" class="donate-btn" onclick="donate(5)">${translations[current_lang].don_2}</a>
-      <a href="https://www.paypal.com/donate/?cmd=_donations&business=pjaworski.dev@gmail.com" target="_blank" class="donate-btn" onclick="donate('custom')">${translations[current_lang].don_3}</a>
+      <a href="https://www.paypal.com/donate/?cmd=_donations&business=pjaworski.dev@gmail.com&currency_code=USD" target="_blank" class="donate-btn"">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+        <circle style="fill:#0070BA;" cx="400" cy="400" r="387.1"/>
+        <path style="fill:#FFFFFF;fill-opacity:0.6;" d="M561.2,285.8c-0.4,2.8-0.9,5.6-1.5,8.5c-19,97.8-84.2,131.5-167.4,131.5H350
+          c-10.2,0-18.7,7.4-20.3,17.4L308,580.7l-6.1,39c-1,6.6,4,12.5,10.7,12.5h75.1c8.9,0,16.5-6.5,17.9-15.2l0.7-3.8l14.1-89.8l0.9-4.9
+          c1.4-8.8,9-15.3,17.9-15.3h11.2c72.8,0,129.8-29.6,146.4-115.1c7-35.7,3.4-65.6-15.1-86.5C576.2,295.3,569.3,290.1,561.2,285.8z"/>
+        <path style="fill:#FFFFFF;fill-opacity:0.8;" d="M541.3,277.8c-2.9-0.8-5.9-1.6-9-2.3c-3.1-0.7-6.3-1.3-9.5-1.8
+          c-11.4-1.8-23.9-2.7-37.3-2.7H372.3c-2.8,0-5.4,0.6-7.8,1.8c-5.2,2.5-9.1,7.5-10,13.5l-24.1,152.5l-0.7,4.4
+          c1.6-10,10.2-17.4,20.3-17.4h42.4c83.2,0,148.3-33.8,167.4-131.5c0.6-2.9,1-5.7,1.5-8.5c-4.8-2.6-10-4.7-15.7-6.6
+          C544.2,278.7,542.7,278.3,541.3,277.8z"/>
+        <path style="fill:#FFFFFF;" d="M354.4,286.3c0.9-6,4.8-11,10-13.5c2.4-1.1,5-1.8,7.8-1.8h113.2c13.4,0,25.9,0.9,37.3,2.7
+          c3.3,0.5,6.4,1.1,9.5,1.8c3.1,0.7,6.1,1.5,9,2.3c1.4,0.4,2.9,0.9,4.3,1.3c5.6,1.9,10.8,4.1,15.7,6.6c5.7-36.1,0-60.7-19.6-83
+          c-21.5-24.5-60.4-35-110.1-35H287.2c-10.2,0-18.8,7.4-20.4,17.4l-60.1,381.2c-1.2,7.5,4.6,14.3,12.2,14.3H308l22.4-142L354.4,286.3z
+          "/>
+        </svg>
+      <span>${translations[current_lang].don_1}</span>
+      </a>
+        <a href="https://ko-fi.com/patrykjaworski" target="_blank" class="donate-btn"">
+      <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+      <circle style="fill:#1196CC;" cx="400" cy="400" r="333.3"/>
+      <rect x="197.4" y="276.9" style="fill:#DB3535;stroke:#000000;stroke-miterlimit:10;" width="295.2" height="259"/>
+      <path style="fill-rule:evenodd;clip-rule:evenodd;fill:#FFFFFF;" d="M570.8,229.9h-35.6h-357c-15.8,0-28.7,12.8-28.7,28.7v264.7
+        c0,31.7,25.7,57.4,57.4,57.4h270.9c31.7,0,57.4-25.7,57.4-57.4v-37.4h35.6c68.7,0,124.3-55.7,124.3-124.3v-7.3
+        C695.1,285.5,639.5,229.9,570.8,229.9z M535.2,419.5V296.2h32.5c34,0,61.6,27.6,61.6,61.6c0,34-27.6,61.6-61.6,61.6H535.2z
+        M397.7,307.8c-33.1,0-54.2,13-63,38.9c-8.9-25.9-29.9-38.9-63-38.9c-49.7,0-68.2,61.9-42.1,102.3c17.4,27,52.4,61.1,105.1,102.3
+        c52.7-41.2,87.7-75.3,105.1-102.3C465.8,369.7,447.4,307.8,397.7,307.8z"/>
+      </svg>
+      <span>${translations[current_lang].don_2}</span>
+      </a>
+      <a href="https://weblxapplications.com/donate#crypto" target="_blank" class="donate-btn"">
+        <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
+          <g>
+              <linearGradient id="SVGID_1_" gradientUnits="userSpaceOnUse" x1="102.3725" y1="820.8485" x2="102.3725" y2="819.8786" gradientTransform="matrix(800 0 0 -800 -81498 656690.875)">
+              <stop  offset="0" style="stop-color:#F9AA4B"/>
+              <stop  offset="1" style="stop-color:#F7931A"/>
+            </linearGradient>
+            <path style="fill:url(#SVGID_1_);" d="M776.4,493.8c-51.8,208-262.5,334.4-470.2,282.5C98.2,724.5-28.2,513.8,23.7,306.2
+              C75.5,98.2,285.9-28.2,493.8,23.7C701.5,75.2,828.2,285.9,776.4,493.8L776.4,493.8L776.4,493.8z"/>
+            <path style="fill:#FFFFFF;" d="M584.7,351.7c7.6-51.5-31.5-79.4-85.5-97.9l17.6-70l-42.4-10.6l-17,68.2
+              c-11.2-2.7-22.7-5.5-34.3-7.9l17-68.5l-42.4-10.6l-17.3,69.7c-9.4-2.1-18.5-4.2-27.3-6.4v-0.3l-58.8-14.5l-11.2,45.5
+              c0,0,31.5,7.3,30.9,7.6c17.3,4.2,20.3,15.8,19.7,24.9l-20,79.7c1.2,0.3,2.7,0.6,4.5,1.5c-1.5-0.3-3-0.6-4.5-1.2l-27.9,111.5
+              c-2.1,5.2-7.6,13-19.4,10c0.3,0.6-30.9-7.6-30.9-7.6l-21.2,48.8l55.5,13.9c10.3,2.7,20.3,5.2,30.3,7.9L282.5,616l42.4,10.6l17.6-70
+              c11.5,3,23,6.1,33.9,8.8l-17.3,69.7l42.4,10.6l17.6-70.6c72.7,13.6,127.3,8.2,150-57.6c18.5-52.7-0.9-83.4-39.1-103.4
+              C558.4,407.7,579.3,389.2,584.7,351.7L584.7,351.7L584.7,351.7z M487.4,488.1c-13,52.7-102.1,24.2-130.9,17l23.3-93.7
+              C408.6,418.6,501.4,432.9,487.4,488.1L487.4,488.1z M500.8,350.7c-12.1,48.2-86.1,23.6-110,17.6l21.2-84.9
+              C435.9,289.5,513.2,300.7,500.8,350.7L500.8,350.7z"/>
+          </g>
+        </svg>
+      <span>${translations[current_lang].don_3}</span>
+      </a>
     </div>
 
     <p class="spp__sup"><strong>${translations[current_lang].sup} ❤️</strong></p>
@@ -739,6 +773,26 @@
     height: 10px;
     background:linear-gradient(180deg, rgba(22, 21, 21, 0), rgba(22, 21, 21, 0.2));
     z-index: 1;
+  }
+
+  .spp__popup-container .donate-as {
+    display: flex;
+    flex-flow: wrap;
+    flex-wrap: wrap;
+    margin-top: 0.5rem;
+  }
+
+  .spp__popup-container .donate-as > a {
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  margin: 0 5px 5px 0;
+  }
+
+  .spp__popup-container .donate-as > a svg {
+  margin-right: 0.3rem;
+  width: 1.4rem;
+  height: 1.4rem;
   }
 
   .spp__popup-container img {
@@ -869,8 +923,8 @@
 
                   // set closeCount -= 1 even if not closed & set new timestamp for 4 days delay
                   browser_cr.storage.local.set({ 'closeDonateCount': (isNaN(data.closeDonateCount) ? 0 : (data.closeDonateCount * 1)) + 1 });
-                  if(typeof result?.formState?.theme === "string") {
-                    browser_cr.storage.local.set({ formState: {...result.formState, timestamp: Date.now()}  });
+                  if (typeof result?.formState?.theme === "string") {
+                    browser_cr.storage.local.set({ formState: { ...result.formState, timestamp: Date.now() } });
                   }
                   // console.log((isNaN(data.closeDonateCount) ? 0 : (data.closeDonateCount * 1)) + 1);
 

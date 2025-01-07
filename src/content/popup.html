@@ -25,12 +25,16 @@
         <option value="en">English</option>
         <option value="de">German - Deutsch</option>
         <option value="es">Spanish - español</option>
+        <option value="fr">French - français</option>
         <option value="pl">Polish - polski</option>
         <option value="uk">Ukrainian - українська</option>
+        <option value="ru">Rusian - русский</option>
         <option value="be">Belarusian - беларуская</option>
         <option value="hi">Hindi - हिन्दी</option>
         <option value="sv">Swedish - svenska</option>
         <option value="ar">Arabic - العربية</option>
+        <option value="ja">Japanese - 日本語 (Nihongo)</option>
+        <option value="zh">Chinese - 中文 (Zhōngwén)</option>
       </select>
     </nav>
   </header>
@@ -39,11 +43,11 @@
     <form name="l3_settings" id="l3_settings">
       <section class="group">
         <span class="sect_lable" data-i18n="menu_main"> Main features: </span>
-        <label class="ch_ip">
+        <!-- <label class="ch_ip">
           <input type="checkbox" name="classic_mode" />
           <span class="ch_sp"></span>
           <span data-i18n="mi_1">Enable "Focus mode"</span>
-        </label>
+        </label> -->
         <label class="ch_ip">
           <input type="checkbox" name="disable_reels" />
           <span class="ch_sp"></span>
@@ -86,13 +90,18 @@
           <span data-i18n="mi_16">Navigate to Direct from Main page</span>
         </label>
 
+        <label class="ch_ip">
+          <input type="checkbox" name="disable_threads" />
+          <span class="ch_sp"></span>
+          <span data-i18n="mi_18">Hide Threads Button</span>
+        </label>
 
         <label class="ch_ip">
           <input type="checkbox" name="mp_disable_feed" />
           <span class="ch_sp"></span>
           <span data-i18n="mi_9">Disable Feed (experimental)</span>
         </label>
-
+    
 
       </section>
       <section class="group">
@@ -158,7 +167,7 @@
   </section>
   <footer>
     <nav class="links">
-      <a href="https://weblxapplications.com/igp/update#changelog" target="_blank" class="version">v2.0.1</a>
+      <a href="https://weblxapplications.com/igp/update#changelog" target="_blank" class="version">v2.1.0</a>
       <a href="./contribute.html" data-i18n="btn_h18n">Contribute</a>
       <a href="./donate.html" class="don_btn"><span data-i18n="btn_donate">Donate</span><img class="ko-img"
           src="../assets/img/cup-border.png"></a>

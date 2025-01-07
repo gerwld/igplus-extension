@@ -1,6 +1,6 @@
 {
   "extensionName": {
-    "message": "IGPlus - Remove Instagram Reels, Explore Page"
+    "message": "IGPlus - Hide Instagram Reels, Explore Page"
   },
   "extensionDescription": {
     "message": "Disable Instagram Shorts, videos, comments, suggestions wall, vanity metrics, homepage recomendations, trending... and many more."
@@ -42,25 +42,25 @@
     "message": "Enable \"Focus mode\""
   },
   "mi_2": {
-    "message": "Disable Reels page & Reels videos"
+    "message": "Disable the Reels page & Reels videos"
   },
   "mi_3": {
-    "message": "Disable Explore page"
+    "message": "Disable the Explore page"
   },
   "mi_4": {
-    "message": "Disable Stories section on Main page"
+    "message": "Hide the Stories section (Main page)"
   },
   "mi_5": {
     "message": "Disable Stories everywhere"
   },
   "mi_6": {
-    "message": "Make \"new messages\" labels gray"
+    "message": "Make \"New messages\" labels gray"
   },
   "mi_7": {
-    "message": "Disable \"new messages\" labels"
+    "message": "Disable \"New messages\" labels"
   },
   "mi_8": {
-    "message": "Disable recomendations on Main page"
+    "message": "Disable recomendations (Main page)"
   },
   "mi_9": {
     "message": "Disable Feed (experimental)"
@@ -69,19 +69,19 @@
     "message": "Color palette / font:"
   },
   "mi_11": {
-    "message": "Disable likes, followers count (vanity metrics)"
+    "message": "Disable likes and follower counts (vanity metrics)"
   },
   "mi_12": {
     "message": "Enable grayscale mode (experimental)"
   },
   "mi_13": {
-    "message": "Make everything square shaped"
+    "message": "Make everything square-shaped"
   },
   "mi_14": {
-    "message": "Block all videos to reduce traffic usage (experimental)"
+    "message": "Block all videos to reduce traffic usage"
   },
   "mi_15": {
-    "message": "Block all images to reduce traffic usage (experimental)"
+    "message": "Block all images to reduce traffic usage"
   },
   "fonts_title": {
     "message": "Select font:"
@@ -141,7 +141,7 @@
     "message": "review"
   },
   "d_cred__3": {
-    "message": "Thanks a lot."
+    "message": "Thank you."
   },
   "s_title": {
     "message": "Having troubles with IGPlus?"
@@ -187,5 +187,8 @@
   },
   "mi_17": {
     "message": "Disable Comments (experimental)"
+  },
+  "mi_18": {
+    "message": "Hide Threads Button"
   }
 }

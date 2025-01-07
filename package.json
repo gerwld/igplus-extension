@@ -1,16 +1,21 @@
 {
   "name": "igplus-extension",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.1.0",
+  "description": "Browser Extension that helps to disable Reels, Stories, recommendations, vanity metrics, change theme, font, and more.",
   "main": "/assets/js/init.js",
   "type": "module",
-  "scripts": {
-    "build": "rm -rf ./public && gulp build",
-    "gbuild": "clear && rm -rf ./public && gulp build_md",
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "author": "P Jaworski",
-  "license": "CC BY-NC-ND 4.0",
+	"scripts": {
+		"edge": "npm run clean && gulp edge",
+		"chrome": "npm run clean && gulp chrome",
+		"firefox": "npm run clean && gulp firefox",
+		"build": "npm run clean && gulp build",
+		"build:prod": "npm run clean && gulp build_md",
+		"fetch:all": "pnpm fetch:day && pnpm fetch:night && pnpm fetch:morning",
+		"test": "clear && echo 'Tests not implemented yet. Please check manually.'",
+		"clean": "rm -rf ./dist"
+	},
+	"author": "P Jaworski",
+	"license": "CC BY-NC-ND 4.0",
   "devDependencies": {
     "browser-sync": "^2.28.3",
     "gulp": "^4.0.2",
@@ -21,7 +26,7 @@
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^8.0.0",
     "gulp-insert": "^0.5.0",
-    "gulp-rename": "^2.0.1",
+    "gulp-rename": "^2.1.0",
     "gulp-svgmin": "^4.1.0",
     "gulp-uglify": "^3.0.2"
   },
@@ -34,5 +39,12 @@
     "gulp-zip": "^6.0.0",
     "postcss": "^8.4.21",
     "rsuite": "^5.32.0"
-  }
+  },
+  "prettier": {
+		"tabWidth": 4,
+		"useTabs": true,
+		"semi": false,
+		"singleQuote": true,
+		"printWidth": 128
+	}
 }

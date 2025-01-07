@@ -452,7 +452,7 @@ html.dark_mode .btn_header:hover {
 }
 
 [lang="hi"] .content {
-  min-height: 299px;
+  min-height: 310px;
 }
 
 [lang="es"] .content,
@@ -462,8 +462,18 @@ html.dark_mode .btn_header:hover {
 
 [lang="ar"] .content,
 [lang="uk"] .content,
+[lang="zh"] .content,
+[lang="ru"] .content,
 [lang="pl"] .content {
-  min-height: 296px;
+  min-height: 310px;
+}
+
+[lang="ja"] .content {
+  min-height: 340px;
+}
+
+[lang="fr"] .content {
+  min-height: 370px;
 }
 
 #l3_settings {
@@ -984,7 +994,7 @@ a.don_btn {
 .ch_sp {
   flex: 0 0 27px !important;
   position: absolute;
-  top: 0;
+  top: 0.5px;
   left: 0;
   height: 16px;
   width: 27px;

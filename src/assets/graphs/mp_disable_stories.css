@@ -4,3 +4,17 @@ div>._aac4._aac6._aj3f._ajdu,
 .x9f619.x1lliihq.x10wlt62.x1n2onr6.x1hq5gj4.x1ejq31n.xd10rxx.x1sy0etr.x17r0tee.x1y1aw1k.x4uap5.xkhd6sd.xvbhtw8.x1lq5wgf.xgqcy7u.x30kzoy.x9jhf4c.x178xt8z.x11wr9rl.x1e3j9e7.x120q0s9.xw7yly9.xwib8y2.x18vkjtm {
   display: none !important;
 }
+
+@media only screen and (max-width: 640px) {
+  [role="menu"].x1qjc9v5.x78zum5.xdt5ytf.x17j7krd {
+    display: none!important;
+  }
+
+  [role="menu"].x1qjc9v5.x78zum5.xdt5ytf.x17j7krd + * {
+    margin-top: -2rem;
+  }
+
+  .xmnaoh6 {
+    margin-bottom: 0!important;
+  }
+}

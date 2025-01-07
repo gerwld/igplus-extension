@@ -1,4 +1,11 @@
-1. pnpm i && rm -rf ./public && gulp build
-2. In public/chrome is build
+To successfully build the project, please follow these instructions:
 
-Thats it. Also you need gulp for build it, and it may work with npm if you don't use pnpm. Thanks!
+1. Install dependencies and build:
+   pnpm install && pnpm build
+
+2. Locate the build output:
+   The build files can be found in the `public/firefox` directory.
+
+### Additional Information:
+- Gulp Requirement: Ensure Gulp is installed globally, as it is necessary for the build process.
+- If you are not using pnpm, you may use npm by substituting `pnpm` with `npm` in the command above. 

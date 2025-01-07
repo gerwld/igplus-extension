@@ -1,0 +1,194 @@
+{
+	"extensionName": {
+		"message": "IGPlus - 隐藏 Instagram Reels 和探索页面"
+	},
+	"extensionDescription": {
+		"message": "禁用 Instagram Shorts、视频、评论、推荐墙、虚荣指标、首页推荐、趋势等功能。"
+	},
+	"disabled": {
+		"message": "您已关闭 IGPlus"
+	},
+	"header_title": {
+		"message": "IGPlus 扩展"
+	},
+	"header_subtitle": {
+		"message": "减少干扰，更专注于重要的事情。"
+	},
+	"btn_donate": {
+		"message": "捐赠"
+	},
+	"btn_support": {
+		"message": "获取支持"
+	},
+	"btn_reqfeature": {
+		"message": "请求功能"
+	},
+	"btn_goback": {
+		"message": "返回"
+	},
+	"menu_main": {
+		"message": "主要功能："
+	},
+	"menu_sec": {
+		"message": "附加功能："
+	},
+	"menu_palette": {
+		"message": "配色方案/字体："
+	},
+	"n_default": {
+		"message": "默认"
+	},
+	"mi_1": {
+		"message": "启用“专注模式”"
+	},
+	"mi_2": {
+		"message": "禁用 Reels 页面和 Reels 视频"
+	},
+	"mi_3": {
+		"message": "禁用探索页面"
+	},
+	"mi_4": {
+		"message": "隐藏主页上的故事部分"
+	},
+	"mi_5": {
+		"message": "禁用所有地方的故事"
+	},
+	"mi_6": {
+		"message": "将“新消息”标签设为灰色"
+	},
+	"mi_7": {
+		"message": "禁用“新消息”标签"
+	},
+	"mi_8": {
+		"message": "禁用主页上的推荐内容"
+	},
+	"mi_9": {
+		"message": "禁用动态（实验性）"
+	},
+	"mi_10": {
+		"message": "配色方案/字体："
+	},
+	"mi_11": {
+		"message": "禁用点赞数和粉丝数（虚荣指标）"
+	},
+	"mi_12": {
+		"message": "启用灰度模式（实验性）"
+	},
+	"mi_13": {
+		"message": "将所有内容设置为方形"
+	},
+	"mi_14": {
+		"message": "屏蔽所有视频以减少流量使用（实验性）"
+	},
+	"mi_15": {
+		"message": "屏蔽所有图片以减少流量使用（实验性）"
+	},
+	"fonts_title": {
+		"message": "选择字体："
+	},
+	"themes_title": {
+		"message": "选择主题："
+	},
+	"themes_label": {
+		"message": "新"
+	},
+	"themes_msg": {
+		"message": "新选项 v1.1.9"
+	},
+	"theme_1": {
+		"message": "默认（深绿色）"
+	},
+	"theme_2": {
+		"message": "浅绿色"
+	},
+	"theme_3": {
+		"message": "深紫色"
+	},
+	"theme_4": {
+		"message": "深粉色（小猫）"
+	},
+	"theme_5": {
+		"message": "浅紫色"
+	},
+	"theme_6": {
+		"message": "深蓝色"
+	},
+	"theme_7": {
+		"message": "深红色"
+	},
+	"theme_8": {
+		"message": "深黄色"
+	},
+	"d_title": {
+		"message": "捐赠使 IGPlus 持续运行。"
+	},
+	"d_subtitle": {
+		"message": "我每周花费数小时修复错误、添加和改进功能，以及处理用户反馈。您的支持对持续维护至关重要。"
+	},
+	"d_pp": {
+		"message": "通过 PayPal 捐赠"
+	},
+	"d_kofi": {
+		"message": "在 Ko-Fi 上支持我"
+	},
+	"d_card": {
+		"message": "通过借记卡捐赠"
+	},
+	"d_cred__1": {
+		"message": "您还可以与朋友分享 IGPlus 或留下"
+	},
+	"d_cred__2": {
+		"message": "评论"
+	},
+	"d_cred__3": {
+		"message": "非常感谢。"
+	},
+	"s_title": {
+		"message": "使用 IGPlus 时遇到问题？"
+	},
+	"s_subtitle": {
+		"message": "您可以尝试以下故障排除步骤："
+	},
+	"s_res__1": {
+		"message": "刷新 Instagram 页面。"
+	},
+	"s_res__2": {
+		"message": "禁用并重新启用 IGPlus。"
+	},
+	"s_res__3": {
+		"message": "禁用其他扩展程序。"
+	},
+	"s_res__4": {
+		"message": "卸载并重新安装 IGPlus。"
+	},
+	"s_res__5": {
+		"message": "清除浏览器缓存。"
+	},
+	"s_emailme": {
+		"message": "如果问题仍然存在，请发送邮件至"
+	},
+	"s_effic": {
+		"message": "为帮助我更高效地协助您，请包含以下信息："
+	},
+	"s_detail__1": {
+		"message": "您正在使用的 IGPlus 版本。"
+	},
+	"s_detail__2": {
+		"message": "显示问题的截图或视频。"
+	},
+	"s_detail__3": {
+		"message": "问题的详细描述。"
+	},
+	"s_detail__4": {
+		"message": "您的浏览器及其版本（例如，Firefox 86.0）。"
+	},
+	"mi_16": {
+		"message": "从主页导航到 Direct"
+	},
+	"mi_17": {
+		"message": "禁用评论（实验性）"
+	},
+	"mi_18": {
+		"message": "隐藏 Threads 按钮"
+	}
+}

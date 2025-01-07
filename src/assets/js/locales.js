@@ -58,7 +58,7 @@
   // Entry point. 
   // If manually selected - then so, else browser lang if so & not beta, otherways english
 
-  const notinbeta = ["en", "de", "es", "pl", "uk", "sv", "ar", "be"];
+  const notinbeta = ["en", "de", "es", "pl", "uk", "sv", "ar", "be", "ru", "fr", "ja", "zh"];
   const browser_lang = navigator?.language?.split("-")[0]?.toLowerCase() || "en"
   browser_cr.storage.local.get("formState", async (result) => {
 

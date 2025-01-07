@@ -187,5 +187,9 @@
   },
   "mi_17": {
     "message": "Desactivar comentarios (beta)"
+},
+"mi_18": {
+  "message": "Ocultar botón de Threads"
 }
+
 }

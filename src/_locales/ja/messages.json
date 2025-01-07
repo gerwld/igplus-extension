@@ -1,0 +1,194 @@
+{
+	"extensionName": {
+		"message": "IGPlus - Instagramのリール、探索ページを非表示に"
+	},
+	"extensionDescription": {
+		"message": "Instagramのショート動画、コメント、提案ウォール、虚栄心指標、ホームページのおすすめ、トレンドなどを無効にします。"
+	},
+	"disabled": {
+		"message": "IGPlusをオフにしました"
+	},
+	"header_title": {
+		"message": "IGPlus拡張機能"
+	},
+	"header_subtitle": {
+		"message": "気を散らすものを減らし、大切なことに集中しましょう。"
+	},
+	"btn_donate": {
+		"message": "寄付"
+	},
+	"btn_support": {
+		"message": "サポートを受ける"
+	},
+	"btn_reqfeature": {
+		"message": "機能をリクエスト"
+	},
+	"btn_goback": {
+		"message": "戻る"
+	},
+	"menu_main": {
+		"message": "主な機能:"
+	},
+	"menu_sec": {
+		"message": "追加機能:"
+	},
+	"menu_palette": {
+		"message": "カラーパレット / フォント:"
+	},
+	"n_default": {
+		"message": "デフォルト"
+	},
+	"mi_1": {
+		"message": "「集中モード」を有効にする"
+	},
+	"mi_2": {
+		"message": "リールページとリール動画を無効にする"
+	},
+	"mi_3": {
+		"message": "探索ページを無効にする"
+	},
+	"mi_4": {
+		"message": "メインページのストーリーセクションを非表示にする"
+	},
+	"mi_5": {
+		"message": "すべての場所でストーリーを無効にする"
+	},
+	"mi_6": {
+		"message": "「新しいメッセージ」ラベルをグレーにする"
+	},
+	"mi_7": {
+		"message": "「新しいメッセージ」ラベルを無効にする"
+	},
+	"mi_8": {
+		"message": "メインページのおすすめを無効にする"
+	},
+	"mi_9": {
+		"message": "フィードを無効にする（実験的）"
+	},
+	"mi_10": {
+		"message": "カラーパレット / フォント:"
+	},
+	"mi_11": {
+		"message": "いいねやフォロワー数（虚栄心指標）を無効にする"
+	},
+	"mi_12": {
+		"message": "グレースケールモードを有効にする（実験的）"
+	},
+	"mi_13": {
+		"message": "すべてを四角い形状にする"
+	},
+	"mi_14": {
+		"message": "トラフィック使用量を減らすためにすべての動画をブロックする（実験的）"
+	},
+	"mi_15": {
+		"message": "トラフィック使用量を減らすためにすべての画像をブロックする（実験的）"
+	},
+	"fonts_title": {
+		"message": "フォントを選択:"
+	},
+	"themes_title": {
+		"message": "テーマを選択:"
+	},
+	"themes_label": {
+		"message": "新着"
+	},
+	"themes_msg": {
+		"message": "新しいオプション v1.1.9"
+	},
+	"theme_1": {
+		"message": "デフォルト（ダークグリーン）"
+	},
+	"theme_2": {
+		"message": "ライトグリーン"
+	},
+	"theme_3": {
+		"message": "ダークパープル"
+	},
+	"theme_4": {
+		"message": "ダークピンク（子猫）"
+	},
+	"theme_5": {
+		"message": "ライトパープル"
+	},
+	"theme_6": {
+		"message": "ダークブルー"
+	},
+	"theme_7": {
+		"message": "ダークレッド"
+	},
+	"theme_8": {
+		"message": "ダークイエロー"
+	},
+	"d_title": {
+		"message": "IGPlusを維持するための寄付。"
+	},
+	"d_subtitle": {
+		"message": "毎週何時間もバグ修正、機能追加と改善、ユーザーフィードバックへの対応に費やしています。継続的なメンテナンスには皆様のサポートが重要です。"
+	},
+	"d_pp": {
+		"message": "PayPalで寄付する"
+	},
+	"d_kofi": {
+		"message": "Ko-Fiでサポートする"
+	},
+	"d_card": {
+		"message": "デビットカードで寄付する"
+	},
+	"d_cred__1": {
+		"message": "また、IGPlusを友人と共有したり、"
+	},
+	"d_cred__2": {
+		"message": "レビュー"
+	},
+	"d_cred__3": {
+		"message": "を残したりすることもできます。ありがとうございます。"
+	},
+	"s_title": {
+		"message": "IGPlusに問題がありますか？"
+	},
+	"s_subtitle": {
+		"message": "以下のトラブルシューティング手順をお試しください："
+	},
+	"s_res__1": {
+		"message": "Instagramページを更新する。"
+	},
+	"s_res__2": {
+		"message": "IGPlusを無効化してから再度有効化する。"
+	},
+	"s_res__3": {
+		"message": "他の拡張機能を無効にする。"
+	},
+	"s_res__4": {
+		"message": "IGPlusをアンインストールして再インストールする。"
+	},
+	"s_res__5": {
+		"message": "ブラウザのキャッシュをクリアする。"
+	},
+	"s_emailme": {
+		"message": "問題が解決しない場合は、以下のメールアドレスまでご連絡ください："
+	},
+	"s_effic": {
+		"message": "より効率的にサポートするため、以下の情報をお知らせください："
+	},
+	"s_detail__1": {
+		"message": "使用中のIGPlusのバージョン。"
+	},
+	"s_detail__2": {
+		"message": "問題を示すスクリーンショットや動画。"
+	},
+	"s_detail__3": {
+		"message": "問題の詳細な説明。"
+	},
+	"s_detail__4": {
+		"message": "ブラウザとそのバージョン（例：Firefox 86.0）。"
+	},
+	"mi_16": {
+		"message": "メインページからDirectへ移動する"
+	},
+	"mi_17": {
+		"message": "コメントを無効にする（実験的）"
+	},
+	"mi_18": {
+		"message": "Threads ボタンを非表示"
+	}
+}
