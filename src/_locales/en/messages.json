@@ -126,13 +126,13 @@
     "message": "I spend hours every week fixing bugs, adding and improving features, and addressing user feedback. Your support is crucial to continued maintenance."
   },
   "d_pp": {
-    "message": "Donate via PayPal"
+    "message": "Donate with PayPal"
   },
   "d_kofi": {
     "message": "Support me on Ko-Fi"
   },
   "d_card": {
-    "message": "Donate via debit card"
+    "message": "Donate using card"
   },
   "d_cred__1": {
     "message": "You can also share IGPlus with your friends or leave a"

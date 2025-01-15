@@ -22,8 +22,8 @@ IGPlus is a powerful Extension that allows you to customize and personalize your
 - **Reels and Explore Disable:** Disable the Reels section and videos, as well as the Explore page to have more control over your Instagram feed.
 - **Stories Disable:** Remove the Stories section from the main page and disable Stories everywhere for a cleaner and distraction-free interface.
 - **Aside Count Labels:** Make the count labels in the aside section appear in gray or disable them completely for a more streamlined look.
-- **Color Palette and Font Selection:** Choose from a variety of color palettes and fonts to customize the appearance of Instagram to your liking.
-- **Additional Features:** Disable recommendations on the main page, hide likes and followers count, enable grayscale mode, make everything square-shaped, and block videos or images to reduce traffic usage.
+- **Font Selection:** Choose from a variety of fonts to customize the appearance of Instagram to your liking.
+- **Additional Features:** Disable recommendations on the main page, hide likes and followers count, enable grayscale mode, make everything square-shaped, block videos or images to reduce traffic usage, and many more.
 
 ## Installation
 

@@ -2,7 +2,8 @@
   "manifest_version": 3,
   "name": "__MSG_extensionName__",
   "description": "__MSG_extensionDescription__",
-  "version": "2.1.0",
+  "version": "2.2.0",
+  "version_name": "2.2.0 Stable",
   "default_locale": "en",
   "icons": {
     "128": "/assets/icons/icon128.png"
@@ -35,6 +36,7 @@
         "/assets/graphs/counters_disable.css",
         "/assets/graphs/grayscale.css",
         "/assets/graphs/disable_threads.css",
+        "/assets/graphs/disable_notes.css",
         "/assets/graphs/fonts/noto_sans.css",
         "/assets/graphs/fonts/roboto.css",
         "/assets/graphs/fonts/poppins.css",
