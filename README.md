@@ -12,9 +12,14 @@ IGPlus is a powerful Extension that allows you to customize and personalize your
 
 ***
 
-<p align="center"><a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/igplus-remove-instagram-r/dbbopjndlaginbghfoibbndhlbpdpapd"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/igplus-extension/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white"></a>  <a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/igplus-remove-instagram-r/dbbopjndlaginbghfoibbndhlbpdpapd"><img alt="Edge Addons" src="https://img.shields.io/badge/Edge-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"></a>  <a href="#soon" title="Soon" rel="noreferrer noopener"><img height="28" alt="Apple App Store" src="https://img.shields.io/badge/Safari-141e24.svg?&style=for-the-badge&logo=microsoft-edge&logoColor=white"></a>
-
-
+<p align="center">
+  <a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/igplus-remove-instagram-r/dbbopjndlaginbghfoibbndhlbpdpapd"><img alt="Chrome Web Store" src="https://img.shields.io/badge/Chrome-141e24.svg?&style=for-the-badge&logo=google-chrome&logoColor=white"></a>  
+  <a rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/igplus-extension/"><img alt="Firefox Add-ons" src="https://img.shields.io/badge/Firefox-141e24.svg?&style=for-the-badge&logo=firefox-browser&logoColor=white"></a>  
+  <a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/igplus-remove-instagram-r/dbbopjndlaginbghfoibbndhlbpdpapd"><img alt="Opera / Opera GX Browser" src="https://img.shields.io/badge/Opera-141e24.svg?&style=for-the-badge&logo=opera&logoColor=white"></a>
+  <a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/igplus-remove-instagram-r/dbbopjndlaginbghfoibbndhlbpdpapd"><img alt="Brave Browser" src="https://img.shields.io/badge/Brave-141e24.svg?&style=for-the-badge&logo=brave&logoColor=white"></a>  
+  <a rel="noreferrer noopener" href="https://chromewebstore.google.com/detail/igplus-remove-instagram-r/dbbopjndlaginbghfoibbndhlbpdpapd"><img alt="Edge Addons" src="https://img.shields.io/badge/Edge-141e24.svg?&style=for-the-badge&logo=e&logoColor=white"></a>  
+  <a href="#soon" title="Soon" rel="noreferrer noopener"><img height="28" alt="Apple App Store" src="https://img.shields.io/badge/Safari-141e24.svg?&style=for-the-badge&logo=safari&logoColor=white"></a>
+</p>
 
 ## Features
 
