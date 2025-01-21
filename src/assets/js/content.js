@@ -405,6 +405,24 @@
               margin-bottom: 5px;
             }
 
+            @keyframes appear {
+              0% {
+                opacity: 0;
+                filter: blur(10px);
+              }
+              20% {
+                filter: blur(10px);
+              }
+              100% {
+                opacity: 1;
+                filter: blur(0px);
+              }
+            }
+
+            #ext_show>div {
+              animation: appear 1000ms ease;
+            }
+
             #ext_show p {
               max-width: 290px;
               font-size: 14px;
@@ -540,7 +558,7 @@
   (() => {
     const APPEAR_TIMEOUT = 1000 * 40;
     // const APPEAR_TIMEOUT = 2000;
-    const MAX_CLOSE_COUNT = 4;
+    const MAX_CLOSE_COUNT = 5;
     const supported_languages = ["en", "de", "es", "pl", "uk", "sv", "ar", "be", "ru", "fr", "hi", "ja", "nl", "zh", "pt"];
     let current_lang = "en";
     const translations = {
@@ -934,6 +952,20 @@
 
 <style id="43ggfdbt5rf">
 
+  @keyframes appear {
+    0% {
+      opacity: 0;
+      filter: blur(10px);
+    }
+    20% {
+      filter: blur(10px);
+    }
+    100% {
+      opacity: 1;
+      filter: blur(0px);
+    }
+  }
+
   #donation-popup {
     position: fixed;
     top: 10px;
@@ -947,7 +979,10 @@
     border: 1px solid rgb(68, 86, 91, 0.5);
     box-shadow: rgba(0, 0, 0, 0.8) 0px 8px 24px;
     border-radius: 15px;
+    animation: appear 1000ms ease;
   }
+
+
   .spp__popup-container {
     position: relative;
     overflow: hidden;

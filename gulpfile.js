@@ -33,7 +33,7 @@ import chalk from 'chalk';
 let { src, dest, task, series } = gulp;
 const link = chalk.hex('#5e98d9');
 const EXTENSION_NAME = 'igplus'
-const EXTENSION_V = 'v.2.2.0'
+const EXTENSION_V = 'v.2.3.0'
 const COPYRIGHT = `//   - This file is part of IGPlus Extension
 //  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
 //   - Copyright (C) 2023-present IGPlus Extension

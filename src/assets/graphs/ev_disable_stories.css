@@ -22,6 +22,11 @@ canvas._aarh[width="84"]+span::before {
   display: none !important;
 }
 
-  section.xc3tme8.xcrlgei.xtyw845.x1682tcd > div[role="menu"] {
-    display: none!important;
-  }
+section.xc3tme8.xcrlgei.xtyw845.x1682tcd>div[role="menu"] {
+  display: none !important;
+}
+
+[role="button"]:has(canvas.x1upo8f9.xpdipgo.x87ps6o) {
+  pointer-events: none !important;
+  user-select: none !important;
+}

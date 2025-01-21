@@ -21,3 +21,14 @@ hr+.x5yr21d.xw2csxc.x1odjw0f.x1n2onr6 {
 article .x9f619.xjbqb8w.x78zum5.x168nmei.x13lgxp2.x5pf9jr.xo71vjh.x1uhb9sk.x1plvlek.xryxfnj.x1c4vz4f.x2lah0s.xdt5ytf.xqjyukv.x1qjc9v5.x1oa3qoh.x1nhvcw1:has(h3._a9zc) {
   display: none!important;
 }
+
+/* View 1 comment */
+.x9f619.xjbqb8w.x78zum5:nth-child(3) .x2lah0s.xdt5ytf.xqjyukv.x1qjc9v5.x1oa3qoh.x1nhvcw1:nth-last-child(2) span[style="----base-line-clamp-line-height: 18px; --lineHeight: 18px;"] {
+  display: none!important;
+}
+
+/* Comment section (opened post) */
+._a9z6._a9za > div.xryxfnj:nth-child(2),
+._a9z6._a9za > div.xryxfnj:nth-child(3) {
+  display: none!important;
+}
