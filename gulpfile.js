@@ -33,7 +33,7 @@ import chalk from 'chalk';
 let { src, dest, task, series } = gulp;
 const link = chalk.hex('#5e98d9');
 const EXTENSION_NAME = 'igplus'
-const EXTENSION_V = 'v.2.3.0'
+const EXTENSION_V = 'v.2.3.0.2'
 const COPYRIGHT = `//   - This file is part of IGPlus Extension
 //  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
 //   - Copyright (C) 2023-present IGPlus Extension
@@ -160,6 +160,13 @@ task('zipper', async function (done) {
             .pipe(gulp.dest('./public/'))
             .on('end', function () {
                 console.log("Zipper finished, dest: " + link(`./public/${fn_base}_firefox.zip`));
+                done();
+            });
+        src("./public/firefox/**/*")
+            .pipe(zip(`${fn_base}_firefox.xpi`))
+            .pipe(gulp.dest('./public/'))
+            .on('end', function () {
+                console.log("Zipper finished, dest: " + link(`./public/${fn_base}_firefox.xpi`));
                 done();
             });
         src("./public/chromium/**/*")

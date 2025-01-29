@@ -333,220 +333,296 @@
 
 // ---- Rate extension popup ---- //
 
+// (() => {
+//   "use strict";
+//   (() => {
+//     const APPEAR_TIMEOUT = 10 * 1000 * 60;
+//     // const APPEAR_TIMEOUT = 2000;
+//     const MAX_CLOSE_COUNT = 4;
+//     const browser_cr = chrome ? chrome : browser;
+//     const STORE_LINKS = {
+//       "chrome": "https://chromewebstore.google.com/detail/dbbopjndlaginbghfoibbndhlbpdpapd/reviews",
+//       "firefox": "https://addons.mozilla.org/en-US/firefox/addon/igplus-extension/reviews/",
+//       "edge": "https://chromewebstore.google.com/detail/dbbopjndlaginbghfoibbndhlbpdpapd/reviews",
+//       "opera": "https://chromewebstore.google.com/detail/dbbopjndlaginbghfoibbndhlbpdpapd/reviews"
+//     }
+
+//     function detectBrowser() {
+//       const agent = navigator.userAgent;
+//       if (agent.includes("Edg")) return "edge";
+//       if (agent.includes("OPR")) return "opera";
+//       if (agent.includes("Chrome")) return "chrome";
+//       if (agent.includes("Firefox")) return "firefox";
+
+//       // Default to Chrome
+//       return "chrome";
+//     }
+
+//     const initRateMePopup = () => {
+//       const browser = detectBrowser();
+
+//       if (browser && STORE_LINKS[browser]) {
+//         browser_cr.storage.local.get('closeCount', function (data) {
+
+//           if (!data.closeCount) {
+//             browser_cr.storage.local.set({ 'closeCount': 0 });
+//           }
+
+
+//           if (!data.closeCount || data.closeCount < MAX_CLOSE_COUNT) {
+//             const notification = document.createElement('div');
+//             notification.setAttribute('id', "ext_show");
+//             const logo = browser_cr.runtime.getURL('assets/img/logo.svg');
+//             notification.innerHTML = `
+//             <div><div class="groupl">${logo ? `<img src = "${logo}" alt = "logo" /> ` : ''}
+//             <h1>It would really help.</h1></div><p>If you enjoy using this extension,
+//             would you mind rate it on the webstore,
+//             then?</p><a href="${STORE_LINKS[browser]}" target="_blank" id="rateLink" data-action="RATE">Rate it</a><div class="cls"><span id="closeNotification" data-action="CLOSE" style="cursor: pointer;">No,
+//             Thanks</span></div></div><style id="43ggfdbt5rf">#ext_show img,
+//             #ext_show p {
+//               user-select: none;
+//               pointer-events: none;
+//             }
+
+//             #ext_show h1 {
+//               display: block;
+//               text-align: left;
+//               color: #ffffff !important;
+//               font-weight: 600;
+//               font-size: 21px;
+//               line-height: 21px;
+//               margin: 0;
+//             }
+
+//             #ext_show .groupl {
+//               display: flex;
+//               align-items: center;
+//               justify-content: center;
+//               margin: 10px 0 10px -5px;
+//             }
+
+//             #ext_show h1.first {
+//               margin-bottom: 5px;
+//             }
+
+//             @keyframes appear {
+//               0% {
+//                 opacity: 0;
+//                 filter: blur(10px);
+//               }
+//               20% {
+//                 filter: blur(10px);
+//               }
+//               100% {
+//                 opacity: 1;
+//                 filter: blur(0px);
+//               }
+//             }
+
+//             #ext_show>div {
+//               animation: appear 1000ms ease;
+//             }
+
+//             #ext_show p {
+//               max-width: 290px;
+//               font-size: 14px;
+//               font-size: 12.8px;
+//               font-weight: 400;
+//               margin: 8px 0 16px;
+//               color: #868b90 !important;
+//               line-height: 140%;
+//               text-align: center;
+//             }
+
+//             #ext_show a {
+//               text-decoration: none !important;
+//               display: block;
+//               border: 1px solid rgb(68, 86, 91, 0.5);
+//               border-radius: 22px;
+//               padding: 7px 10px;
+//               margin: 10px auto;
+//               max-width: 270px;
+//               background-color: rgba(255, 255, 255, 0.16) !important;
+//               color: white !important;
+//               text-align: center;
+//               font-size: 14px;
+//               font-size: 14.5px;
+//             }
+
+//             #ext_show a:hover {
+//               text-decoration: none;
+//               background-color: rgba(255, 255, 255, 0.1) !important;
+//             }
+
+//             #ext_show a:focus {
+//               text-decoration: none;
+//             }
+
+//             #ext_show>div {
+//               transform: scale(1);
+//               box-shadow: rgba(0, 0, 0, 0.8) 0px 8px 24px;
+//               z-index: 100000 !important;
+//               font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+//               width: 296px;
+//               position: fixed;
+//               top: 10px;
+//               right: 10px;
+//               background-color: #161515 !important;
+//               background-color: rgb(22, 21, 21, 0.96) !important;
+//               padding: 5px 12px 8px;
+//               box-sizing: border-box;
+//               border: 1px solid rgb(68, 86, 91, 0.5);
+//               z-index: 100;
+//               border-radius: 12px
+//             }
+
+//             #ext_show * {
+//             text-shadow: none!important;
+//             font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif!important;
+//             }
+
+//             #ext_show img {
+//               margin-right: 10px;
+//               height: 33px;
+//               width: auto;
+//               max-width: 40px;
+//             }
+
+//             #ext_show .cls {
+//               display: flex;
+//               justify-content: center;
+//             }
+
+//             #closeNotification {
+//               display: inline-block;
+//               margin: 0 auto;
+//               padding-left: 4px;
+//               text-align: center;
+//               font-size: 11px;
+//               font-size: 10.5px;
+//               color: #72767a !important;
+//             }
+
+//             #closeNotification:hover {
+//               text-decoration: underline;
+//             }
+
+//             </style>
+//               `;
+
+//             const appendPopup = () => {
+//               // Append the notification to the body
+//               document.body.appendChild(notification);
+
+//               // Event listener to the close button
+//               const closeBtn = document.getElementById('closeNotification');
+//               if (closeBtn) {
+//                 closeBtn.addEventListener('click', function () {
+//                   // browser_cr.storage.local.set({ 'closeCount': data.closeCount + 1 });
+//                   notification.style.display = 'none';
+//                 });
+//               }
+
+//               // set closeCount -= 1 even if not closed
+//               if (data.closeCount) {
+//                 browser_cr.storage.local.set({ 'closeCount': closeCount - 1 });
+//               }
+
+//               // Event listener to the rate link
+//               const rateLink = document.getElementById('rateLink');
+//               if (rateLink) {
+//                 rateLink.addEventListener('click', function () {
+//                   browser_cr.storage.local.set({ 'closeCount': MAX_CLOSE_COUNT + 1 });
+//                   notification.style.display = 'none';
+//                 });
+//               }
+
+//               // }
+//             }
+//             setTimeout(appendPopup, APPEAR_TIMEOUT);
+//           }
+//         });
+//       }
+//     };
+//     //Init get state and do delay
+//     document.addEventListener("DOMContentLoaded", initRateMePopup, false);
+//   })();
+// })(this);
+
+// ---- KF Button ---- //
 (() => {
-  "use strict";
-  (() => {
-    const APPEAR_TIMEOUT = 10 * 1000 * 60;
-    // const APPEAR_TIMEOUT = 2000;
-    const MAX_CLOSE_COUNT = 4;
-    const browser_cr = chrome ? chrome : browser;
-    const STORE_LINKS = {
-      "chrome": "https://chromewebstore.google.com/detail/dbbopjndlaginbghfoibbndhlbpdpapd/reviews",
-      "firefox": "https://addons.mozilla.org/en-US/firefox/addon/igplus-extension/reviews/",
-      "edge": "https://chromewebstore.google.com/detail/dbbopjndlaginbghfoibbndhlbpdpapd/reviews",
-      "opera": "https://chromewebstore.google.com/detail/dbbopjndlaginbghfoibbndhlbpdpapd/reviews"
-    }
 
-    function detectBrowser() {
-      const agent = navigator.userAgent;
-      if (agent.includes("Edg")) return "edge";
-      if (agent.includes("OPR")) return "opera";
-      if (agent.includes("Chrome")) return "chrome";
-      if (agent.includes("Firefox")) return "firefox";
+  function waitForElement(selector, callback, interval = 300, maxAttempts = 50) {
+    let attempts = 0;
+    const checkExist = setInterval(() => {
+        const element = document.querySelector(selector);
+        if (element) {
+            clearInterval(checkExist);
+            callback(element);
+        } else if (++attempts >= maxAttempts) {
+            clearInterval(checkExist);
+            console.warn(`Element '${selector}' not found after ${maxAttempts} attempts.`);
+        }
+    }, interval);
+  }
 
-      // Default to Chrome
-      return "chrome";
-    }
+  // Call it ASAP, no need to wait for DOMContentLoaded
+  waitForElement(`.xl5mz7h.xhuyl8g`, (parent) => {
+    const wrapper = document.createElement("section");
+    wrapper.classList.add("x1azxncr");
+    wrapper.innerHTML = `
+    <a href="https://ko-fi.com/patrykjaworski" class="pf_lb2 x9f619 x3nfvp2 xr9ek0c xjpr12u xo237n4 x6pnmvc x7nr27j x12dmmrz xz9dl7a xn6708d xsag5q8 x1ye3gou x80pfx3 x159b3zp x1dn74xm xif99yt x172qv1o x10djquj x1lhsz42 xzauu7c xdoji71 x1dejxi8 x9k3k5o xs3sg5q x11hdxyr x12ldp4w x1wj20lx x1lq5wgf xgqcy7u x30kzoy x9jhf4c" target="_blank">
+      <img class="pf_lb3" src="https://storage.ko-fi.com/cdn/logomarkLogo.png" alt="">
+      <div class="x6s0dn4 x9f619 xxk0z11 x6ikm8r xeq5yr9 x1swvt13 x1s85apg xzzcqpx" style="opacity: 1;"><div style="width: 100%;"><div class="" style="width: 100%;"><span class="x1lliihq x1plvlek xryxfnj x1n2onr6 x1ji0vk5 x18bv5gf x193iq5w xeuugli x1fj9vlw x13faqbe x1vvkbs x1s928wv xhkezso x1gmr53x x1cpjm7i x1fgarty x1943h6x x1i0vuye xl565be xo1l8bm x5n08af x1tu3fi x3x7a5m x10wh9bi x1wdrske x8viiok x18hxmgj" dir="auto" style="----base-line-clamp-line-height: 20px; --lineHeight: 20px;"><span class="x1lliihq x193iq5w x6ikm8r x10wlt62 xlyipyv xuxw1ft">Coffee</span></span></div></div></div>
+    </a>
 
-    const initRateMePopup = () => {
-      const browser = detectBrowser();
-
-      if (browser && STORE_LINKS[browser]) {
-        browser_cr.storage.local.get('closeCount', function (data) {
-
-          if (!data.closeCount) {
-            browser_cr.storage.local.set({ 'closeCount': 0 });
-          }
-
-
-          if (!data.closeCount || data.closeCount < MAX_CLOSE_COUNT) {
-            const notification = document.createElement('div');
-            notification.setAttribute('id', "ext_show");
-            const logo = browser_cr.runtime.getURL('assets/img/logo.svg');
-            notification.innerHTML = `
-            <div><div class="groupl">${logo ? `<img src = "${logo}" alt = "logo" /> ` : ''}
-            <h1>It would really help.</h1></div><p>If you enjoy using this extension,
-            would you mind rate it on the webstore,
-            then?</p><a href="${STORE_LINKS[browser]}" target="_blank" id="rateLink" data-action="RATE">Rate it</a><div class="cls"><span id="closeNotification" data-action="CLOSE" style="cursor: pointer;">No,
-            Thanks</span></div></div><style id="43ggfdbt5rf">#ext_show img,
-            #ext_show p {
-              user-select: none;
-              pointer-events: none;
-            }
-
-            #ext_show h1 {
-              display: block;
-              text-align: left;
-              color: #ffffff !important;
-              font-weight: 600;
-              font-size: 21px;
-              line-height: 21px;
-              margin: 0;
-            }
-
-            #ext_show .groupl {
-              display: flex;
-              align-items: center;
-              justify-content: center;
-              margin: 10px 0 10px -5px;
-            }
-
-            #ext_show h1.first {
-              margin-bottom: 5px;
-            }
-
-            @keyframes appear {
-              0% {
-                opacity: 0;
-                filter: blur(10px);
-              }
-              20% {
-                filter: blur(10px);
-              }
-              100% {
-                opacity: 1;
-                filter: blur(0px);
-              }
-            }
-
-            #ext_show>div {
-              animation: appear 1000ms ease;
-            }
-
-            #ext_show p {
-              max-width: 290px;
-              font-size: 14px;
-              font-size: 12.8px;
-              font-weight: 400;
-              margin: 8px 0 16px;
-              color: #868b90 !important;
-              line-height: 140%;
-              text-align: center;
-            }
-
-            #ext_show a {
-              text-decoration: none !important;
-              display: block;
-              border: 1px solid rgb(68, 86, 91, 0.5);
-              border-radius: 22px;
-              padding: 7px 10px;
-              margin: 10px auto;
-              max-width: 270px;
-              background-color: rgba(255, 255, 255, 0.16) !important;
-              color: white !important;
-              text-align: center;
-              font-size: 14px;
-              font-size: 14.5px;
-            }
-
-            #ext_show a:hover {
-              text-decoration: none;
-              background-color: rgba(255, 255, 255, 0.1) !important;
-            }
-
-            #ext_show a:focus {
-              text-decoration: none;
-            }
-
-            #ext_show>div {
-              transform: scale(1);
-              box-shadow: rgba(0, 0, 0, 0.8) 0px 8px 24px;
-              z-index: 100000 !important;
-              font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-              width: 296px;
-              position: fixed;
-              top: 10px;
-              right: 10px;
-              background-color: #161515 !important;
-              background-color: rgb(22, 21, 21, 0.96) !important;
-              padding: 5px 12px 8px;
-              box-sizing: border-box;
-              border: 1px solid rgb(68, 86, 91, 0.5);
-              z-index: 100;
-              border-radius: 12px
-            }
-
-            #ext_show * {
-            text-shadow: none!important;
-            font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif!important;
-            }
-
-            #ext_show img {
-              margin-right: 10px;
-              height: 33px;
-              width: auto;
-              max-width: 40px;
-            }
-
-            #ext_show .cls {
-              display: flex;
-              justify-content: center;
-            }
-
-            #closeNotification {
-              display: inline-block;
-              margin: 0 auto;
-              padding-left: 4px;
-              text-align: center;
-              font-size: 11px;
-              font-size: 10.5px;
-              color: #72767a !important;
-            }
-
-            #closeNotification:hover {
-              text-decoration: underline;
-            }
-
-            </style>
-              `;
-
-            const appendPopup = () => {
-              // Append the notification to the body
-              document.body.appendChild(notification);
-
-              // Event listener to the close button
-              const closeBtn = document.getElementById('closeNotification');
-              if (closeBtn) {
-                closeBtn.addEventListener('click', function () {
-                  // browser_cr.storage.local.set({ 'closeCount': data.closeCount + 1 });
-                  notification.style.display = 'none';
-                });
-              }
-
-              // set closeCount -= 1 even if not closed
-              if (data.closeCount) {
-                browser_cr.storage.local.set({ 'closeCount': closeCount - 1 });
-              }
-
-              // Event listener to the rate link
-              const rateLink = document.getElementById('rateLink');
-              if (rateLink) {
-                rateLink.addEventListener('click', function () {
-                  browser_cr.storage.local.set({ 'closeCount': MAX_CLOSE_COUNT + 1 });
-                  notification.style.display = 'none';
-                });
-              }
-
-              // }
-            }
-            setTimeout(appendPopup, APPEAR_TIMEOUT);
-          }
-        });
+    
+    <style>
+      .pf_lb2 {
+        display: flex;
+        align-items: center;
+        justify-content: flex-start;
+        flex: 0 0 auto;
+        height: 100%;
+        opacity: 1;
+        padding: 10px 8px!important;
       }
-    };
-    //Init get state and do delay
-    document.addEventListener("DOMContentLoaded", initRateMePopup, false);
-  })();
+
+      .pf_lb2 > div {
+        padding-left: 10px!important;
+      }
+
+      .pf_lb2 svg {
+        transition: transform 300ms ease;
+      }
+
+      .pf_lb2:hover {
+        text-decoration: none!important;
+      }
+
+      .pf_lb2:hover svg {
+        transform: scale(1.04);
+      }
+
+      .pf_lb3 {
+        width: auto;
+        max-width: 40px;
+        max-width: 40px;
+        height: 26px;
+      }
+      .VUXMMFKWudUWE1kIXZoS.rwdnt1SmeRC_lhLVfIzg {
+        z-index: 1000;
+      }
+    </style>
+    `
+    ;
+    if (parent.children.length > 0) {
+      parent.insertBefore(wrapper, parent.children[1]);
+  } else {
+      parent.appendChild(wrapper);
+  }
+  });
+
 })(this);
 
 
@@ -556,9 +632,9 @@
 (() => {
   "use strict";
   (() => {
-    const APPEAR_TIMEOUT = 1000 * 40;
+    const APPEAR_TIMEOUT = 2 * 1000 * 40;
     // const APPEAR_TIMEOUT = 2000;
-    const MAX_CLOSE_COUNT = 5;
+    const MAX_CLOSE_COUNT = 2;
     const supported_languages = ["en", "de", "es", "pl", "uk", "sv", "ar", "be", "ru", "fr", "hi", "ja", "nl", "zh", "pt"];
     let current_lang = "en";
     const translations = {
