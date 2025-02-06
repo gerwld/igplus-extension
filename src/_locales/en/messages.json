@@ -3,7 +3,7 @@
     "message": "IGPlus - Hide Instagram Reels, Explore Page"
   },
   "extensionDescription": {
-    "message": "Disable Instagram Shorts, videos, comments, suggestions wall, vanity metrics, homepage recomendations, trending... and many more."
+    "message": "2025 • Open-source • Disable Instagram Shorts, videos, comments, suggestions wall, vanity metrics, homepage recommendations, trending... and many more."
   },
   "disabled": {
     "message": "You turned off IGPlus"
@@ -60,7 +60,7 @@
     "message": "Disable \"New messages\" labels"
   },
   "mi_8": {
-    "message": "Disable recomendations (Main page)"
+    "message": "Disable recommendations (Main page)"
   },
   "mi_9": {
     "message": "Disable Feed (experimental)"
@@ -129,7 +129,7 @@
     "message": "Donate with PayPal"
   },
   "d_kofi": {
-    "message": "Support with Ko-Fi"
+    "message": "Support with Ko-Fi.com"
   },
   "d_card": {
     "message": "Donate using card"

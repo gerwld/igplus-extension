@@ -835,9 +835,7 @@ a.don_btn {
 }
 
 .donate_nav a:active {
-  box-shadow: 0px -2px 0 0 var(--shadow-color-1);
-  transform: translateY(3px);
-  transition: transform 50ms ease, box-shadow 50ms ease;
+  outline: none!important;
 }
 
 .donate_nav span {

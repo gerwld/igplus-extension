@@ -10,7 +10,6 @@
 		"firefox": "npm run clean && gulp firefox",
 		"build": "npm run clean && gulp build",
 		"build:prod": "npm run clean && gulp build_md",
-		"fetch:all": "pnpm fetch:day && pnpm fetch:night && pnpm fetch:morning",
 		"test": "clear && echo 'Tests not implemented yet. Please check manually.'",
 		"clean": "rm -rf ./public"
 	},

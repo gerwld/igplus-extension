@@ -27,3 +27,9 @@ img {
     var(--background-noise) !important;
   background-image: linear-gradient(rgba(0, 0, 0, 0.6) 0, var(--background-base) 100%), var(--background-noise) !important;
 }
+
+
+/* KF button */
+#b705b0e5b14434a529cff55fd61131489 img {
+  display: block!important;
+}

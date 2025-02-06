@@ -33,7 +33,7 @@ import chalk from 'chalk';
 let { src, dest, task, series } = gulp;
 const link = chalk.hex('#5e98d9');
 const EXTENSION_NAME = 'igplus'
-const EXTENSION_V = 'v.2.3.0.2'
+const EXTENSION_V = 'v.3.0.0'
 const COPYRIGHT = `//   - This file is part of IGPlus Extension
 //  <https://github.com/gerwld/IGPlus-extension/blob/main/README.md>,
 //   - Copyright (C) 2023-present IGPlus Extension
@@ -98,6 +98,14 @@ task('minifyJS', async function () {
     src(['./src/assets/js/*.js'])
         .pipe(uglify())
         .pipe(insert.prepend(COPYRIGHT))
+        .pipe(gulpFlatten({ includeParents: 4 }))
+        .pipe(dest('./public/chromium/assets/js/'))
+        .pipe(dest('./public/firefox/assets/js/'))
+});
+
+//## Pass JS (dev mode) ##//
+task('passJS', async function () {
+    src(['./src/assets/js/*.js'])
         .pipe(gulpFlatten({ includeParents: 4 }))
         .pipe(dest('./public/chromium/assets/js/'))
         .pipe(dest('./public/firefox/assets/js/'))
@@ -194,10 +202,11 @@ task('watch', function () {
 });
 
 task('build', series('minifyImg', "minifyCSS", "minifyJS", "minifyHTML", "addOther"));
+task('build_dev', series('minifyImg', "minifyCSS", "passJS", "minifyHTML", "addOther"));
 task('build_md', series('minifyImg', "minifyCSS", "minifyJS", "minifyHTML", "addOther", "source", "zipper"));
 
 // Task to run the build and start the watcher
-task('dev', series('build', 'watch'));
+task('dev', series('build_dev', 'watch'));
 // TODO: Faster Dev builds
 task('edge', series('build', 'watch'));
 task('firefox', series('build', 'watch'));
