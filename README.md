@@ -60,10 +60,6 @@ For any inquiries regarding commercial use or permission, please contact the cre
 
 If you have any questions, suggestions, or feedback, please feel free to contact us at [pjaworski.dev@gmail.com].
 
----
-
-Enhance your Instagram experience with IGPlus Extension and enjoy a customized interface that reflects your style and preferences. Download now and take your Instagram usage to the next level.
-
 ## Contributors ✨
 
 Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
@@ -80,8 +76,14 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 </table>
 
 <!-- markdownlint-restore -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
 
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
+---
+
+Enhance your Instagram experience with IGPlus Extension and enjoy a customized interface that reflects your style and preferences. Download now and take your Instagram usage to the next level.
+
+
