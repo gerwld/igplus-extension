@@ -14,12 +14,18 @@ importers:
       chalk:
         specifier: ^5.3.0
         version: 5.3.0
+      gulp-file-include:
+        specifier: ^2.3.0
+        version: 2.3.0
       gulp-filter:
         specifier: ^9.0.1
         version: 9.0.1(gulp@4.0.2)
       gulp-flatten:
         specifier: ^0.4.0
         version: 0.4.0
+      gulp-rename:
+        specifier: ^2.0.0
+        version: 2.0.0
       gulp-replace:
         specifier: ^1.1.4
         version: 1.1.4
@@ -48,9 +54,6 @@ importers:
       gulp-concat:
         specifier: ^2.6.1
         version: 2.6.1
-      gulp-file-include:
-        specifier: ^2.3.0
-        version: 2.3.0
       gulp-htmlmin:
         specifier: ^5.0.1
         version: 5.0.1
@@ -60,9 +63,6 @@ importers:
       gulp-insert:
         specifier: ^0.5.0
         version: 0.5.0
-      gulp-rename:
-        specifier: ^2.0.0
-        version: 2.0.0
       gulp-svgmin:
         specifier: ^4.1.0
         version: 4.1.0
@@ -1092,7 +1092,7 @@ packages:
     resolution: {integrity: sha512-oWb1Z6mkHIskLzEJ/XWX0srkpkTQ7vaopMQkyaEIoq0fmtFVxOthb8cCxeT+p3ynTdkk/RZwbgG4brR5BeWECw==}
     engines: {node: '>= 4.0'}
     os: [darwin]
-    deprecated: The v1 package contains DANGEROUS / INSECURE binaries. Upgrade to safe fsevents v2
+    deprecated: Upgrade to fsevents v2 to mitigate potential security issues
 
   fsevents@2.3.3:
     resolution: {integrity: sha512-5xoDfX+fL7faATnagmWPpbFtwh/R77WmMMqqHGS65C3vvB0YHrgF+B1YmZ3441tMj5n63k0212XNoJwzlhffQw==}
