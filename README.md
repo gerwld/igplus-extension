@@ -42,8 +42,10 @@ You can also download the latest version of IGPlus Extension from the [Releases]
 Once the extension is installed, follow these steps:
 
 1. **Activation:** Open Instagram in your browser.
-2. **Extension Access:** Click on the IGPlus icon in the browser toolbar to activate it.
+2. **Extension Access:** Click on the IGPlus icon (<img src="https://raw.githubusercontent.com/gerwld/igplus-extension/8765ded5cef43659500cef369b9bfdc6b81d0b70/assets/img/logo.svg" width="18" height="18"/>) in the browser toolbar (<img src="https://github.com/user-attachments/assets/8e11b0ed-4513-4809-b6d1-ab88d0f98d80" width="20" height="20"/>) to activate it.
 3. **Customization:** The extension settings panel will open, allowing you to customize your Instagram experience to your preferences.
+
+
 
 <br>
 
