@@ -71,13 +71,12 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
   <tbody>
     <tr>
       <td align="center" valign="top" width="14.28%"><a href="https://github.com/ApatheticToSocialMedia"><img src="https://avatars.githubusercontent.com/u/194858144?v=4?s=100" width="100px;" alt="ApatheticToSocialMedia"/><br /><sub><b>ApatheticToSocialMedia</b></sub></a><br /><a href="https://github.com/gerwld/igplus-extension/issues?q=author%3AApatheticToSocialMedia" title="Bug reports">🐛</a></td>
+      <td align="center" valign="top" width="14.28%"><a href="http://www.hkumar.me"><img src="https://avatars.githubusercontent.com/u/11796657?v=4?s=100" width="100px;" alt="Harsh Kumar"/><br /><sub><b>Harsh Kumar</b></sub></a><br /><a href="https://github.com/gerwld/igplus-extension/issues?q=author%3Ahkumar1993" title="Bug reports">🐛</a></td>
     </tr>
   </tbody>
 </table>
 
 <!-- markdownlint-restore -->
-
-This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
 <!-- prettier-ignore-end -->
 
 <!-- ALL-CONTRIBUTORS-LIST:END -->
