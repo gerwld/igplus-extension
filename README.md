@@ -1,4 +1,7 @@
 <p align="center">
+<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
+[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
+<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <img src="https://raw.githubusercontent.com/gerwld/igplus-extension/8765ded5cef43659500cef369b9bfdc6b81d0b70/assets/img/logo.svg" width="75" height="75"/>
 </p>
 
@@ -63,3 +66,25 @@ If you have any questions, suggestions, or feedback, please feel free to contact
 ---
 
 Enhance your Instagram experience with IGPlus Extension and enjoy a customized interface that reflects your style and preferences. Download now and take your Instagram usage to the next level.
+
+## Contributors ✨
+
+Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/docs/en/emoji-key)):
+
+<!-- ALL-CONTRIBUTORS-LIST:START - Do not remove or modify this section -->
+<!-- prettier-ignore-start -->
+<!-- markdownlint-disable -->
+<table>
+  <tbody>
+    <tr>
+      <td align="center" valign="top" width="14.28%"><a href="https://github.com/ApatheticToSocialMedia"><img src="https://avatars.githubusercontent.com/u/194858144?v=4?s=100" width="100px;" alt="ApatheticToSocialMedia"/><br /><sub><b>ApatheticToSocialMedia</b></sub></a><br /><a href="https://github.com/gerwld/igplus-extension/issues?q=author%3AApatheticToSocialMedia" title="Bug reports">🐛</a></td>
+    </tr>
+  </tbody>
+</table>
+
+<!-- markdownlint-restore -->
+<!-- prettier-ignore-end -->
+
+<!-- ALL-CONTRIBUTORS-LIST:END -->
+
+This project follows the [all-contributors](https://github.com/all-contributors/all-contributors) specification. Contributions of any kind welcome!
