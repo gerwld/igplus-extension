@@ -1,7 +1,4 @@
 <p align="center">
-<!-- ALL-CONTRIBUTORS-BADGE:START - Do not remove or modify this section -->
-[![All Contributors](https://img.shields.io/badge/all_contributors-1-orange.svg?style=flat-square)](#contributors-)
-<!-- ALL-CONTRIBUTORS-BADGE:END -->
   <img src="https://raw.githubusercontent.com/gerwld/igplus-extension/8765ded5cef43659500cef369b9bfdc6b81d0b70/assets/img/logo.svg" width="75" height="75"/>
 </p>
 
