@@ -126,7 +126,7 @@ Thanks goes to these wonderful people ([emoji key](https://allcontributors.org/d
 
 <h3>Translations contributions</h3>
 
-- **🌎 English translation** · [Adam Jablonski](https://github.com/gerwld/igplus-extension/tree/main/src/_locales/en)
+- **🌎 English translation (improvements)** · [Adam Jablonski](https://github.com/gerwld/igplus-extension/tree/main/src/_locales/en)
 - **🇩🇪 German translation** · [dubstebowl](https://github.com/gerwld/igplus-extension/tree/main/src/_locales/de)
 - **🇺🇦 Ukrainian translation** · [@kolobochok33](https://github.com/gerwld/igplus-extension/tree/main/src/_locales/uk) 
 
