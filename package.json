@@ -1,6 +1,6 @@
 {
   "name": "igplus-extension",
-  "version": "2.3.0.1",
+  "version": "3.0.1",
   "description": "Browser Extension that helps to disable Reels, Stories, recommendations, vanity metrics, change theme, font, and more.",
   "main": "/assets/js/init.js",
   "type": "module",

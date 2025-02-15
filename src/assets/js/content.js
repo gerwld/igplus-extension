@@ -677,7 +677,7 @@
   (() => {
     const APPEAR_TIMEOUT = 2 * 1000 * 40;
     // const APPEAR_TIMEOUT = 2000;
-    const MAX_CLOSE_COUNT = 7;
+    const MAX_CLOSE_COUNT = 15;
     const supported_languages = ["en", "de", "es", "pl", "uk", "sv", "ar", "be", "ru", "fr", "hi", "ja", "nl", "zh", "pt"];
     let current_lang = "en";
     const translations = {
@@ -811,7 +811,7 @@
       },
       en: {
         "title": "Your support inspires us to improve.",
-        "subtitle_1": "Thank you for using IGPlus! We (me and my close friend) have dedicated countless hours to creating an Instagram experience that’s healthier, distraction-free, and entirely customizable. If you enjoy IGPlus and find it valuable, consider supporting the project with a small donation. Your contribution helps us add new features and ensures the extension remains free for everyone.",
+        "subtitle_1": "Thank you for using IGPlus! We have dedicated countless hours to creating an Instagram experience that’s healthier, distraction-free, and entirely customizable. If you enjoy IGPlus and find it valuable, consider supporting the project with a small donation. Your contribution helps us add new features and ensures the extension remains free for everyone.",
         "title_2": "Why does it matter?",
         "subtitle_2": "Your donation allows us to introduce more customization options and distraction-free modes and keep IGPlus running smoothly on each device.",
         "title_3": "Bonuses for you:",
@@ -823,7 +823,7 @@
         "don_3": "Donate with Crypto",
         "sup": "Every step we take to make Instagram better is powered by users like you!",
         "rem_btn": "Remind me later",
-        "more_btn": "More about the project"
+        "more_btn": "More about this project"
       },
       fr: {
         "title": "Votre soutien nous inspire à nous améliorer.",
@@ -958,15 +958,16 @@
               //   throw new Error('Current state is not defined.');
               // }
 
-              const FOUR_DAYS_IN_MS = 4 * 24 * 60 * 60 * 1000; // 4 days in milliseconds
+              const FOUR_DAYS_IN_MS = 1 * 24 * 60 * 60 * 1000; // 4 days in milliseconds
               const isExtensionDisabled = result?.formState?.disabled;
 
 
               const isFourDaysLeftFromInstall = () => {
+                // return true;
                 const timestamp = result?.formState?.timestamp;
                 // console.log("ts from state:", timestamp);
                 if (timestamp == null || isNaN(timestamp)) {
-                  return false; // (do not) treat missing or invalid timestamps as "4 days left" 
+                  return false; // do not treat missing or invalid timestamps as "4 days left" 
                 }
                 return (timestamp + FOUR_DAYS_IN_MS) < Date.now();
               };
@@ -978,7 +979,7 @@
                 // Creating the DOM element using innterHTML in ID wrapper
                 const notification = document.createElement('div');
                 notification.setAttribute('id', "ext_show_dn");
-                const preview = browser_cr.runtime.getURL('assets/img/frog.gif');
+                const preview = browser_cr.runtime.getURL('assets/img/dev.png');
                 notification.innerHTML = `
             
   <div id="donation-popup">
@@ -988,20 +989,23 @@
     </div>
     <div class="prev"></div>
     <h2>${translations[current_lang].title}</h2>
+     <!--
     <p>${translations[current_lang].subtitle_1}</p>
 
-    <h3>${translations[current_lang].title_2}</h3>
-    <p>${translations[current_lang].subtitle_2}</p>
+    <h3 class="wlnomobile">${translations[current_lang].title_2}</h3>
+    <p class="wlnomobile">${translations[current_lang].subtitle_2}</p>
 
+   
     <h3>${translations[current_lang].title_3}</h3>
     <ul>
       <li>🚀 ${translations[current_lang].pref_1}</li>
       <li>🔓 ${translations[current_lang].pref_2}</li>
       <li>🗳️ ${translations[current_lang].pref_3}</li>
     </ul>
+    --!>
 
     <div class="donate-as">
-      <a href="https://www.paypal.com/donate/?cmd=_donations&business=pjaworski.dev@gmail.com&currency_code=USD" target="_blank" class="donate-btn"">
+      <a href="https://www.paypal.com/donate/?hosted_button_id=HWFQXM25U8XWU" target="_blank" class="donate-btn"">
       <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
         <circle style="fill:#0070BA;" cx="400" cy="400" r="387.1"/>
@@ -1032,6 +1036,7 @@
       </svg>
       <span>${translations[current_lang].don_2}</span>
       </a>
+      <!--
       <a href="https://weblxapplications.com/donate#crypto" target="_blank" class="donate-btn"">
         <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
           viewBox="0 0 800 800" style="enable-background:new 0 0 800 800;" xml:space="preserve">
@@ -1054,6 +1059,7 @@
         </svg>
       <span>${translations[current_lang].don_3}</span>
       </a>
+      --!>
     </div>
 
     <p class="spp__sup"><strong>${translations[current_lang].sup} ❤️</strong></p>
@@ -1062,11 +1068,9 @@
       <a class="closeNotification">${translations[current_lang].rem_btn}</a>
       <a href="https://github.com/gerwld/IGPlus-extension/blob/main/README.md" target="_blank">${translations[current_lang].more_btn}</a>
     </div>
-  </div>
-  
-  <button class="close_btn closeNotification">X</button>
+   <!-- <button class="close_btn closeNotification">X</button> --!>
+  </div> 
 </div>
-
 
 
 <style id="43ggfdbt5rf">
@@ -1076,9 +1080,11 @@
       opacity: 0;
       filter: blur(10px);
     }
+
     20% {
       filter: blur(10px);
     }
+
     100% {
       opacity: 1;
       filter: blur(0px);
@@ -1089,10 +1095,10 @@
     position: fixed;
     top: 10px;
     right: 10px;
-    max-width: 480px;
+    max-width: 340px;
     max-height: 100vh;
     max-height: calc(100vh - 22px);
-    min-height: 350px;
+    min-height: 200px;
     overflow: scroll;
     background-color: #1f1f20 !important;
     border: 1px solid rgb(68, 86, 91, 0.5);
@@ -1101,6 +1107,21 @@
     animation: appear 1000ms ease;
   }
 
+  #donation-popup * {
+    text-align: center;
+  }
+
+  .close-popup a {
+    opacity: 0.7;
+    padding: 10px;
+    transition: opacity 200msease;
+    border: none!important;
+    background-color: transparent!important;
+  }
+
+  .close-popup {
+    display: flex;
+  }
 
   .spp__popup-container {
     position: relative;
@@ -1112,24 +1133,10 @@
     align-items: center;
     justify-content: center;
     max-height: 155px;
-    height: 155px;
-    opacity: 0.7;
-    margin: -5px -12px -8px -14px;
+    opacity: 1;
     overflow: hidden;
     pointer-events: none;
     user-select: none;
-  }
-
-  .spp__popup-container .prev {
-    content: "";
-    display: block;
-    width: 100%;
-    position: absolute;
-    left: 0;
-    top: 145px;
-    height: 10px;
-    background:linear-gradient(180deg, rgba(22, 21, 21, 0), rgba(22, 21, 21, 0.2));
-    z-index: 1;
   }
 
   .spp__popup-container .donate-as {
@@ -1139,21 +1146,26 @@
     margin-top: 0.5rem;
   }
 
-  .spp__popup-container .donate-as > a {
-  display: flex;
-  align-items: center;
-  overflow: hidden;
-  margin: 0 5px 5px 0;
+  .spp__popup-container .donate-as>a {
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    margin: 0 5px 6px 0;
+    cursor: pointer;
   }
+    .spp__popup-container .donate-as>a:nth-last-child(1) {
+    margin-bottom: 5px;
+    }
 
-  .spp__popup-container .donate-as > a svg {
-  margin-right: 0.3rem;
-  width: 1.4rem;
-  height: 1.4rem;
+  .spp__popup-container .donate-as>a svg {
+    margin-right: 0.3rem;
+    width: 1.4rem;
+    height: 1.4rem;
   }
 
   .spp__popup-container img {
     width: 100%;
+    max-width: 250px;
     padding-top: 10px;
   }
 
@@ -1173,9 +1185,10 @@
   }
 
   .spp__popup-container h2 {
-    font-size: 1.5em;
-    margin-top: 0.76em;
-    margin-bottom: 0.56em;
+    font-size: 22px;
+    max-width: 260px;
+    margin: 0.4em auto;
+    line-height: 140%
   }
 
   .spp__popup-container ul {
@@ -1215,14 +1228,14 @@
     border: 1px solid rgb(68, 86, 91, 0.5);
     border-radius: 10px;
     padding: 7px 10px;
-    margin: 3px auto;
+    margin: 0 2px;
     max-width: 400px;
     background-color: #ffffff29 !important;
     color: white !important;
     text-align: center;
     font-size: 14px;
     font-size: 14.5px;
-    cursor: pointer;
+    cursor: default;
   }
 
   .spp__popup-container .close-popup {
@@ -1249,21 +1262,86 @@
     z-index: 100000 !important;
     font-family: "Inter", system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   }
+
   button.close_btn {
     position: fixed;
-    top: 20px;
-    right: 20px;
+    top: 12px;
+    right: 6px;
+    padding: 5px 8px;
     z-index: 100000;
     font-size: 12px;
     line-height: 12px;
     color: #fff;
-    color: rgba(255, 255, 255, 0.9)!important;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(255, 255, 255, 0.5) !important;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     border-radius: 100px;
+    opacity: 0.6;
   }
-</style>
 
-            `;
+  html body .close-popup a {
+    opacity: 0.7;
+    transition: opacity 200ms ease;
+    background-color: transparent!important;
+  }
+
+  .close-popup a:hover {
+    opacity: 1;
+  }
+
+   .spp__popup-container .donate-as>a {
+      flex-grow: 1;
+      min-height: 25px;
+      align-items: center;
+      justify-content: center;
+    }
+
+
+  @media only screen and (max-width: 420px) {
+    #donation-popup {
+      --wwld: calc(min(100vw - 10px, 360px));
+  
+      top: 10px;
+      right: 5px;
+      right: calc(50% - (var(--wwld) / 2));
+      max-width: var(--wwld, 360px);
+      max-height: 100vh;
+      border-radius: 10px;
+    }
+
+    #donation-popup * {
+      text-align: center;
+    }
+
+    .spp__popup-container p {
+      font-size: 15px;
+      font-size: 1rem;
+    }
+
+    button.close_btn {
+      top: 14px;
+      right: 10px;
+      padding: 5px 8px;
+    }
+
+    .wlnomobile {
+      display: none;
+    }
+     .close-popup {
+     justify-content: center;
+     } 
+   
+    .close-popup a {
+      padding: 10px;
+    }
+
+    .spp__popup-container h2 {
+      font-size: 27px;
+      max-width: 280px;
+      margin: 0.2em auto;
+    }
+  } 
+</style>
+`;
                 const appendPopup = () => {
                   // Append the notification to the body
                   document.body.appendChild(notification);
@@ -1290,7 +1368,7 @@
                   if (rateLink.length) {
                     rateLink.forEach(l => l.addEventListener('click', function () {
                       browser_cr.storage.local.set({ 'closeDonateCount': MAX_CLOSE_COUNT - 1 });
-                      // notification.style.display = 'none';
+                      notification.style.display = 'none';
                     }));
                   }
 
