@@ -26,4 +26,4 @@ I regularly update IGPlus to fix bugs, improve functionality, and enhance securi
 
 If you have any concerns, questions, or feedback regarding the security of IGPlus, please contact us at [pjaworski.dev@gmail.com]. I welcome your input and I am dedicated to continuously improving our security practices.
 
-IGPlus aims to provide a safe, customizable, and enjoyable Instagram experience without compromising your privacy or security. Thank you for choosing IGPlus as your chess enhancement tool.
+IGPlus aims to provide a safe, customizable, and enjoyable Instagram experience without compromising your privacy or security. Thank you for choosing IGPlus as your Instagram enhancement tool.
