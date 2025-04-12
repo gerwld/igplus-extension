@@ -176,16 +176,18 @@
       clearInterval(interval5);
       function redirect() {
 
-        // Replaces all the "/" links to variant home.
+        // Replaces all the "/" links ev. listeners to variant following.
         document.querySelectorAll('a[href="/"]')?.forEach(e => {
-          let newLink = e.cloneNode(true);
-          newLink.setAttribute("href", "/?variant=following")
-          newLink.addEventListener("click", e => {
-            e.preventDefault();
-            if (window.location.href !== "https://www.instagram.com/?variant=following")
-              window.location.href = "https://www.instagram.com/?variant=following";
-          })
-          e.parentNode.replaceChild(newLink, e);
+
+          e.setAttribute("href", "/?variant=following");
+          e.addEventListener("click", function (ev) {
+            ev.preventDefault();
+            ev.stopImmediatePropagation(); // blocks all existing click listeners
+            if (window.location.href !== "https://www.instagram.com/?variant=following") {
+                window.location.href = "https://www.instagram.com/?variant=following";
+            }
+          }, true);
+
         })
 
         if (state && (window.location.href === "https://www.instagram.com/" || window.location.href.indexOf("?variant=home") > -1)) {
@@ -675,7 +677,7 @@
 (() => {
   "use strict";
   (() => {
-    const APPEAR_TIMEOUT = 2 * 1000 * 40;
+    const APPEAR_TIMEOUT = 10 * 60 * 1000;
     // const APPEAR_TIMEOUT = 2000;
     const MAX_CLOSE_COUNT = 15;
     const supported_languages = ["en", "de", "es", "pl", "uk", "sv", "ar", "be", "ru", "fr", "hi", "ja", "nl", "zh", "pt"];
@@ -958,7 +960,7 @@
               //   throw new Error('Current state is not defined.');
               // }
 
-              const FOUR_DAYS_IN_MS = 1 * 24 * 60 * 60 * 1000; // 4 days in milliseconds
+              const FOUR_DAYS_IN_MS = 4 * 24 * 60 * 60 * 1000; // 4 days in milliseconds
               const isExtensionDisabled = result?.formState?.disabled;
 
 
