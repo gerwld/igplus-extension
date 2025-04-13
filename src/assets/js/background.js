@@ -53,7 +53,7 @@ browser_cr.runtime.onInstalled.addListener(function (details) {
         chrome.tabs.create({ url: "https://weblxapplications.com/igp/welcome" });
         chrome.storage.local.set({ 'welcomePageDisplayed': true });
       } else if (details.reason === 'update') {
-        // chrome.tabs.create({ url: "https://weblxapplications.com/igp/update" });
+        chrome.tabs.create({ url: "https://weblxapplications.com/igp/update" });
       }
     });
   }
