@@ -22,13 +22,30 @@
       const lang_set = document.getElementById("lang_set");
 
 
+      // Hide stories main section logic
+      function hideStoriesSectionMain(state) {
+        const item_muted_stories = container.querySelector('input[name="muted_stories"]');
+        if (state?.mp_disable_stories) {
+          item_muted_stories.setAttribute("disabled", true);
+          chrome.storage.local.set({ formState: { ...state, mp_disable_stories: true, muted_stories: true } });
+        } else {
+          item_muted_stories.disabled = false;
+        }
+      }
+
       // Disable stories logic
       function disableStories(state) {
-        const mp_item = container.querySelector('input[name="mp_disable_stories"]');
+        const mp_item_disable_stories = container.querySelector('input[name="mp_disable_stories"]');
+        const item_muted_stories = container.querySelector('input[name="muted_stories"]');
+      
         if (state?.ev_disable_stories) {
-          mp_item.setAttribute("disabled", true);
-          chrome.storage.local.set({ formState: { ...state, ev_disable_stories: true, mp_disable_stories: true } });
-        } else mp_item.disabled = false;
+          mp_item_disable_stories.setAttribute("disabled", true);
+          item_muted_stories.setAttribute("disabled", true);
+          chrome.storage.local.set({ formState: { ...state, ev_disable_stories: true, mp_disable_stories: true, muted_stories: true } });
+        } else {
+          mp_item_disable_stories.disabled = false;
+          item_muted_stories.disabled = false;
+        }
       }
 
       // Nav to direct logic
@@ -67,6 +84,7 @@
         // Retrieve state from extension storage or use the initial state
         chrome.storage.local.get("formState", (result) => {
           let state = result.formState ? result.formState : {};
+          hideStoriesSectionMain(state);
           disableStories(state);
           navToDirect(state);
 

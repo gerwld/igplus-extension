@@ -1,0 +1,9 @@
+li:has(.xbyyjgo){
+    display: none!important;
+}
+
+@media only screen and (max-width: 640px) {
+    .xbyyjgo{
+        display: none!important;
+    }
+}
