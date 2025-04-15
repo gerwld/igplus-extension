@@ -21,6 +21,6 @@ div>._aac4._aac6._aj3f._ajdu,
 
 /* 3.0.4 bugfix */
 
-[data-pagelet="story_tray"] div:has(button._afxw) {
+main .xmnaoh6>[data-pagelet="story_tray"] {
   display: none!important;
 }
