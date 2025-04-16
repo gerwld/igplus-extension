@@ -190,5 +190,8 @@
   },
   "mi_18": {
     "message": "Hide Threads Button"
+  },
+  "mi_19": {
+    "message": "Hide Muted Stories"
   }
 }

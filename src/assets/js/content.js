@@ -16,7 +16,7 @@
 (() => {
   "use strict";
   (() => {
-    let interval0, interval1, interval2, interval3, interval4, interval5, interval6, interval7;
+    let interval0, interval1, interval2, interval3, interval4, interval5, interval6, interval7, interval8;
     const fonts = [
       "noto_sans",
       "pixelify",
@@ -152,11 +152,12 @@
       } else clearInterval(interval3);
     }
 
-    function disableStories(ev_disable_stories, mp_disable_stories) {
-      console.log(ev_disable_stories, mp_disable_stories)
+    function disableStories(ev_disable_stories, mp_disable_stories, muted_stories) {
+      console.log(ev_disable_stories, mp_disable_stories, muted_stories)
       clearInterval(interval4);
       setOrRemoveStylesOfItem("/assets/graphs/ev_disable_stories.css", ev_disable_stories, "ev_disable_stories");
       setOrRemoveStylesOfItem("/assets/graphs/mp_disable_stories.css", mp_disable_stories, "mp_disable_stories");
+      setOrRemoveStylesOfItem("/assets/graphs/muted_stories.css", muted_stories, "muted_stories");
       function redirect() {
         if (ev_disable_stories && window.location.href.includes("/stories/")) {
           if (window.location?.assign) window.location.assign("/");
@@ -257,6 +258,20 @@
       }
     }
 
+    function disableMutedStories(state) {
+      clearInterval(interval8);
+      setOrRemoveStylesOfItem("/assets/graphs/muted_stories.css", state, "muted_stories");
+    
+      function redirect() {
+        console.log("Redirecting muted stories...");
+      }
+    
+      if (state) {
+        interval8 = setInterval(redirect, 300);
+      } else {
+        clearInterval(interval8);
+      }
+    }
 
     /**
      * Updates DOM based on the user state, and applies all the corresponding changes without any unnecessary mutations.
@@ -278,6 +293,7 @@
           "counters_disable",
           "grayscale",
           "disable_threads",
+          "muted_stories",
         ]
 
         // This part injects current (active) .css setters, based on the user settings state.
@@ -291,7 +307,8 @@
         toggleExplore(state.disable_explore);
         toggleReels(state.disable_reels);
         disableVideos(state.block_videos);
-        disableStories(state.ev_disable_stories, state.mp_disable_stories);
+        disableMutedStories(state.muted_stories);
+        disableStories(state.ev_disable_stories, state.mp_disable_stories, state.muted_stories);
         !state.nav_to_messages_first && disableRecommendations(state.mp_disable_recs);
         navToMessages(state.nav_to_messages_first)
 

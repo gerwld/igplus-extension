@@ -188,7 +188,10 @@
 	"mi_17": {
 		"message": "Kommentare deaktivieren (Beta)"
 	},
-  "mi_18": {
-    "message": "Schaltfläche \"Threads\" ausblenden"
-  }
+	"mi_18": {
+		"message": "Schaltfläche \"Threads\" ausblenden"
+	},
+	"mi_19": {
+		"message": ""
+	}
 }
